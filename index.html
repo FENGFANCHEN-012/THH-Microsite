@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I AM 40 — The Helping Hand 40th Anniversary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Fraunces:opsz,wght@9..144,300;9..144,800;9..144,900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="progress"></div>
+<div id="cursor-dot"></div><div id="cursor-ring"></div>
+
+<main>
+  <!-- 1. HERO: sticky stage, scroll-driven (850vh) -->
+  <section id="hero" style="height:850vh">
+    <div class="stage hero-stage">
+      <!-- central block: "I AM 40 DAYS" -->
+      <div class="hero-bg" id="heroBg">
+        <img src="img/building.jpg" alt="">
+        <div class="hero-tint"></div>
+      </div>
+      <header class="hero-top" id="heroTop">
+        <span>The Helping Hand</span><span>40th Anniversary · 1985–2025</span>
+      </header>
+      <div class="hero-center" id="heroMain">
+        <div class="mono hero-iam" id="heroIam">I AM</div>
+        <div class="display hero-num" id="heroNum">40</div>
+        <div class="mono hero-days" id="heroDays">D A Y S</div>
+        <p class="hero-sub" id="heroSub">40 years of restoration.<br>14,600 days of lives being rebuilt.</p>
+      </div>
+      <!-- floating numbers canvas (pans horizontally) -->
+      <div class="numbers-canvas" id="canvas"></div>
+      <div class="numbers-text" id="numbersText">
+        <p class="nt-1">14,600 days tell the story of an organisation.</p>
+        <p class="nt-2 display">Every single day tells the story of a life.</p>
+      </div>
+      <div class="profile-card" id="profile">
+        <img id="pfImg" alt="">
+        <div class="pf-body">
+          <div class="pf-head"><div><span>Overcomer profile</span><strong id="pfName"></strong><small id="pfRole"></small></div></div>
+          <div class="pf-stat"><span>I AM</span><strong id="pfDays"></strong></div>
+          <p id="pfQuote"></p>
+        </div>
+      </div>
+      <div class="scroll-cue" id="scrollCue"><span class="mono">Scroll</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- 2. FEATURED STORY: sticky stage, 5 scenes (520vh) -->
+  <section id="story" style="height:520vh">
+    <div class="stage story-stage">
+      <div class="scene sc-intro" data-scene="0">
+        <div class="mono eyebrow">Featured Story</div>
+        <div class="display big" id="sNum">2,456</div>
+        <div class="mono label">Days Free</div>
+        <p class="display lead">Daniel's story begins with a number.<br><em>But the number is not the beginning.</em></p>
+      </div>
+      <div class="scene sc-past" data-scene="1">
+        <div class="panel-dark">
+          <div class="mono eyebrow lite">P A S T</div>
+          <div class="display big lite">1,825</div>
+          <div class="mono label lite">Days Incarcerated</div>
+          <p class="body-lite">Five years behind walls. Every day the same. He counted not in hope, but in habit.</p>
+        </div>
+        <div class="photo past-photo"></div>
+      </div>
+      <div class="scene sc-turn" data-scene="2">
+        <div class="turn-bg"></div>
+        <div class="turn-copy">
+          <div class="mono eyebrow lite">The Turning Point</div>
+          <blockquote class="display">“I met men who had nothing to gain from being kind to me. But they were. That was God.”</blockquote>
+          <cite class="mono">— Daniel T., resident since 2018</cite>
+          <p class="body-lite">The Helping Hand offered Daniel a room, a community, and the slow work of becoming someone new.</p>
+        </div>
+      </div>
+      <div class="scene sc-present" data-scene="3">
+        <div class="photo present-photo"></div>
+        <div class="panel-light">
+          <div class="mono eyebrow">P R E S E N T</div>
+          <div class="display big">2,456</div>
+          <div class="mono label">Days Free</div>
+          <ul>
+            <li>Employed as Head Chef</li><li>Reconciled with his family</li>
+            <li>Mentoring 3 new residents</li><li>Leads Sunday worship</li>
+          </ul>
+        </div>
+      </div>
+      <div class="scene sc-count" data-scene="4">
+        <div class="mono eyebrow">I A M</div>
+        <div class="display big grey">2,456</div>
+        <div class="count-and">AND COUNTING.</div>
+        <p class="count-sub">Tomorrow, he will be 2,457.</p>
+      </div>
+      <nav class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></nav>
+    </div>
+  </section>
+
+  <!-- 3. OVERCOMERS WALL -->
+  <section id="wall">
+    <div class="wrap">
+      <div class="wall-head">
+        <div>
+          <div class="mono eyebrow">The Overcomers</div>
+          <h2 class="display">40 Lives.<br>40 Stories.</h2>
+        </div>
+        <p class="wall-note">Each number is a resident of The Helping Hand — and the days they have walked free.</p>
+      </div>
+      <div class="mosaic" id="mosaic"></div>
+    </div>
+  </section>
+
+  <!-- 4. COLLECTIVE IMPACT -->
+  <section id="impact">
+    <div class="wrap impact-grid">
+      <div class="collage" id="collage"></div>
+      <div class="impact-copy">
+        <div class="mono eyebrow">Collective Impact</div>
+        <h2 class="display">One day.<br>One life.<br><span class="blue">40 years of<br>second chances.</span></h2>
+        <div class="stats">
+          <div><div class="display stat" data-to="4200" data-suffix="+">0+</div><div class="mono stat-l">Residents Served</div></div>
+          <div><div class="display stat" data-to="847000" data-suffix="+">0+</div><div class="mono stat-l">Days of Collective Freedom</div></div>
+          <div><div class="display stat" data-to="82" data-suffix="%">0%</div><div class="mono stat-l">Employment Rate</div></div>
+          <div><div class="display stat" data-to="40" data-suffix="">0</div><div class="mono stat-l">Years of Restoration</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap people-line">
+      <h3 class="display">THH's story is not made of years.<br><span class="blue">It is made of people.</span></h3>
+    </div>
+  </section>
+
+  <!-- 5. SUPPORT -->
+  <section id="support">
+    <div class="support-img"></div>
+    <div class="support-copy">
+      <div class="mono eyebrow">Impact made possible together</div>
+      <h2 class="display">See what support<br><span class="light blue">makes possible.</span></h2>
+      <p>Discover how donors and partners have supported THH’s work — and how funding is translated into programmes, outcomes and lasting impact.</p>
+      <a class="explore mono" href="#">Explore our impact <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- 6. THE NEXT DAY + FOOTER -->
+  <section id="next">
+    <div class="wrap next-inner">
+      <div class="mono eyebrow wide">The Next Day</div>
+      <div class="next-num">
+        <div class="display plus1">+ 1</div>
+        <div class="rule"></div>
+        <div class="display n1" id="nBig">14,600</div>
+        <div class="display n2">14,601</div>
+      </div>
+      <p class="next-a">40 years is not the end of the story.</p>
+      <p class="next-b">Tomorrow, we count another day.</p>
+      <div class="mono eyebrow wide mt">Be part of the next chapter</div>
+      <div class="cta">
+        <a class="mono solid" href="#">Support a life</a>
+        <a class="mono" href="#">Volunteer with us</a>
+        <a class="mono" href="#">Partner with THH</a>
+      </div>
+      <footer>
+        <div><div class="display brand">The Helping Hand</div><div class="mono tiny">1985 – and counting</div></div>
+        <div class="mono tiny center">I AM 14,601</div>
+        <div class="mono tiny right">Registered charity in Singapore<br>thehelpinghand.org.sg</div>
+      </footer>
+    </div>
+  </section>
+</main>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
