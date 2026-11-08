@@ -470,7 +470,7 @@ function Partners() {
 }
 
 function Transparency() {
-  const [open, setOpen] = useState<number | null>(0)
+  const [open, setOpen] = useState<number | null>(null)
   return (
     <div className="donor-trust donor-section">
       <div className="donor-trust__intro">
@@ -484,10 +484,10 @@ function Transparency() {
       </div>
       <div className="donor-trust__points">
         {TRUST_POINTS.map((point, index) => (
-          <button type="button" className={index === open ? "is-open" : ""} key={point.number} onClick={() => setOpen(open === index ? null : index)}>
+          <button type="button" aria-expanded={index === open} className={index === open ? "is-open" : ""} key={point.number} onClick={() => setOpen(open === index ? null : index)}>
             <span>{point.number}</span>
             <strong>{point.title}</strong>
-            <i>{index === open ? "−" : "+"}</i>
+            <i aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M6 9l6 6 6-6" /></svg></i>
             <p>{point.copy}</p>
           </button>
         ))}

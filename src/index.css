@@ -5362,3 +5362,76 @@ body {
 .drug-free-picker__done {
   text-transform: none;
 }
+
+/* Accordion chevron (Figma "accordion": Default / Click to expand) */
+.donor-trust__points > button > i {
+  display: grid;
+  place-items: center;
+  color: #315893;
+  font-style: normal;
+}
+
+.donor-trust__points > button > i svg {
+  transition: transform 0.3s ease;
+}
+
+.donor-trust__points > button.is-open > i svg {
+  transform: rotate(180deg);
+}
+
+/* Timeline year list (Figma "year interaction"): plain years, selected = dash + bold ink */
+.history-timeline__years button {
+  grid-template-columns: 0.75rem 1fr;
+  color: #315893;
+}
+
+.history-timeline__years button > span {
+  display: none;
+}
+
+.history-timeline__years button > i,
+.history-timeline__years button.is-active > i {
+  width: 0.5rem;
+  height: 1px;
+  border-radius: 0;
+  background: transparent;
+  transform: none;
+}
+
+.history-timeline__years button.is-active {
+  color: var(--thh-ink);
+}
+
+.history-timeline__years button.is-active > i {
+  background: currentColor;
+}
+
+.history-timeline__years button > i,
+.history-timeline__years button.is-active > i {
+  border: 0;
+}
+
+.history-timeline__years button > strong {
+  font-weight: 400;
+}
+
+.history-timeline__years button.is-active > strong {
+  font-weight: 700;
+}
+
+/* Accordion rows: heading-sm regular titles, blue numbers (Figma 07 Financial accountability) */
+.donor-trust__points > button {
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.donor-trust__points > button > span {
+  color: #315893;
+}
+
+.donor-trust__points > button > strong {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.78;
+  letter-spacing: 0;
+}

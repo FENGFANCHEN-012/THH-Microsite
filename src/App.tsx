@@ -777,7 +777,7 @@ function NumberSection({ progress }: { progress: number }) {
                   '--number-y': `${item.y}%`,
                   '--number-size': item.fs,
                   '--number-mobile-size': item.mfs,
-                  opacity: numbersVisibility * (isActive ? 0.72 : item.op),
+                  opacity: numbersVisibility * (isActive ? 1 : item.op),
                   transform: `translateY(${(1 - numbersVisibility) * 24}px)`,
                   pointerEvents: numbersVisibility > 0.01 ? 'auto' : 'none',
                   transition: 'opacity 0.25s ease',
@@ -1096,20 +1096,21 @@ function OvercomersWall() {
                   }}
                 />
                 {/* Bottom gradient for text on hover */}
-                <div className="absolute inset-0" style={{ background: isHov ? `linear-gradient(to top, ${BG3} 0%, rgba(255,255,255,0.4) 40%, transparent 65%)` : 'none', transition: 'background 0.5s' }} />
+                <div className="absolute inset-0" style={{ background: isHov ? 'linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0.75) 30%, transparent 60%)' : 'none', transition: 'background 0.5s' }} />
 
-                {/* Number */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="font-mono block mb-1 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
-                  <div className="font-display font-bold leading-none text-center" style={{ fontSize: isLarge ? '3.2rem' : '1.9rem', letterSpacing: '-0.04em', color: INK, transform: isHov ? 'translateY(-10px)' : 'translateY(0)', transition: 'transform 0.4s ease' }}>
+                {/* Default: I AM / days / DAYS OF FREEDOM (fades out on hover) */}
+                <div className="absolute inset-0 flex flex-col items-start justify-center px-8" style={{ opacity: isHov ? 0 : 1, transition: 'opacity 0.4s ease' }}>
+                  <span className="font-mono block leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
+                  <div className="font-display font-bold leading-[1.33]" style={{ fontSize: isLarge ? '4.5rem' : '2rem', letterSpacing: isLarge ? '-0.0667em' : '-0.025em', color: INK }}>
                     {person.days.toLocaleString()}
                   </div>
+                  <span className="font-mono block leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>Days of freedom</span>
                 </div>
 
-                {/* Name */}
-                <div className="absolute bottom-0 left-0 right-0 p-4" style={{ opacity: isHov ? 1 : 0, transform: isHov ? 'translateY(0)' : 'translateY(10px)', transition: 'all 0.4s ease' }}>
-                  <p className="font-mono text-[0.75rem] leading-[1.67] uppercase" style={{ color: GOLD }}>{person.name}</p>
-                  <p className="font-body text-[0.75rem] mt-1 leading-[1.67]" style={{ color: INK2 }}>{person.role}</p>
+                {/* Hover: name + role over the clear photo */}
+                <div className="absolute bottom-0 left-0 right-0 p-6" style={{ opacity: isHov ? 1 : 0, transform: isHov ? 'translateY(0)' : 'translateY(10px)', transition: 'all 0.4s ease' }}>
+                  <p className="font-mono text-[0.875rem] leading-[1.57] uppercase" style={{ color: GOLD }}>{person.name}</p>
+                  <p className="font-body text-[1rem] mt-1 leading-[1.5]" style={{ color: INK }}>{person.role}</p>
                 </div>
               </div>
             )
