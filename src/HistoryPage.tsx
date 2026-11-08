@@ -197,7 +197,7 @@ function HistoryIntro() {
             <span style={{ transform: `translateX(${-progress * 6}vw)` }}>40 YEARS.</span>
             <span className="history-intro__outline" style={{ transform: `translateX(${progress * 6}vw)` }}>ONE JOURNEY.</span>
           </div>
-          <p className="history-intro__copy" style={{ opacity: Math.min(1, progress * 4) }}>
+          <p className="history-intro__copy">
             Not simply a sequence of dates, but years of people, change, growth, challenge and lives transformed.
           </p>
         </div>
@@ -297,22 +297,17 @@ function HistoryFinale() {
       <div className="history-finale__sticky">
         <div className="history-grain" />
         <div className="history-finale__years" style={{ opacity: first }}>
-          1987 <i /> 2024
+          1987 <i /> 2027
         </div>
         <div className="history-finale__statement" style={{ opacity: second }}>
           <span>ALL THESE YEARS BECAME</span>
-          <strong>IAM40</strong>
+          <strong>I AM 40</strong>
         </div>
         <div className="history-finale__result" style={{ opacity: third, transform: `scale(${0.9 + third * 0.1})` }}>
           <span>I AM</span>
           <strong>14,600</strong>
           <em>DAYS</em>
           <p>Forty years are made of days.<br />Every day is made of people.</p>
-        </div>
-        <div className="history-finale__footer">
-          <span>The Helping Hand</span>
-          <span>1987 → 2024 → 40 years → 14,600 days</span>
-          <span>And the journey continues</span>
         </div>
       </div>
     </div>

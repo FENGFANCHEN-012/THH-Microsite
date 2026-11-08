@@ -106,7 +106,7 @@ body {
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .home-header__anniversary strong {
@@ -127,7 +127,7 @@ body {
   line-height: 1;
   font-style: normal;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .home-header__identity {
@@ -140,7 +140,7 @@ body {
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.5;
-  text-transform: none;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -402,7 +402,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -411,7 +411,7 @@ body {
   align-items: baseline;
   gap: 0.5rem;
   margin-top: 0.5rem;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .drug-free-picker__statement:first-child {
@@ -458,7 +458,7 @@ body {
   line-height: 1.67;
   font-weight: 400;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
   background: transparent;
   border-radius: 0;
@@ -508,7 +508,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
   background: transparent;
 }
@@ -560,7 +560,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -598,7 +598,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -802,7 +802,7 @@ body {
   line-height: 1.67;
   letter-spacing: 0;
   text-align: center;
-  text-transform: none;
+  text-transform: uppercase;
   color: #315893;
   background: #ecf2fa;
 }
@@ -827,7 +827,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: #315893;
 }
 
@@ -857,7 +857,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: rgba(12, 17, 21, 0.68);
   background: transparent;
 }
@@ -877,7 +877,7 @@ body {
   line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: #315893;
 }
 
@@ -988,7 +988,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .donor-header__nav {
@@ -1004,7 +1004,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-brown);
   background: transparent;
 }
@@ -1016,7 +1016,7 @@ body {
   line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ivory);
   background: var(--thh-gold);
 }
@@ -1051,7 +1051,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1119,7 +1119,7 @@ body {
   line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
-  text-transform: none;
+  text-transform: uppercase;
   transition: transform 0.3s, background 0.3s, color 0.3s;
 }
 
@@ -1173,7 +1173,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: #ecf2fa;
 }
 
@@ -1198,7 +1198,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -1284,7 +1284,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1411,7 +1411,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ivory);
   background: rgba(12, 17, 21, 0.58);
 }
@@ -1431,7 +1431,7 @@ body {
   line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1459,7 +1459,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -1479,7 +1479,7 @@ body {
 }
 
 .donor-metric-note span {
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1516,7 +1516,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1554,7 +1554,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .donor-support-flow__equation i {
@@ -1594,7 +1594,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1625,7 +1625,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -1758,7 +1758,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -1809,7 +1809,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1862,7 +1862,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -1929,7 +1929,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -1970,7 +1970,7 @@ body {
   line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ink);
 }
 
@@ -2065,7 +2065,7 @@ body {
   line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-brown);
 }
 
@@ -2082,7 +2082,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -2130,7 +2130,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -2164,7 +2164,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ink);
   background: transparent;
 }
@@ -2240,7 +2240,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -2352,7 +2352,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -2492,7 +2492,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ivory);
 }
 
@@ -2537,7 +2537,7 @@ body {
   line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -2547,7 +2547,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0;
   line-height: 1.67;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -2608,7 +2608,7 @@ body {
   line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: #ecf2fa;
 }
 
@@ -2668,7 +2668,7 @@ body {
   line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .donor-impact-explorer__list button > p {
@@ -2727,7 +2727,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -2809,7 +2809,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -2860,7 +2860,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ivory);
 }
 
@@ -2929,7 +2929,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -2956,7 +2956,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
   background: transparent;
 }
@@ -3004,7 +3004,7 @@ body {
   line-height: 1.67;
   font-weight: 400;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -3053,7 +3053,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -3088,7 +3088,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0;
   line-height: 1.67;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -3160,7 +3160,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0;
   line-height: 1.67;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -3760,7 +3760,7 @@ body {
 .history-rail__current {
   margin-top: 0.5rem;
   color: var(--thh-muted);
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .history-rail__current span:first-child {
@@ -3801,7 +3801,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -3818,7 +3818,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -3836,8 +3836,7 @@ body {
 }
 
 .history-intro__outline {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--thh-ink);
+  color: #315893; /* new design: solid brand blue, no outline */
 }
 
 .history-intro__copy {
@@ -3867,7 +3866,7 @@ body {
 
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .history-intro__count strong {
@@ -3891,7 +3890,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -3911,12 +3910,12 @@ body {
 }
 
 .history-opening-note span {
-  max-width: 62rem;
+  max-width: 75rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 7vw, 7.5rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem); /* heading-xl */
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.29;
+  letter-spacing: -0.0286em;
 }
 
 .history-opening-note p {
@@ -3995,7 +3994,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ivory);
   background: rgba(12, 17, 21, 0.7);
 }
@@ -4015,7 +4014,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -4224,7 +4223,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-ivory);
 }
 
@@ -4272,7 +4271,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -4483,7 +4482,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -4801,7 +4800,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -4826,7 +4825,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
   animation: history-timeline-cue-in 0.45s ease both;
 }
@@ -4893,7 +4892,7 @@ body {
   line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-gold);
 }
 
@@ -4936,7 +4935,7 @@ body {
   font-size: 0.75rem;
   line-height: 1.67;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: uppercase;
   color: var(--thh-muted);
 }
 
@@ -5175,4 +5174,89 @@ body {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* Shared site footer (Figma "footer" component) */
+.site-footer {
+  padding: 4rem 1.25rem 2rem;
+  text-align: center;
+  color: #0c1115;
+  background: #ffffff;
+}
+
+.site-footer__brand > strong {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.44;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #315893;
+}
+
+.site-footer__brand > strong em {
+  font-style: normal;
+  color: #b43c49;
+}
+
+.site-footer__mark {
+  display: inline-grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  margin-top: 0.5rem;
+  color: #315893;
+}
+
+.site-footer__mark small {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.67;
+  letter-spacing: 0;
+}
+
+.site-footer__mark small:last-child {
+  justify-self: end;
+  margin-top: -0.5rem;
+}
+
+.site-footer__mark span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.0375em;
+  background: linear-gradient(180deg, #315893 0%, #203d69 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.site-footer__brand > p {
+  margin-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.67;
+}
+
+.site-footer__credits {
+  max-width: 90rem;
+  margin: 1.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ecf2fa;
+}
+
+.site-footer__credits strong {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.67;
+}
+
+.site-footer__credits p {
+  margin-top: 0.25rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.67;
 }

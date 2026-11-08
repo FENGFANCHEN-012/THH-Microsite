@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import HistoryPage from "./HistoryPage"
+import SiteFooter from "./SiteFooter"
 import DonorImpactPage from "./DonorImpactPage"
 import thhBuilding from "./assets/thh-building.png"
 
@@ -320,9 +321,9 @@ function HomeHeader({
 
         <nav className="home-header__nav" aria-label="Main navigation">
           <button type="button" className={currentPath === '/' ? 'is-active' : ''} aria-current={currentPath === '/' ? 'page' : undefined} onClick={goHome} data-cursor="true">Home</button>
-          <button type="button" className={currentPath === '/impact' ? 'is-active' : ''} aria-current={currentPath === '/impact' ? 'page' : undefined} onClick={() => goToPage('/impact')} data-cursor="true">Donor impact</button>
           <button type="button" className={currentPath === '/journey' ? 'is-active' : ''} aria-current={currentPath === '/journey' ? 'page' : undefined} onClick={() => goToPage('/journey')} data-cursor="true">Timeline</button>
           <button type="button" aria-disabled="true" data-cursor="true">40 stories</button>
+          <button type="button" className={currentPath === '/impact' ? 'is-active' : ''} aria-current={currentPath === '/impact' ? 'page' : undefined} onClick={() => goToPage('/impact')} data-cursor="true">Donor impact</button>
         </nav>
 
         <a
@@ -353,9 +354,9 @@ function HomeHeader({
 
       <div id="home-mobile-menu" className={`home-header__mobile-menu${menuOpen ? ' is-open' : ''}`}>
         <button type="button" className={currentPath === '/' ? 'is-active' : ''} aria-current={currentPath === '/' ? 'page' : undefined} onClick={goHome}>Home</button>
-        <button type="button" className={currentPath === '/impact' ? 'is-active' : ''} aria-current={currentPath === '/impact' ? 'page' : undefined} onClick={() => goToPage('/impact')}>Donor impact</button>
         <button type="button" className={currentPath === '/journey' ? 'is-active' : ''} aria-current={currentPath === '/journey' ? 'page' : undefined} onClick={() => goToPage('/journey')}>Timeline</button>
         <button type="button" aria-disabled="true">40 stories</button>
+        <button type="button" className={currentPath === '/impact' ? 'is-active' : ''} aria-current={currentPath === '/impact' ? 'page' : undefined} onClick={() => goToPage('/impact')}>Donor impact</button>
         <a href="https://thehelpinghand.org.sg" target="_blank" rel="noreferrer">
           Back to THH website <span aria-hidden="true">↗</span>
         </a>
@@ -642,18 +643,18 @@ function HeroSection({ progress }: { progress: number }) {
 
         {/* Main type */}
         <div className="relative z-30 text-center select-none pointer-events-none" style={{ opacity: mainOpacity }}>
-          <p className="font-mono mb-5 leading-[1.33]" style={{ color: centralColor, fontSize: 'clamp(1rem, 1.8vw, 1.5rem)', opacity: 1 - morphP * 0.4 }}>
+          <p className="font-mono mb-5 leading-[1.33] uppercase" style={{ color: centralColor, fontSize: 'clamp(1rem, 1.8vw, 1.5rem)', opacity: 1 - morphP * 0.4 }}>
             I AM
           </p>
           <div className="font-display font-bold leading-[1.28] tracking-[-0.00769em]" style={{ fontSize: 'clamp(7.5rem, 18vw, 19.5rem)', color: centralColor, transform: `scale(${1 + morphP * 0.1})`, willChange: 'transform' }}>
             {displayNum}
           </div>
-          <p className="font-mono mt-5 leading-[1.44]" style={{ color: BG, fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)', opacity: daysP * (1 - backgroundEase), transform: `translateY(${(1 - daysP) * 8}px)` }}>
-            D A Y S
+          <p className="font-mono mt-5 leading-[1.44] uppercase" style={{ color: BG, fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)', opacity: daysP > 0.05 ? daysP * (1 - backgroundEase) : Math.max(0, 1 - morphP * 3), transform: `translateY(${(1 - daysP) * 8}px)` }}>
+            {daysP > 0.05 ? 'Days' : 'Years of restoring lives'}
           </p>
           <div className="mt-16 text-center" style={{ opacity: subtitleP * (1 - backgroundEase), transform: `translateY(${(1 - subtitleP) * 24}px)` }}>
             <p className="font-body font-normal leading-[1.33]" style={{ color: BG, fontSize: '1.5rem' }}>
-              40 years of restoration.<br />14,600 days of lives being rebuilt.
+              40 years of restoration.<br />14,600 days of lives being transformed.
             </p>
           </div>
         </div>
@@ -764,7 +765,7 @@ function NumberSection({ progress }: { progress: number }) {
                   else showProfile(i)
                 }}
               >
-                <span className="block font-mono mb-1 leading-[1.67]" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
+                <span className="block font-mono mb-1 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
                 <div className="font-display font-bold leading-none" style={{ fontSize: 'var(--number-size)', letterSpacing: '-0.04em', color: INK }}>{item.n.toLocaleString()}</div>
               </button>
             )
@@ -830,8 +831,8 @@ function NumberSection({ progress }: { progress: number }) {
 
         <div className="absolute inset-0 z-20 flex items-center justify-center px-6 text-center pointer-events-none" style={{ opacity: 1 - mainOpacity }}>
           <div className="max-w-2xl">
-            <p className="font-body font-normal leading-[1.33]" style={{ color: INK3, fontSize: 'clamp(1rem, 1.5vw, 1.5rem)' }}>14,600 days tell the story of an organisation.</p>
-            <p className="font-display font-bold mt-1 leading-[1.5] tracking-[-0.025em]" style={{ fontSize: '2rem', color: INK }}>Every single day tells the story of a life.</p>
+            <p className="font-body font-normal leading-[1.33]" style={{ color: INK3, fontSize: 'clamp(1rem, 1.5vw, 1.5rem)' }}>14,600 days tell the story of overcoming odds and prejudices</p>
+            <p className="font-display font-bold mt-1 leading-[1.5] tracking-[-0.025em]" style={{ fontSize: '2rem', color: INK }}>Every single day brings possibilities to our residents&apos; lives.</p>
           </div>
         </div>
 
@@ -856,7 +857,7 @@ function AnniversarySequence() {
 
         {/* Scroll nudge */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3" style={{ opacity: Math.max(0, 1 - heroP * 6) }}>
-          <span className="font-mono leading-[1.67]" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.72)' }}>Scroll</span>
+          <span className="font-mono leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.72)' }}>Scroll</span>
           <div className="w-px h-10" style={{ background: 'rgba(255,255,255,0.5)' }} />
         </div>
       </div>
@@ -880,18 +881,18 @@ function MissionVisionSection() {
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden" style={{ background: BG2 }}>
         <div className="max-w-[1440px] mx-auto px-20 w-full">
           <div className="mb-10" style={{ opacity: qP, transform: `translateY(${(1 - qP) * 12}px)` }}>
-            <p className="font-mono text-[0.75rem] leading-[1.67]" style={{ color: INK5 }}>The reason for 40 years</p>
+            <p className="font-mono text-[0.75rem] leading-[1.67] uppercase" style={{ color: INK5 }}>The reason for 40 years</p>
           </div>
 
           <div style={{ opacity: mP, transform: `translateY(${(1 - mP) * 28}px)` }}>
-            <p className="font-mono text-[0.75rem] mb-6 leading-[1.67]" style={{ color: GOLD }}>Mission</p>
+            <p className="font-mono text-[0.75rem] mb-6 leading-[1.67] uppercase" style={{ color: GOLD }}>Mission</p>
             <h2 className="font-display font-bold leading-[1.25] tracking-[-0.0375em]" style={{ fontSize: 'clamp(2rem, 4.2vw, 4rem)', maxWidth: '900px', color: INK }}>
               To restore lives and rebuild futures — through community, compassion, and the conviction that every man deserves a second chance.
             </h2>
           </div>
 
           <div className="mt-16 pl-16" style={{ borderLeft: `2px solid ${GOLD}`, opacity: vP, transform: `translateY(${(1 - vP) * 24}px)` }}>
-            <p className="font-mono text-[0.75rem] mb-5 leading-[1.67]" style={{ color: INK4 }}>Vision</p>
+            <p className="font-mono text-[0.75rem] mb-5 leading-[1.67] uppercase" style={{ color: INK4 }}>Vision</p>
             <h3 className="font-display font-normal leading-[1.4] tracking-[-0.04em]" style={{ fontSize: 'clamp(1.125rem, 2.8vw, 2.5rem)', maxWidth: '720px', color: INK2 }}>
               A Singapore where every former offender can walk free — not just from prison walls, but from the weight of the past.
             </h3>
@@ -919,7 +920,7 @@ function RevealSection() {
     <div ref={ref} className="py-30 px-16" style={{ background: BG2 }}>
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-16 max-w-lg">
-          <p className="font-mono text-[0.75rem] mb-5 leading-[1.67]" style={{ color: GOLD, opacity: inView ? 1 : 0, transition: 'opacity 1s' }}>The Numbers</p>
+          <p className="font-mono text-[0.75rem] mb-5 leading-[1.67] uppercase" style={{ color: GOLD, opacity: inView ? 1 : 0, transition: 'opacity 1s' }}>The Numbers</p>
           <h2 className="font-display font-bold leading-[1.17] tracking-[-0.025em]" style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', color: INK, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 1s 0.1s, transform 1s 0.1s' }}>
             These are not<br />statistics.
           </h2>
@@ -944,7 +945,7 @@ function RevealSection() {
 
               {/* I AM + number */}
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-mono block mb-2 leading-[1.67]" style={{ fontSize: '0.75rem', color: GOLD, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.8s ${i * 0.07}s, transform 0.8s ${i * 0.07}s` }}>I AM</span>
+                <span className="font-mono block mb-2 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(10px)', transition: `opacity 0.8s ${i * 0.07}s, transform 0.8s ${i * 0.07}s` }}>I AM</span>
                 <div className="font-display font-bold text-center leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(3rem, 5.5vw, 4.5rem)', color: INK, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(18px)', transition: `opacity 0.9s ${i * 0.07 + 0.1}s, transform 0.9s ${i * 0.07 + 0.1}s` }}>
                   {person.days.toLocaleString()}
                 </div>
@@ -952,7 +953,7 @@ function RevealSection() {
 
               {/* Hover name + quote */}
               <div className="absolute bottom-0 left-0 right-0 p-6" style={{ opacity: hovId === person.id ? 1 : 0, transform: hovId === person.id ? 'translateY(0)' : 'translateY(12px)', transition: 'all 0.5s ease' }}>
-                <p className="font-mono text-[0.75rem] mb-2 leading-[1.67]" style={{ color: GOLD }}>{person.name}</p>
+                <p className="font-mono text-[0.75rem] mb-2 leading-[1.67] uppercase" style={{ color: GOLD }}>{person.name}</p>
                 <p className="font-body text-[0.875rem] italic leading-[1.57]" style={{ color: INK2 }}>&ldquo;{person.quote}&rdquo;</p>
               </div>
             </div>
@@ -982,7 +983,7 @@ function TransformationSection() {
     <div ref={ref} style={{ height: '420vh' }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center px-20 py-16" style={{ background: BG }}>
         <div style={{ opacity: stagePs[0] }}>
-          <p className="font-mono text-[0.75rem] mb-3 leading-[1.67]" style={{ color: GOLD }}>Training & Development</p>
+          <p className="font-mono text-[0.75rem] mb-3 leading-[1.67] uppercase" style={{ color: GOLD }}>Training & Development</p>
           <h2 className="font-display font-bold mb-12 leading-[1.33] tracking-[-0.0333em]" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: INK }}>
             The path of transformation.
           </h2>
@@ -1003,7 +1004,7 @@ function TransformationSection() {
             <div key={i} style={{ opacity: stagePs[i], transform: `translateY(${(1 - stagePs[i]) * 24}px)` }}>
               <div className="font-display font-bold mb-4 leading-[1.33] tracking-[-0.0333em]" style={{ fontSize: '3rem', color: GOLD }}>{stage.n}</div>
               <p className="font-display font-bold text-[1.125rem] mb-1 leading-[1.78]" style={{ color: INK }}>{stage.title}</p>
-              <p className="font-mono mb-4 leading-[1.67]" style={{ fontSize: '0.75rem', color: INK4 }}>{stage.sub}</p>
+              <p className="font-mono mb-4 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK4 }}>{stage.sub}</p>
               <p className="font-body text-[0.875rem] leading-[1.57]" style={{ color: INK3 }}>{stage.desc}</p>
             </div>
           ))}
@@ -1028,12 +1029,12 @@ function OvercomersWall() {
       <div className="max-w-[1440px] mx-auto">
         <div className="flex justify-between items-end mb-16">
           <div>
-            <p className="font-mono text-[0.75rem] mb-4 leading-[1.67]" style={{ color: GOLD, opacity: inView ? 1 : 0, transition: 'opacity 0.8s' }}>The Overcomers</p>
+            <p className="font-mono text-[0.75rem] mb-4 leading-[1.67] uppercase" style={{ color: GOLD, opacity: inView ? 1 : 0, transition: 'opacity 0.8s' }}>The Overcomers</p>
             <h2 className="font-display font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 8vw, 7.5rem)', color: INK, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.9s 0.1s, transform 0.9s 0.1s' }}>
-              40 Lives.<br />40 Stories.
+              40 lives.<br />40 stories.
             </h2>
           </div>
-          <p className="font-body text-[0.875rem] max-w-xs text-right leading-[1.57]" style={{ color: INK3 }}>Each number is a resident of The Helping Hand — and the days they have walked free.</p>
+          <p className="font-body text-[0.875rem] max-w-xs text-right leading-[1.57]" style={{ color: INK3 }}>Each number represents the number of days a resident successfully lives drug free.</p>
         </div>
 
         <div className="grid gap-1" style={{ gridTemplateColumns: 'repeat(4, 1fr)', gridAutoRows: '190px', background: GAP }}>
@@ -1058,7 +1059,7 @@ function OvercomersWall() {
 
                 {/* Number */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="font-mono block mb-1 leading-[1.67]" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
+                  <span className="font-mono block mb-1 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
                   <div className="font-display font-bold leading-none text-center" style={{ fontSize: isLarge ? '3.2rem' : '1.9rem', letterSpacing: '-0.04em', color: INK, transform: isHov ? 'translateY(-10px)' : 'translateY(0)', transition: 'transform 0.4s ease' }}>
                     {person.days.toLocaleString()}
                   </div>
@@ -1066,20 +1067,20 @@ function OvercomersWall() {
 
                 {/* Name */}
                 <div className="absolute bottom-0 left-0 right-0 p-4" style={{ opacity: isHov ? 1 : 0, transform: isHov ? 'translateY(0)' : 'translateY(10px)', transition: 'all 0.4s ease' }}>
-                  <p className="font-mono text-[0.75rem] leading-[1.67]" style={{ color: GOLD }}>{person.name}</p>
+                  <p className="font-mono text-[0.75rem] leading-[1.67] uppercase" style={{ color: GOLD }}>{person.name}</p>
                   <p className="font-body text-[0.75rem] mt-1 leading-[1.67]" style={{ color: INK2 }}>{person.role}</p>
                 </div>
               </div>
             )
           })}
 
-          {/* +28 more */}
+          {/* +33 more */}
           <div className="col-span-1 row-span-1 relative flex items-center justify-center cursor-pointer" style={{ background: BG, border: `1px solid ${BORDER}`, transition: 'border-color 0.3s' }} data-cursor="true"
             onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = GOLD)}
             onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = BORDER)}>
             <div className="text-center">
-              <div className="font-display font-bold leading-[1.4] tracking-[-0.04em]" style={{ fontSize: '2.5rem', color: GOLD }}>+28</div>
-              <p className="font-mono mt-2 leading-[1.67]" style={{ fontSize: '0.75rem', color: INK4 }}>More Overcomers</p>
+              <div className="font-display font-bold leading-[1.4] tracking-[-0.04em]" style={{ fontSize: '2.5rem', color: GOLD }}>+33</div>
+              <p className="font-mono mt-2 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK4 }}>More Overcomers</p>
             </div>
           </div>
         </div>
@@ -1098,7 +1099,7 @@ function EcosystemSection() {
     <div ref={ref} className="py-30 px-20" style={{ background: BG }}>
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-16">
-          <p className="font-mono text-[0.75rem] mb-4 leading-[1.67]" style={{ color: GOLD, opacity: inView ? 1 : 0, transition: 'opacity 0.8s' }}>Community Partners</p>
+          <p className="font-mono text-[0.75rem] mb-4 leading-[1.67] uppercase" style={{ color: GOLD, opacity: inView ? 1 : 0, transition: 'opacity 0.8s' }}>Community Partners</p>
           <h2 className="font-display font-bold leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', color: INK, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.9s 0.1s, transform 0.9s 0.1s' }}>
             No one walks alone.
           </h2>
@@ -1118,7 +1119,7 @@ function EcosystemSection() {
                 <div className="font-display font-bold text-[2rem] leading-[1.5] tracking-[-0.025em]" style={{ color: INK }}>2,456</div>
               </div>
             </div>
-            <p className="font-mono mt-3 text-center leading-[1.67]" style={{ fontSize: '0.75rem', color: INK5 }}>One person</p>
+            <p className="font-mono mt-3 text-center leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK5 }}>One person</p>
           </div>
 
           {/* Arrow */}
@@ -1131,7 +1132,7 @@ function EcosystemSection() {
           {/* THH hub */}
           <div className="col-span-2" style={{ opacity: inView ? 1 : 0, transition: 'opacity 1s 0.5s' }}>
             <div className="p-5 text-center flex flex-col justify-center min-h-[200px]" style={{ border: `1px solid ${GOLD}55`, background: GOLDA }}>
-              <p className="font-mono mb-4 leading-[1.67]" style={{ fontSize: '0.75rem', color: GOLD }}>The Helping Hand</p>
+              <p className="font-mono mb-4 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>The Helping Hand</p>
               {['Residential Care', 'Caseworkers', 'Counsellors', 'Chaplains', 'Life Skills'].map(s => (
                 <p key={s} className="font-body text-[0.75rem] mb-2 leading-[1.67]" style={{ color: INK3 }}>{s}</p>
               ))}
@@ -1149,7 +1150,7 @@ function EcosystemSection() {
           <div className="col-span-6 grid grid-cols-2 gap-2">
             {PARTNERS.map((partner, i) => (
               <div key={i} className="p-5 cursor-pointer" style={{ border: `1px solid ${activeIdx === i ? GOLD : BORDER}`, background: activeIdx === i ? GOLDA : BG2, opacity: inView ? 1 : 0, transition: `opacity 0.8s ${0.6 + i * 0.08}s, border-color 0.3s, background 0.3s` }} data-cursor="true" onMouseEnter={() => setActiveIdx(i)} onMouseLeave={() => setActiveIdx(null)}>
-                <p className="font-mono mb-3 leading-[1.67]" style={{ fontSize: '0.75rem', color: GOLD }}>{partner.cat}</p>
+                <p className="font-mono mb-3 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>{partner.cat}</p>
                 <div className="overflow-hidden" style={{ maxHeight: activeIdx === i ? '120px' : '0px', transition: 'max-height 0.4s ease' }}>
                   {partner.items.map((item, j) => <p key={j} className="font-body text-[0.75rem] mb-2 leading-[1.67]" style={{ color: INK3 }}>{item}</p>)}
                 </div>
@@ -1189,11 +1190,11 @@ function FeaturedStory() {
         <div className="absolute inset-0 flex" style={{ opacity: phase === 0 ? 1 : phase === 1 ? Math.max(0, 1 - phaseP * 4) : 0 }}>
           <div className="w-1/2 flex items-center justify-start" style={{ background: BG, padding: '0 5rem' }}>
             <div>
-              <p className="font-mono text-[0.75rem] mb-4 leading-[1.67]" style={{ color: GOLD }}>Featured Story</p>
-              <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(4.5rem, 13vw, 13rem)', color: INK }}>2,456</div>
-              <div className="font-mono text-[0.875rem] mt-3 mb-8 leading-[1.57]" style={{ color: GOLD }}>DAYS FREE</div>
+              <p className="font-mono text-[0.75rem] mb-4 leading-[1.67] uppercase" style={{ color: GOLD }}>Featured Story</p>
+              <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(4.5rem, 13vw, 13rem)', color: INK }}>9,490</div>
+              <div className="font-mono text-[0.875rem] mt-3 mb-8 leading-[1.57] uppercase" style={{ color: GOLD }}>DAYS FREE</div>
               <p className="font-body text-[1.125rem] font-normal leading-[1.44]" style={{ maxWidth: '380px', color: INK3 }}>
-                Daniel&apos;s story begins with a number.<br />But the number is not the beginning.
+                Moses was fifteen when he began taking cannabis. Heroin followed. By his mid-twenties, both he and his twin brother were struggling with drug addiction.
               </p>
             </div>
           </div>
@@ -1205,12 +1206,12 @@ function FeaturedStory() {
 
         {/* Phase 1 — Past: intentionally warm-dark for emotional contrast */}
         <div className="absolute inset-0 flex" style={{ opacity: pOp(1) }}>
-          <div className="w-1/2 flex items-center justify-center p-20" style={{ background: INK }}>
+          <div className="w-1/2 flex items-center justify-center p-20" style={{ background: BG2 }}>
             <div>
-              <p className="font-mono text-[0.75rem] mb-6 leading-[1.67]" style={{ color: `${GOLD}66` }}>P A S T</p>
-              <div className="font-display font-bold mb-3 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 9vw, 7.5rem)', color: 'rgba(255,255,255,0.65)' }}>1,825</div>
-              <div className="font-mono text-[0.75rem] mb-10 leading-[1.67]" style={{ color: `${GOLD}44` }}>DAYS INCARCERATED</div>
-              <p className="font-body text-[1rem] font-normal max-w-xs leading-[1.5]" style={{ color: 'rgba(255,255,255,0.7)' }}>Five years behind walls. Every day the same. He counted not in hope, but in habit.</p>
+              <p className="font-mono text-[0.75rem] mb-6 leading-[1.67] uppercase" style={{ color: GOLD }}>Past</p>
+              <div className="font-display font-bold mb-3 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 9vw, 7.5rem)', color: INK }}>1,825</div>
+              <div className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>DAYS INCARCERATED</div>
+              <p className="font-body text-[1rem] font-normal max-w-xs leading-[1.5]" style={{ color: INK3 }}>Five years behind walls. Every day the same. He counted not in hope, but in habit.</p>
             </div>
           </div>
           <div className="w-1/2 relative">
@@ -1222,7 +1223,7 @@ function FeaturedStory() {
         {/* Phase 2 — Turning Point: open ivory */}
         <div className="absolute inset-0 flex items-center justify-center" style={{ opacity: pOp(2), background: BG }}>
           <div className="text-center max-w-3xl px-12">
-            <p className="font-mono text-[0.75rem] mb-10 leading-[1.67]" style={{ color: GOLD }}>The Turning Point</p>
+            <p className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>The recovery journey at The Helping Hand</p>
             <blockquote className="font-display font-bold leading-[1.25] tracking-[-0.0375em]" style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', color: INK }}>
               &ldquo;I met men who had nothing to gain from being kind to me. But they were. That was God.&rdquo;
             </blockquote>
@@ -1239,17 +1240,10 @@ function FeaturedStory() {
           </div>
           <div className="w-1/2 flex items-center justify-center p-20" style={{ background: BG2 }}>
             <div>
-              <p className="font-mono text-[0.75rem] mb-6 leading-[1.67]" style={{ color: GOLD }}>P R E S E N T</p>
-              <div className="font-display font-bold mb-3 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 9vw, 7.5rem)', color: INK }}>2,456</div>
-              <div className="font-mono text-[0.75rem] mb-10 leading-[1.67]" style={{ color: GOLD }}>DAYS FREE</div>
-              <div className="space-y-4 max-w-xs">
-                {['Employed as Head Chef', 'Reconciled with his family', 'Mentoring 3 new residents', 'Leads Sunday worship'].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-1 h-1 rounded-full mt-2 shrink-0" style={{ background: GOLD }} />
-                    <p className="font-body text-[0.875rem] leading-[1.57]" style={{ color: INK2 }}>{item}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="font-mono text-[0.75rem] mb-6 leading-[1.67] uppercase" style={{ color: GOLD }}>Present</p>
+              <div className="font-display font-bold mb-3 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 9vw, 7.5rem)', color: INK }}>9,490</div>
+              <div className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>DAYS FREE</div>
+              <p className="font-body text-[1rem] font-normal max-w-xs leading-[1.5]" style={{ color: INK3 }}>Through perseverance and in god&apos;s grace, Clement is deepening his professional skills in Facilities Management.</p>
             </div>
           </div>
         </div>
@@ -1257,7 +1251,7 @@ function FeaturedStory() {
         {/* Phase 4 — And Counting */}
         <div className="absolute inset-0 flex items-center justify-center" style={{ opacity: phase === 4 ? 1 : 0, transition: 'opacity 1s', background: BG }}>
           <div className="text-center">
-            <p className="font-mono text-[0.75rem] mb-5 leading-[1.67]" style={{ color: GOLD }}>I &nbsp; A M</p>
+            <p className="font-mono text-[0.75rem] mb-5 leading-[1.67] uppercase" style={{ color: GOLD }}>I AM</p>
             <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(6rem, 17vw, 13rem)', color: INK }}>2,456</div>
             <div className="font-display font-normal mt-4 leading-[1.33] tracking-[-0.0333em]" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: GOLD }}>AND COUNTING.</div>
             <p className="font-body text-[1rem] mt-10 font-normal leading-[1.5]" style={{ color: INK4 }}>Tomorrow, he will be 2,457.</p>
@@ -1288,7 +1282,7 @@ function LeadershipSection() {
     <div ref={ref} className="py-30 px-20" style={{ background: BG2 }}>
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-16" style={{ opacity: inView ? 1 : 0, transition: 'opacity 0.8s' }}>
-          <p className="font-mono text-[0.75rem] mb-4 leading-[1.67]" style={{ color: GOLD }}>People Behind THH</p>
+          <p className="font-mono text-[0.75rem] mb-4 leading-[1.67] uppercase" style={{ color: GOLD }}>People Behind THH</p>
           <h2 className="font-display font-bold leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', color: INK }}>
             40 years made by<br />the people who stayed.
           </h2>
@@ -1313,14 +1307,14 @@ function LeadershipSection() {
               <blockquote className="font-display font-bold leading-[1.4] tracking-[-0.04em]" style={{ fontSize: 'clamp(2rem, 2.8vw, 2.5rem)', color: INK, marginTop: '-1.5rem' }}>
                 {featured.quote}
               </blockquote>
-              <p className="font-mono text-[0.75rem] mt-8 leading-[1.67]" style={{ color: GOLD }}>— {featured.name}, {featured.role}</p>
+              <p className="font-mono text-[0.75rem] mt-8 leading-[1.67] uppercase" style={{ color: GOLD }}>— {featured.name}, {featured.role}</p>
             </div>
           </div>
         </div>
 
         {/* Others */}
         <div className="pt-12" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <p className="font-mono text-[0.75rem] mb-8 leading-[1.67]" style={{ color: INK5 }}>Leadership Team</p>
+          <p className="font-mono text-[0.75rem] mb-8 leading-[1.67] uppercase" style={{ color: INK5 }}>Leadership Team</p>
           <div className="grid grid-cols-4 gap-4">
             {others.map((person, i) => (
               <div key={i} className="relative overflow-hidden cursor-pointer" style={{ opacity: inView ? 1 : 0, transition: `opacity 0.8s ${0.4 + i * 0.1}s`, aspectRatio: '3/4' }} data-cursor="true" onMouseEnter={() => setHovIdx(i)} onMouseLeave={() => setHovIdx(null)}>
@@ -1350,7 +1344,7 @@ function ImpactStat({ label, value, suffix = '', prefix = '' }: { label: string;
       <div className="font-display font-bold mb-2 leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: INK }}>
         {prefix}{count.toLocaleString()}{suffix}
       </div>
-      <p className="font-mono leading-[1.67]" style={{ fontSize: '0.75rem', color: INK4 }}>{label}</p>
+      <p className="font-mono leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK4 }}>{label}</p>
     </div>
   )
 }
@@ -1376,22 +1370,22 @@ function CollectiveImpact() {
 
           {/* Stats */}
           <div className="col-span-7 pl-12">
-            <p className="font-mono text-[0.75rem] mb-6 leading-[1.67]" style={{ color: GOLD }}>Collective Impact</p>
+            <p className="font-mono text-[0.75rem] mb-6 leading-[1.67] uppercase" style={{ color: GOLD }}>Collective Impact</p>
             <h2 className="font-display font-bold mb-16 leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: INK }}>
               One day.<br />One life.<br /><span style={{ color: GOLD }}>40 years of<br />second chances.</span>
             </h2>
             <div className="grid grid-cols-2 gap-10">
-              <ImpactStat label="Residents Served"             value={4200}   suffix="+" />
-              <ImpactStat label="Days of Collective Freedom"   value={847000} suffix="+" />
-              <ImpactStat label="Employment Rate"              value={82}     suffix="%" />
-              <ImpactStat label="Years of Restoration"         value={40} />
+              <ImpactStat label="Residents Served"        value={3100}  suffix="+" />
+              <ImpactStat label="Hours of Work Therapy"   value={95040} />
+              <ImpactStat label="Counselling Sessions"    value={1301} />
+              <ImpactStat label="Spiritual Sessions"      value={1296} />
             </div>
           </div>
         </div>
 
         <div className="mt-20 pt-16 text-center" style={{ borderTop: `1px solid ${BORDER}` }}>
           <p className="font-display font-bold leading-[1.29] tracking-[-0.0286em]" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: INK, opacity: inView ? 1 : 0, transition: 'opacity 1.2s 0.4s' }}>
-            THH&apos;s story is not made of years.<br /><span style={{ color: GOLD }}>It is made of people.</span>
+            The Helping Hand&apos;s story is about <span style={{ color: GOLD }}>lives, powered by individuals&apos; faith, commitments to change, and community support.</span>
           </p>
         </div>
       </div>
@@ -1421,18 +1415,18 @@ function OrganisationSection() {
 
         {/* Intro */}
         <div className="mb-20 max-w-2xl" style={{ opacity: inView ? 1 : 0, transition: 'opacity 0.8s' }}>
-          <p className="font-mono text-[0.75rem] mb-4 leading-[1.67]" style={{ color: GOLD }}>How THH Works</p>
+          <p className="font-mono text-[0.75rem] mb-4 leading-[1.67] uppercase" style={{ color: GOLD }}>How THH Works</p>
           <h2 className="font-display font-bold leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: INK }}>The structure that<br />sustains the work.</h2>
           <p className="font-body text-[1rem] mt-6 leading-[1.5]" style={{ color: INK3 }}>Behind every overcomer is not just a person — but an organisation built over 40 years to make transformation possible.</p>
         </div>
 
         {/* Org Chart */}
         <div className="mb-20" style={{ opacity: inView ? 1 : 0, transition: 'opacity 0.9s 0.2s' }}>
-          <p className="font-mono text-[0.75rem] mb-8 leading-[1.67]" style={{ color: INK5 }}>Organisation Chart</p>
+          <p className="font-mono text-[0.75rem] mb-8 leading-[1.67] uppercase" style={{ color: INK5 }}>Organisation Chart</p>
 
           <button className="w-full text-left px-6 py-5 flex justify-between items-center mb-1" style={{ ...row, background: BG, transition: 'background 0.2s, border-color 0.2s' }} data-cursor="true" onMouseEnter={hBg} onMouseLeave={uBg} onClick={() => setShowBoard(!showBoard)}>
             <div>
-              <span className="font-mono text-[0.75rem] leading-[1.67]" style={{ color: GOLD }}>Governing Level</span>
+              <span className="font-mono text-[0.75rem] leading-[1.67] uppercase" style={{ color: GOLD }}>Governing Level</span>
               <div className="font-display font-bold text-[1.125rem] mt-1 leading-[1.78]" style={{ color: INK }}>Board of Directors</div>
             </div>
             <span className="font-mono text-[0.875rem] shrink-0 ml-4 leading-[1.57]" style={{ color: INK4 }}>{showBoard ? '−' : '+'} {BOARD.length} members</span>
@@ -1443,7 +1437,7 @@ function OrganisationSection() {
               {BOARD.map((m, i) => (
                 <div key={i} className="px-8 py-4 grid grid-cols-12 items-center" style={{ borderTop: i > 0 ? `1px solid ${BORDER}` : undefined, background: BG }}>
                   <div className="col-span-7 flex items-center gap-4">
-                    <span className="font-mono text-[0.75rem] w-28 shrink-0 leading-[1.67]" style={{ color: GOLD }}>{m.designation}</span>
+                    <span className="font-mono text-[0.75rem] w-28 shrink-0 leading-[1.67] uppercase" style={{ color: GOLD }}>{m.designation}</span>
                     <span className="font-display font-bold text-[1rem] leading-[1.5]" style={{ color: INK }}>{m.name}</span>
                   </div>
                   <div className="col-span-4 text-right"><p className="font-body text-[0.875rem] leading-[1.57]" style={{ color: INK3 }}>{m.profession}</p></div>
@@ -1458,7 +1452,7 @@ function OrganisationSection() {
           <div className="mx-16">
             <button className="w-full text-left px-6 py-5 flex justify-between items-center" style={{ ...row, background: BG, transition: 'background 0.2s, border-color 0.2s' }} data-cursor="true" onMouseEnter={hBg} onMouseLeave={uBg} onClick={() => toggleNode('exec')}>
               <div>
-                <span className="font-mono text-[0.75rem] leading-[1.67]" style={{ color: INK4 }}>Executive</span>
+                <span className="font-mono text-[0.75rem] leading-[1.67] uppercase" style={{ color: INK4 }}>Executive</span>
                 <div className="font-display font-bold text-[1.125rem] mt-1 leading-[1.78]" style={{ color: INK }}>Ms Joyce Tan — Executive Director</div>
               </div>
               <span className="font-mono text-[0.875rem] shrink-0 ml-4 leading-[1.57]" style={{ color: INK4 }}>{orgNodes.exec ? '−' : '+ Expand'}</span>
@@ -1475,7 +1469,7 @@ function OrganisationSection() {
                   { title: 'Head of Employment', name: 'Ms Grace Chen', sub: 'Employment & Community', key: 'community', detail: ['Employment Officers (4)', 'Community Liaison (2)', 'Volunteer Coordinator (1)'] },
                 ].map((dept, i) => (
                   <button key={i} className="text-left px-5 py-4" style={{ ...row, background: BG, transition: 'background 0.2s, border-color 0.2s' }} data-cursor="true" onMouseEnter={hBg} onMouseLeave={uBg} onClick={() => toggleNode(dept.key)}>
-                    <span className="font-mono leading-[1.67]" style={{ fontSize: '0.75rem', color: INK4 }}>{dept.title}</span>
+                    <span className="font-mono leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK4 }}>{dept.title}</span>
                     <div className="font-display font-bold text-[1rem] mt-1 leading-[1.5]" style={{ color: INK }}>{dept.name}</div>
                     {orgNodes[dept.key] && (
                       <div className="mt-3 pt-3 space-y-1" style={{ borderTop: `1px solid ${BORDER}` }}>
@@ -1491,7 +1485,7 @@ function OrganisationSection() {
 
         {/* Committees */}
         <div className="mb-16 pt-16" style={{ borderTop: `1px solid ${BORDER}`, opacity: inView ? 1 : 0, transition: 'opacity 0.9s 0.4s' }}>
-          <p className="font-mono text-[0.75rem] mb-8 leading-[1.67]" style={{ color: INK5 }}>Committee Members</p>
+          <p className="font-mono text-[0.75rem] mb-8 leading-[1.67] uppercase" style={{ color: INK5 }}>Committee Members</p>
           <div className="grid grid-cols-2 gap-2">
             {COMMITTEES.map((comm, i) => (
               <div key={i} style={row}>
@@ -1507,11 +1501,11 @@ function OrganisationSection() {
                     <p className="font-body text-[0.875rem] mb-4 leading-[1.57]" style={{ color: INK3 }}>{comm.desc}</p>
                     <div className="flex gap-10">
                       <div>
-                        <p className="font-mono mb-1 leading-[1.67]" style={{ fontSize: '0.75rem', color: INK5 }}>Members</p>
+                        <p className="font-mono mb-1 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK5 }}>Members</p>
                         <p className="font-body text-[0.875rem] leading-[1.57]" style={{ color: INK2 }}>{comm.members} committee members</p>
                       </div>
                       <div>
-                        <p className="font-mono mb-1 leading-[1.67]" style={{ fontSize: '0.75rem', color: INK5 }}>Frequency</p>
+                        <p className="font-mono mb-1 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK5 }}>Frequency</p>
                         <p className="font-body text-[0.875rem] leading-[1.57]" style={{ color: INK2 }}>{comm.meets}</p>
                       </div>
                     </div>
@@ -1526,7 +1520,7 @@ function OrganisationSection() {
         <div className="pt-16" style={{ borderTop: `1px solid ${BORDER}`, opacity: inView ? 1 : 0, transition: 'opacity 0.9s 0.6s' }}>
           <div className="flex justify-between items-end mb-10">
             <div>
-              <p className="font-mono text-[0.75rem] mb-3 leading-[1.67]" style={{ color: INK5 }}>Corporate Governance</p>
+              <p className="font-mono text-[0.75rem] mb-3 leading-[1.67] uppercase" style={{ color: INK5 }}>Corporate Governance</p>
               <h3 className="font-display font-bold leading-[1.33] tracking-[-0.0333em]" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: INK }}>Trust is the foundation<br />of 40 years.</h3>
             </div>
             <div className="px-5 py-3" style={{ border: `1px solid ${GOLD}66` }}>
@@ -1553,7 +1547,7 @@ function OrganisationSection() {
 
           <div className="flex gap-3">
             {['Annual Report 2024', 'Financial Statements', 'Governance Policy'].map(label => (
-              <button key={label} className="font-mono text-[0.75rem] px-5 py-3 leading-[1.67]" style={{ border: `1px solid ${BORDER}`, color: INK3, background: BG, transition: 'all 0.3s' }} data-cursor="true"
+              <button key={label} className="font-mono text-[0.75rem] px-5 py-3 leading-[1.67] uppercase" style={{ border: `1px solid ${BORDER}`, color: INK3, background: BG, transition: 'all 0.3s' }} data-cursor="true"
                 onMouseEnter={e => { const el = e.currentTarget; el.style.borderColor = GOLD; el.style.color = GOLD }}
                 onMouseLeave={e => { const el = e.currentTarget; el.style.borderColor = BORDER; el.style.color = INK3 }}
               >{label}</button>
@@ -1588,27 +1582,30 @@ function NextDay() {
 
       <div className="max-w-[1440px] mx-auto w-full relative">
         <div className="text-center mb-30">
-          <p className="font-mono text-[0.75rem] mb-16 leading-[1.67]" style={{ color: GOLD }}>The Next Day</p>
+          <p className="font-mono text-[0.75rem] mb-16 leading-[1.67] uppercase" style={{ color: GOLD }}>Beyond 40</p>
 
           <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(4.5rem, 14vw, 13rem)', color: INK }}>14,600</div>
 
-          <div className="font-display font-bold mt-1 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3rem, 9vw, 7.5rem)', color: GOLD, opacity: showPlus ? 1 : 0, transform: showPlus ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 0.7s, transform 0.7s' }}>+ 1</div>
+          <div className="font-display font-bold mt-1 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3rem, 9vw, 7.5rem)', color: GOLD, opacity: showPlus ? 1 : 0, transform: showPlus ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 0.7s, transform 0.7s' }}>+1</div>
 
           <div className="mx-auto my-4" style={{ width: showLine ? '360px' : '0px', height: '1px', background: `${GOLD}66`, transition: 'width 1s ease' }} />
 
           <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(4.5rem, 14vw, 13rem)', background: `linear-gradient(135deg, ${INK} 0%, ${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', opacity: showResult ? 1 : 0, transform: showResult ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 1s, transform 1s' }}>14,601</div>
 
           <p className="font-body text-[1.125rem] font-normal mt-16 leading-[1.44]" style={{ color: INK3 }}>
-            40 years is not the end of the story.<br /><span style={{ color: INK, fontWeight: 400 }}>Tomorrow, we count another day.</span>
+            40 years is a long journey. We thank all our partners, donors and community for helping us restore and renew lives.
+          </p>
+          <p className="font-body text-[1.125rem] font-normal mt-4 leading-[1.44] max-w-[640px] mx-auto" style={{ color: INK3 }}>
+            It is on the shoulders of all who came before us that we continue to stand tall as we strive towards a better tomorrow for all who came through our door! Join us today!
           </p>
         </div>
 
         {/* CTAs */}
         <div className="text-center mb-20">
-          <p className="font-mono text-[0.75rem] mb-10 leading-[1.67]" style={{ color: GOLD }}>Be Part of the Next Chapter</p>
+          <p className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>Be Part of the Next Chapter</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            {[{ label: 'Support a Life', primary: true }, { label: 'Volunteer With Us', primary: false }, { label: 'Partner With THH', primary: false }].map(({ label, primary }) => (
-              <button key={label} className="font-mono text-[0.875rem] leading-[1.57]" data-cursor="true"
+            {[{ label: 'Donate', primary: true }, { label: 'Volunteer With Us', primary: false }, { label: 'Partner With THH', primary: false }].map(({ label, primary }) => (
+              <button key={label} className="font-mono text-[0.875rem] leading-[1.57] uppercase" data-cursor="true"
                 style={{ padding: '1rem 2.5rem', background: primary ? GOLD : 'transparent', color: primary ? BG : INK, border: primary ? 'none' : `1px solid ${BORD2}`, transition: 'all 0.3s ease' }}
                 onMouseEnter={e => { const el = e.currentTarget; if (primary) el.style.background = INK; else { el.style.borderColor = GOLD; el.style.color = GOLD } }}
                 onMouseLeave={e => { const el = e.currentTarget; if (primary) el.style.background = GOLD; else { el.style.borderColor = BORD2; el.style.color = INK } }}
@@ -1617,20 +1614,6 @@ function NextDay() {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="pt-12 flex justify-between items-end" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <div>
-            <p className="font-display font-bold leading-[1.5] tracking-[-0.025em]" style={{ fontSize: '2rem', color: INK }}>The Helping Hand</p>
-            <p className="font-mono text-[0.75rem] mt-1 leading-[1.67]" style={{ color: INK4 }}>1985 – and counting</p>
-          </div>
-          <div className="text-center">
-            <p className="font-mono leading-[1.67]" style={{ fontSize: '0.75rem', color: INK5 }}>I AM 14,601</p>
-          </div>
-          <div className="text-right">
-            <p className="font-mono text-[0.75rem] leading-[1.67]" style={{ color: INK4 }}>Registered charity in Singapore</p>
-            <p className="font-mono text-[0.75rem] mt-1 leading-[1.67]" style={{ color: INK5 }}>thehelpinghand.org.sg</p>
-          </div>
-        </div>
       </div>
     </div>
   )
@@ -1706,6 +1689,7 @@ export default function App() {
     <>
       <HomeHeader currentPath={path} onNavigate={navigate} />
       {page}
+      <SiteFooter />
     </>
   )
 }

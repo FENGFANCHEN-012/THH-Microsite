@@ -10,11 +10,11 @@ const IMPACT = [
 ]
 
 const SUPPORT_AREAS = [
-  { number: "01", title: "Residential rehabilitation", copy: "Residential care, structured programmes and a stable environment for rehabilitation.", outcome: "Enables stability and programme participation.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1707286380312-ad352aa56cde?w=1000&h=900&fit=crop&auto=format" },
-  { number: "02", title: "Skills & training", copy: "Vocational development and practical training that build capability for employment.", outcome: "Enables practical capability and work readiness.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1513350027966-f016e1adcecd?w=1000&h=900&fit=crop&auto=format" },
-  { number: "03", title: "Employment support", copy: "Employment preparation, placement support and guidance for returning to work.", outcome: "Enables pathways towards stable employment.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1695654396323-71beae8dadb1?w=1000&h=900&fit=crop&auto=format" },
-  { number: "04", title: "Mentorship & counselling", copy: "Mentorship, counselling and sustained personal support.", outcome: "Enables continuity, confidence and accountability.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1721972236553-e29838cf4274?w=1000&h=900&fit=crop&auto=format" },
-  { number: "05", title: "Community reintegration", copy: "Family reconciliation, peer support and community relationships.", outcome: "Enables stronger support networks after rehabilitation.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1614835279903-7f6c0f4f66d8?w=1000&h=900&fit=crop&auto=format" },
+  { number: "01", title: "Residential Rehabilitation", copy: "Residential care, structured programmes and a stable environment for rehabilitation.", outcome: "Enables stability and programme participation.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1707286380312-ad352aa56cde?w=1000&h=900&fit=crop&auto=format" },
+  { number: "02", title: "Social Skills and Professional Development", copy: "Vocational development and practical training that build capability for employment.", outcome: "Enables practical capability and work readiness.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1513350027966-f016e1adcecd?w=1000&h=900&fit=crop&auto=format" },
+  { number: "03", title: "Employment Support", copy: "Employment preparation, placement support and guidance for returning to work.", outcome: "Enables pathways towards stable employment.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1695654396323-71beae8dadb1?w=1000&h=900&fit=crop&auto=format" },
+  { number: "04", title: "Mentorship and Counselling", copy: "Mentorship, counselling and sustained personal support.", outcome: "Enables continuity, confidence and accountability.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1721972236553-e29838cf4274?w=1000&h=900&fit=crop&auto=format" },
+  { number: "05", title: "Community Reintegration", copy: "Family reconciliation, peer support and community relationships.", outcome: "Enables stronger support networks after rehabilitation.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1614835279903-7f6c0f4f66d8?w=1000&h=900&fit=crop&auto=format" },
   { number: "06", title: "Programme & operations", copy: "The people, facilities and resources required to deliver THH’s work.", outcome: "Enables reliable, sustained programme delivery.", allocation: "Allocation data to be confirmed", image: "https://images.unsplash.com/photo-1706791776776-9078758308ae?w=1000&h=900&fit=crop&auto=format" },
 ]
 
@@ -137,12 +137,12 @@ function DonorHero() {
           <div className="donor-hero__title">Your support creates<br /><em>lasting impact.</em></div>
           <p>
             THH works with donors, organisations and community partners to fund rehabilitation,
-            reintegration and sustainable second chances.
+            training and supportive programmes to enable their reintegration into society.
           </p>
           <ExternalLink className="donor-button donor-button--primary">Support THH <i>↗</i></ExternalLink>
           <div className="donor-hero__proof">
             <div><strong>40</strong><span>Years of rehabilitation and reintegration work</span></div>
-            <div><strong>2</strong><span>Major 2025 fundraising initiatives featured</span></div>
+            <div><strong>2</strong><span>Major 2026 fundraising initiatives</span></div>
             <div><strong>30%</strong><span>Maximum fundraising expense threshold</span></div>
           </div>
         </div>
@@ -171,23 +171,18 @@ function FundingOverview() {
           <span className="donor-eyebrow">02 — Funding at a glance</span>
           <div className="donor-section__title">Fundraising capability,<br />demonstrated.</div>
         </div>
-        <p>Two 2025 initiatives show THH’s ability to mobilise donors, sponsors and the wider community around its work.</p>
+        <p>Two 2026 initiatives illustrated THH’s donors, sponsors and community partners’ commitment to supporting THH’s mission and goals.</p>
       </div>
       <div className="donor-funding-overview__figures">
         <div>
-          <span>Charity Golf 2025</span>
-          <strong>$618,795</strong>
+          <span>Annual Charity Golf 2026</span>
+          <strong>$375,000</strong>
           <p>Raised through THH’s charity golf initiative.</p>
         </div>
         <div>
-          <span>Ride to Restore 2025</span>
-          <strong>$168,083</strong>
+          <span>Ride and Run to Restore 2026</span>
+          <strong>$407,060</strong>
           <p>Raised through THH’s community cycling initiative.</p>
-        </div>
-        <div className="donor-data-pending">
-          <span>Additional fundraising data</span>
-          <strong>Data required</strong>
-          <p>Insert reporting period, target and comparative performance when verified.</p>
         </div>
       </div>
       <div className="donor-source-note">Source: figures supplied for Charity Golf 2025 and Ride to Restore 2025.</div>
@@ -203,9 +198,9 @@ function Outcomes() {
   return (
     <div className="donor-impact donor-section">
       <div className="donor-section__intro">
-        <span className="donor-eyebrow">04 — What the funding achieves</span>
-        <div className="donor-section__title">From financial input<br />to measurable outcomes.</div>
-        <p>The clearest case for support connects every contribution to delivery and every programme to a measurable result.</p>
+        <span className="donor-eyebrow">04 — Funding equal positive outcomes</span>
+        <div className="donor-section__title">Every dollar leads to<br />meaningful outcomes.</div>
+        <p>Donations support programmes delivery and every programme delivers meaningful and sustainable outcomes.</p>
       </div>
 
       <div className="donor-impact-explorer">
@@ -258,8 +253,8 @@ function SupportFlow() {
     <div className="donor-support-scroll donor-support-scroll--static">
       <div className="donor-support-flow donor-section">
         <div className="donor-support-flow__header">
-          <span className="donor-eyebrow">03 — Where the money goes</span>
-          <div className="donor-section__title">Funding becomes<br />delivery.</div>
+          <span className="donor-eyebrow">03 — How are funds distributed</span>
+          <div className="donor-section__title">Fundings are catalyst<br />to change and improvements</div>
           <p>Scroll through the funding pathways or select a programme area to examine what support enables.</p>
         </div>
         <div className="donor-funding-map">
@@ -360,7 +355,7 @@ function FundraisingStories() {
     <div className="donor-fundraising donor-section">
       <div className="donor-section__intro donor-section__intro--wide">
         <span className="donor-eyebrow">05 — Fundraising track record</span>
-        <div className="donor-section__title">Selected fundraising<br />highlights</div>
+        <div className="donor-section__title">Community Support<br />Highlights</div>
         <p>These initiatives demonstrate THH’s ability to convene supporters and deliver credible fundraising activity. Additional campaign data is clearly marked where required.</p>
       </div>
 
@@ -506,23 +501,12 @@ function DonorFinale({ onHome }: { onHome: () => void }) {
     <div className="donor-finale donor-section">
       <div className="donor-finale__glow" />
       <div className="donor-finale__image"><img src="https://images.unsplash.com/photo-1707286380312-ad352aa56cde?w=1400&h=1000&fit=crop&auto=format" alt="" /></div>
-      <div className="donor-finale__proof"><span>IMPACT</span><i>+</i><span>PARTNERS</span><i>+</i><span>ACCOUNTABILITY</span></div>
-      <span className="donor-eyebrow">09 — Next step</span>
+      <span className="donor-eyebrow">Next step</span>
       <div className="donor-finale__title">Create the next<br /><em>impact with us.</em></div>
       <p>Join the organisations and individuals supporting rehabilitation, reintegration and sustainable second chances.</p>
       <div className="donor-finale__actions">
         <ExternalLink className="donor-button donor-button--primary">Visit THH Main Website <i>↗</i></ExternalLink>
         <ExternalLink className="donor-button donor-button--secondary">Support THH <i>↗</i></ExternalLink>
-      </div>
-      <div className="donor-finale__links">
-        {["Donate", "Get involved", "Partnership", "Contact"].map((label) => (
-          <ExternalLink key={label}>{label} <i>↗</i></ExternalLink>
-        ))}
-      </div>
-      <div className="donor-finale__footer">
-        <button type="button" onClick={onHome}>The Helping Hand</button>
-        <span>Restoration · Reintegration · Second chances</span>
-        <span>Singapore</span>
       </div>
     </div>
   )
