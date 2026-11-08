@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --font-display: 'Fraunces', serif;
+  --font-display: Georgia, "Times New Roman", serif;
   --font-body: 'Inter', sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-mono: "Inter", sans-serif;
 }
 
 html {
@@ -103,19 +101,19 @@ body {
   grid-column: 1 / -1;
   align-self: start;
   padding-left: 0.35rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.46rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .home-header__anniversary strong {
   grid-column: 1;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 3.15rem;
-  font-weight: 750;
+  font-weight: 700;
   line-height: 0.78;
   letter-spacing: -0.07em;
 }
@@ -124,11 +122,11 @@ body {
   grid-column: 2;
   align-self: end;
   margin: 0 0 0.1rem 0.2rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.43rem;
   font-style: normal;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .home-header__identity {
@@ -138,10 +136,10 @@ body {
 
 .home-header__identity strong {
   font-size: 1.02rem;
-  font-weight: 600;
-  letter-spacing: 0.025em;
+  font-weight: 700;
+  letter-spacing: 0;
   line-height: 1;
-  text-transform: uppercase;
+  text-transform: none;
   white-space: nowrap;
 }
 
@@ -329,7 +327,7 @@ body {
   }
 
   .home-header__mobile-menu button.is-active {
-    font-weight: 500;
+    font-weight: 400;
     color: #0c1115;
   }
 
@@ -379,10 +377,10 @@ body {
 }
 
 .drug-free-picker__eyebrow {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
@@ -391,7 +389,7 @@ body {
   align-items: baseline;
   gap: 0.38rem;
   margin-top: 0.55rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .drug-free-picker__statement:first-child {
@@ -399,16 +397,16 @@ body {
 }
 
 .drug-free-picker__statement span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   color: var(--thh-brown);
 }
 
 .drug-free-picker__statement strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2.85rem;
-  font-weight: 780;
+  font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.04em;
   color: var(--thh-ink);
@@ -431,11 +429,11 @@ body {
   margin-top: 0.85rem;
   padding: 0.58rem 0.75rem;
   border: 1px solid rgba(49, 88, 147, 0.3);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   font-weight: 400;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
   background: transparent;
   border-radius: 0;
@@ -470,7 +468,7 @@ body {
 }
 
 .drug-free-picker__view-header strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--thh-ink);
@@ -479,10 +477,10 @@ body {
 .drug-free-picker__view-header button {
   padding: 0.4rem 0;
   border: 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
   background: transparent;
 }
@@ -529,10 +527,10 @@ body {
 }
 
 .drug-free-picker__year-field span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
@@ -542,7 +540,7 @@ body {
   border: 0;
   font: inherit;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--thh-ink);
   background: transparent;
   outline: none;
@@ -564,17 +562,17 @@ body {
 }
 
 .drug-free-picker__field-list > button span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .drug-free-picker__field-list > button strong {
   grid-column: 1;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .drug-free-picker__field-list > button svg {
@@ -635,7 +633,7 @@ body {
 }
 
 .drug-free-picker__calendar-heading > strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 0.95rem;
   text-align: center;
 }
@@ -672,7 +670,7 @@ body {
 
 .drug-free-picker__weekdays span {
   padding: 0.25rem 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.64rem;
   text-align: center;
   color: var(--thh-muted);
@@ -691,7 +689,7 @@ body {
   width: 1.75rem;
   justify-self: center;
   border: 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.74rem;
   color: var(--thh-ink);
   background: transparent;
@@ -756,11 +754,11 @@ body {
   min-height: 17rem;
   place-items: center;
   padding: 1rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: none;
   color: #315893;
   background: #ecf2fa;
 }
@@ -781,17 +779,17 @@ body {
 .numbers-profile-card__header span,
 .numbers-profile-card dt {
   display: block;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: #315893;
 }
 
 .numbers-profile-card__header strong {
   display: block;
   margin-top: 0.25rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.15rem;
   color: #0c1115;
 }
@@ -807,10 +805,10 @@ body {
 .numbers-profile-card__header button {
   padding: 0;
   border: 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: rgba(12, 17, 21, 0.68);
   background: transparent;
 }
@@ -825,16 +823,16 @@ body {
 
 .numbers-profile-card__stat span,
 .numbers-profile-card__stat em {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
   font-style: normal;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: #315893;
 }
 
 .numbers-profile-card__stat strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.6rem;
   line-height: 1;
   color: #0c1115;
@@ -925,17 +923,17 @@ body {
   height: 2.4rem;
   place-items: center;
   border: 1px solid var(--thh-gold);
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--thh-gold);
 }
 
 .donor-header__brand span:last-child {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.61rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .donor-header__nav {
@@ -947,21 +945,21 @@ body {
 .donor-header__nav button {
   padding: 0;
   border: 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-brown);
   background: transparent;
 }
 
 .donor-header__support {
   padding: 0.85rem 1.2rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.6rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--thh-ivory);
   background: var(--thh-gold);
 }
@@ -992,18 +990,18 @@ body {
 
 .donor-eyebrow {
   display: block;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.63rem;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-hero__title {
   margin-top: 1.8rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(4.3rem, 7.4vw, 8.2rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 0.85;
   letter-spacing: -0.065em;
 }
@@ -1011,7 +1009,7 @@ body {
 .donor-hero__title em,
 .donor-finale__title em,
 .donor-section__title em {
-  font-weight: 300;
+  font-weight: 400;
   color: var(--thh-gold);
 }
 
@@ -1019,7 +1017,7 @@ body {
   max-width: 35rem;
   margin: 2.4rem 0 2rem;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
   color: var(--thh-brown);
 }
@@ -1035,7 +1033,7 @@ body {
 
 .donor-hero__proof strong {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2.4rem;
   line-height: 1;
   color: var(--thh-gold);
@@ -1055,11 +1053,11 @@ body {
   gap: 0.8rem;
   padding: 1rem 1.3rem;
   border: 1px solid var(--thh-ink);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.64rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   transition: transform 0.3s, background 0.3s, color 0.3s;
 }
 
@@ -1109,17 +1107,17 @@ body {
 
 .donor-hero__image-label span {
   display: block;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: #ecf2fa;
 }
 
 .donor-hero__image-label strong {
   display: block;
   margin-top: 0.4rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.7rem;
 }
 
@@ -1131,10 +1129,10 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -1157,9 +1155,9 @@ body {
 }
 
 .donor-section__title {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.4rem, 6vw, 6.5rem);
-  font-weight: 750;
+  font-weight: 700;
   line-height: 0.92;
   letter-spacing: -0.055em;
 }
@@ -1169,7 +1167,7 @@ body {
 .donor-trust__intro > p {
   color: var(--thh-brown);
   font-size: 0.92rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
 }
 
@@ -1214,17 +1212,17 @@ body {
 }
 
 .donor-funding-overview__figures span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.6rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-funding-overview__figures strong {
   display: block;
   margin-top: 5rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3rem, 5.5vw, 5.8rem);
   line-height: 0.9;
   letter-spacing: -0.06em;
@@ -1243,18 +1241,18 @@ body {
 }
 
 .donor-funding-overview__figures .donor-data-pending strong {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 1.3rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   color: var(--thh-muted);
 }
 
 .donor-source-note,
 .donor-metric-note {
   margin-top: 1rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.53rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   color: var(--thh-muted);
 }
 
@@ -1279,16 +1277,16 @@ body {
 }
 
 .donor-outcome-chain span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0;
   color: var(--thh-gold);
 }
 
 .donor-outcome-chain strong {
   display: block;
   margin-top: 1rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.8rem;
 }
 
@@ -1329,10 +1327,10 @@ body {
   left: 1rem;
   bottom: 1rem;
   padding: 0.45rem 0.6rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.48rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-ivory);
   background: rgba(12, 17, 21, 0.58);
 }
@@ -1347,17 +1345,17 @@ body {
 
 .donor-impact__quote > span,
 .donor-impact__quote > em {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
   font-style: normal;
-  letter-spacing: 0.48em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-impact__quote > strong {
   margin: 0.4rem 0;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(6rem, 12vw, 12rem);
   line-height: 0.8;
   letter-spacing: -0.075em;
@@ -1366,7 +1364,7 @@ body {
 .donor-impact__quote p {
   max-width: 29rem;
   margin-top: 3.5rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.8rem;
   font-style: italic;
   line-height: 1.3;
@@ -1374,10 +1372,10 @@ body {
 
 .donor-impact__quote small {
   margin-top: 1.3rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -1397,7 +1395,7 @@ body {
 }
 
 .donor-metric-note span {
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
@@ -1421,7 +1419,7 @@ body {
 
 .donor-impact__stats strong {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.4rem, 6vw, 6rem);
   line-height: 1;
   letter-spacing: -0.06em;
@@ -1430,10 +1428,10 @@ body {
 .donor-impact__stats span {
   display: block;
   margin-top: 0.8rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.58rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
@@ -1466,10 +1464,10 @@ body {
   justify-content: space-between;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--thh-line);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.61rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .donor-support-flow__equation i {
@@ -1505,17 +1503,17 @@ body {
 .donor-event__content > span,
 .donor-partner-group__label,
 .donor-trust__points span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-support-flow__areas strong {
   display: block;
   margin-top: 7rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
 }
 
@@ -1523,7 +1521,7 @@ body {
   margin-top: 1.2rem;
   color: var(--thh-brown);
   font-size: 0.83rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
 }
 
@@ -1532,11 +1530,11 @@ body {
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid var(--thh-line);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
   line-height: 1.5;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -1548,7 +1546,7 @@ body {
 }
 
 .donor-support-flow__note span {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2.1rem;
   line-height: 1.15;
 }
@@ -1612,9 +1610,9 @@ body {
 
 .donor-event__content > div {
   margin-top: 1.4rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.8rem, 5vw, 5.3rem);
-  font-weight: 750;
+  font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.05em;
 }
@@ -1622,7 +1620,7 @@ body {
 .donor-event__content strong {
   display: block;
   margin-top: 2rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.5rem, 6vw, 6.5rem);
   line-height: 1;
   letter-spacing: -0.06em;
@@ -1662,10 +1660,10 @@ body {
 .donor-event__content dd,
 .donor-partner-cases dd {
   margin: 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -1696,7 +1694,7 @@ body {
 }
 
 .donor-partner-group > div:last-child span {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.45rem;
 }
 
@@ -1710,10 +1708,10 @@ body {
 }
 
 .donor-partners__statement > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.58rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
@@ -1740,7 +1738,7 @@ body {
 .donor-partner-quotes__quote blockquote {
   max-width: 56rem;
   margin: 0;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.8rem, 3.5vw, 3.5rem);
   line-height: 1.12;
   letter-spacing: -0.035em;
@@ -1754,16 +1752,16 @@ body {
 }
 
 .donor-partner-quotes__quote figcaption strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   color: var(--thh-ink);
 }
 
 .donor-partner-quotes__quote figcaption span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -1826,17 +1824,17 @@ body {
 }
 
 .donor-partner-cases > div > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.54rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-partner-cases > div > strong {
   display: block;
   margin-top: 2rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.6rem;
   color: var(--thh-muted);
 }
@@ -1863,11 +1861,11 @@ body {
   margin-top: 2rem;
   padding-bottom: 0.55rem;
   border-bottom: 1px solid var(--thh-gold);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.6rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--thh-ink);
 }
 
@@ -1890,7 +1888,7 @@ body {
 }
 
 .donor-trust__points strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   line-height: 1.15;
 }
@@ -1926,9 +1924,9 @@ body {
 
 .donor-finale__title {
   margin-top: 2rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(4.5rem, 10vw, 10rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 0.82;
   letter-spacing: -0.07em;
 }
@@ -1955,11 +1953,11 @@ body {
 .donor-finale__links a {
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--thh-line);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--thh-brown);
 }
 
@@ -1972,10 +1970,10 @@ body {
   justify-content: space-between;
   padding-top: 1.2rem;
   border-top: 1px solid var(--thh-line);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.53rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -2019,24 +2017,24 @@ body {
 }
 
 .home-donor-teaser__content > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .home-donor-teaser__content > div {
   margin-top: 1.7rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.5rem, 6vw, 6.5rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.055em;
 }
 
 .home-donor-teaser__content em {
-  font-weight: 300;
+  font-weight: 400;
   color: var(--thh-gold);
 }
 
@@ -2052,10 +2050,10 @@ body {
   padding: 0 0 0.6rem;
   border: 0;
   border-bottom: 1px solid var(--thh-gold);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.63rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-ink);
   background: transparent;
 }
@@ -2072,9 +2070,9 @@ body {
   z-index: 1;
   right: -0.04em;
   bottom: -0.2em;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 28vw;
-  font-weight: 850;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.08em;
   color: rgba(49, 88, 147, 0.08);
@@ -2125,17 +2123,17 @@ body {
 .donor-hero__total > small,
 .donor-hero__split span {
   display: block;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.6rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-hero__total > strong {
   display: block;
   margin: 1rem 0;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(7rem, 17vw, 17rem);
   line-height: 0.8;
   letter-spacing: -0.08em;
@@ -2143,7 +2141,7 @@ body {
 
 .donor-hero__total > small {
   color: var(--thh-muted);
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
 }
 
 .donor-hero__split {
@@ -2162,7 +2160,7 @@ body {
 .donor-hero__split strong {
   display: block;
   margin-top: 1rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(4rem, 8vw, 8rem);
   line-height: 0.9;
   letter-spacing: -0.065em;
@@ -2231,16 +2229,16 @@ body {
 
 .donor-funding-map__source > span,
 .donor-funding-map__detail > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.54rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-funding-map__source > strong {
   margin-top: 1rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.7rem, 5vw, 5rem);
   line-height: 0.85;
   letter-spacing: -0.055em;
@@ -2302,13 +2300,13 @@ body {
 }
 
 .donor-funding-map__nodes button > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
   color: var(--thh-gold);
 }
 
 .donor-funding-map__nodes button > strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
 }
 
@@ -2365,10 +2363,10 @@ body {
   z-index: 2;
   top: 1rem;
   right: 1rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.42rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-ivory);
 }
 
@@ -2384,7 +2382,7 @@ body {
 
 .donor-funding-map__detail > strong {
   margin-top: 0.7rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2.2rem;
 }
 
@@ -2403,19 +2401,19 @@ body {
 .donor-funding-map__detail em,
 .donor-funding-map__detail .fg-inline-italic {
   margin-right: 0.7rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
   font-style: normal;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-funding-map__detail > small {
   margin-top: 0.7rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.48rem;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -2471,18 +2469,18 @@ body {
 .donor-impact-explorer__number span,
 .donor-impact-explorer__number em {
   display: block;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
   font-style: normal;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: #ecf2fa;
 }
 
 .donor-impact-explorer__number strong {
   display: block;
   margin: 0.5rem 0;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(5rem, 10vw, 10rem);
   line-height: 0.8;
   letter-spacing: -0.07em;
@@ -2515,22 +2513,22 @@ body {
 }
 
 .donor-impact-explorer__list button > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
   color: var(--thh-gold);
 }
 
 .donor-impact-explorer__list button > strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.7rem;
 }
 
 .donor-impact-explorer__list button > em {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
   font-style: normal;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .donor-impact-explorer__list button > p {
@@ -2584,10 +2582,10 @@ body {
   position: absolute;
   z-index: 2;
   top: 4rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.58rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
@@ -2601,7 +2599,7 @@ body {
 .donor-model__words strong {
   position: absolute;
   inset: 50% 0 auto;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(5rem, 12vw, 12rem);
   line-height: 0.82;
   letter-spacing: -0.07em;
@@ -2665,24 +2663,24 @@ body {
 .donor-campaign-explorer__tabs span,
 .donor-campaign-explorer__evidence > span,
 .donor-campaign-explorer__amount small {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-campaign-explorer__tabs strong {
   display: block;
   margin-top: 1.3rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
 }
 
 .donor-campaign-explorer__tabs em {
   display: block;
   margin-top: 0.7rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.6rem;
   font-style: normal;
 }
@@ -2711,10 +2709,10 @@ body {
   z-index: 2;
   top: 1rem;
   left: 1rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.45rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-ivory);
 }
 
@@ -2729,7 +2727,7 @@ body {
 .donor-campaign-explorer__amount strong {
   display: block;
   margin-top: 0.5rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(4rem, 7vw, 7rem);
   line-height: 0.85;
   letter-spacing: -0.065em;
@@ -2745,7 +2743,7 @@ body {
 
 .donor-campaign-explorer__evidence > strong {
   margin-top: 1rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2.3rem;
 }
 
@@ -2772,10 +2770,10 @@ body {
 
 .donor-campaign-explorer__evidence dd {
   margin: 0.4rem 0 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -2798,10 +2796,10 @@ body {
   border: 0;
   border-bottom: 1px solid var(--thh-line);
   text-align: left;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
   background: transparent;
 }
@@ -2832,9 +2830,9 @@ body {
   border: 1px solid var(--thh-gold);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .donor-ecosystem__hub span {
@@ -2842,11 +2840,11 @@ body {
   top: calc(100% + 0.7rem);
   width: 10rem;
   text-align: center;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.45rem;
   font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -2858,7 +2856,7 @@ body {
   padding: 0.7rem 0.9rem;
   border: 1px solid var(--thh-line);
   text-align: center;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
   line-height: 1.4;
   color: var(--thh-brown);
@@ -2890,16 +2888,16 @@ body {
 }
 
 .donor-ecosystem__detail > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .donor-ecosystem__detail > strong {
   margin-top: 1.3rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
 }
 
@@ -2918,9 +2916,9 @@ body {
 
 .donor-ecosystem__detail dd {
   margin: 0.5rem 0 0;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -2968,15 +2966,15 @@ body {
   display: grid;
   place-items: center;
   border: 1px solid var(--thh-gold);
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--thh-gold);
 }
 
 .donor-partner-marquee__item strong {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   line-height: 1.25;
   color: var(--thh-ink);
@@ -2985,11 +2983,11 @@ body {
 .donor-partner-marquee__item span {
   display: block;
   margin-top: 0.55rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.45rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   line-height: 1.5;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -3069,9 +3067,9 @@ body {
   align-items: center;
   gap: 1.2rem;
   margin-bottom: 2rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.24em;
+  letter-spacing: 0;
   color: var(--thh-brown);
 }
 
@@ -3526,9 +3524,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 0.85rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0;
 }
 
 .history-rail__track {
@@ -3564,7 +3562,7 @@ body {
 .history-rail__current {
   margin-top: 0.6rem;
   color: var(--thh-muted);
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .history-rail__current span:first-child {
@@ -3599,10 +3597,10 @@ body {
   right: 3rem;
   display: flex;
   justify-content: space-between;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.63rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -3615,17 +3613,17 @@ body {
 
 .history-kicker {
   margin-bottom: 1.6rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.67rem;
-  letter-spacing: 0.52em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .history-intro__title {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(4rem, 10.8vw, 10.5rem);
-  font-weight: 850;
+  font-weight: 700;
   line-height: 0.78;
   letter-spacing: -0.065em;
 }
@@ -3644,7 +3642,7 @@ body {
   max-width: 37rem;
   margin: 3.5rem auto 0;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
   color: var(--thh-brown);
 }
@@ -3657,18 +3655,18 @@ body {
   align-items: flex-end;
   gap: 0.8rem;
   writing-mode: vertical-rl;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   color: var(--thh-muted);
 }
 
 .history-intro__count span {
   font-size: 0.58rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .history-intro__count strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
   color: var(--thh-gold);
 }
@@ -3682,10 +3680,10 @@ body {
   align-items: center;
   gap: 0.8rem;
   transform: translateX(-50%);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
@@ -3706,9 +3704,9 @@ body {
 
 .history-opening-note span {
   max-width: 62rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3rem, 7vw, 7rem);
-  font-weight: 750;
+  font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.05em;
 }
@@ -3719,7 +3717,7 @@ body {
   padding-left: 2rem;
   border-left: 1px solid var(--thh-gold);
   color: var(--thh-brown);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.8;
 }
 
@@ -3746,9 +3744,9 @@ body {
   z-index: 0;
   top: 3vh;
   left: 4vw;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(8rem, 25vw, 24rem);
-  font-weight: 850;
+  font-weight: 700;
   line-height: 0.8;
   letter-spacing: -0.08em;
   color: var(--thh-sand);
@@ -3785,10 +3783,10 @@ body {
   right: 0.9rem;
   bottom: 0.8rem;
   padding: 0.45rem 0.6rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-ivory);
   background: rgba(12, 17, 21, 0.7);
 }
@@ -3804,17 +3802,17 @@ body {
 .history-milestone__text > span {
   display: block;
   margin-bottom: 1.2rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .history-milestone__heading {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.4rem, 5vw, 5.2rem);
-  font-weight: 750;
+  font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.05em;
 }
@@ -3824,7 +3822,7 @@ body {
   margin-top: 1.7rem;
   color: var(--thh-brown);
   font-size: 0.92rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
 }
 
@@ -3832,9 +3830,9 @@ body {
   position: absolute;
   left: 3rem;
   bottom: 2rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.56rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0;
   color: var(--thh-muted);
 }
 
@@ -3845,9 +3843,9 @@ body {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   color: var(--thh-line);
   writing-mode: vertical-rl;
 }
@@ -3990,9 +3988,9 @@ body {
 
 .decade-threshold__word {
   position: absolute;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 42vw;
-  font-weight: 850;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.1em;
   color: rgba(255, 255, 255, 0.14);
@@ -4005,18 +4003,18 @@ body {
 }
 
 .decade-threshold__content span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.6rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-ivory);
 }
 
 .decade-threshold__content p {
   margin-top: 1.4rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.8rem, 4vw, 4rem);
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: -0.04em;
 }
 
@@ -4051,15 +4049,15 @@ body {
 
 .history-timeline__nav-heading span,
 .history-timeline__nav-count {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.54rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
 .history-timeline__nav-heading strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2.4rem;
   line-height: 1;
   color: var(--thh-gold);
@@ -4116,15 +4114,15 @@ body {
 }
 
 .history-timeline__years button > span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
 }
 
 .history-timeline__years button > strong {
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .history-timeline__years button:hover,
@@ -4145,7 +4143,7 @@ body {
 }
 
 .history-timeline__years button.is-active > strong {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .history-timeline__nav-count {
@@ -4185,9 +4183,9 @@ body {
   z-index: 0;
   top: -1rem;
   left: 0;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(7rem, 16vw, 15rem);
-  font-weight: 850;
+  font-weight: 700;
   line-height: 0.8;
   letter-spacing: -0.08em;
   color: var(--thh-paper);
@@ -4257,10 +4255,10 @@ body {
 .history-timeline__copy > span {
   display: block;
   margin-bottom: 1.2rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.62rem;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
@@ -4269,7 +4267,7 @@ body {
   margin-top: 1.7rem;
   color: var(--thh-brown);
   font-size: 0.92rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.75;
 }
 
@@ -4278,9 +4276,9 @@ body {
   align-items: center;
   gap: 0.8rem;
   margin-top: 2rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.52rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   color: var(--thh-muted);
 }
 
@@ -4417,7 +4415,7 @@ body {
 .history-timeline__nav-heading span,
 .history-timeline__nav-count {
   font-size: 0.5rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
 }
 
 .history-timeline__nav-heading strong {
@@ -4441,7 +4439,7 @@ body {
 
 .history-timeline__years button > strong {
   font-size: 0.9rem;
-  font-weight: 550;
+  font-weight: 700;
 }
 
 .history-timeline__line {
@@ -4558,16 +4556,16 @@ body {
 }
 
 .history-timeline__decade-note span {
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.48rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .history-timeline__decade-note p {
   margin-top: 0.6rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   line-height: 1.25;
   color: var(--thh-brown);
@@ -4581,10 +4579,10 @@ body {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.5rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
   animation: history-timeline-cue-in 0.45s ease both;
 }
@@ -4628,9 +4626,9 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3rem, 9vw, 9rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.06em;
 }
 
@@ -4644,17 +4642,17 @@ body {
 .history-finale__result > span,
 .history-finale__result em {
   display: block;
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   font-style: normal;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-gold);
 }
 
 .history-finale__statement strong {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(6rem, 18vw, 18rem);
   line-height: 0.9;
   letter-spacing: -0.08em;
@@ -4662,7 +4660,7 @@ body {
 
 .history-finale__result strong {
   display: block;
-  font-family: "Fraunces", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(6rem, 20vw, 19rem);
   line-height: 0.78;
   letter-spacing: -0.08em;
@@ -4687,10 +4685,10 @@ body {
   justify-content: space-between;
   padding-top: 1.2rem;
   border-top: 1px solid var(--thh-line);
-  font-family: "DM Mono", monospace;
+  font-family: "Inter", sans-serif;
   font-size: 0.55rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--thh-muted);
 }
 
