@@ -102,7 +102,7 @@ body {
   align-self: start;
   padding-left: 0.35rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.46rem;
+  font-size: 0.46rem; /* logo mark: exempt from type scale */
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1;
@@ -112,10 +112,10 @@ body {
 .home-header__anniversary strong {
   grid-column: 1;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 3.15rem;
+  font-size: 3.15rem; /* logo mark: exempt from type scale */
   font-weight: 700;
   line-height: 0.78;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.04em;
 }
 
 .home-header__anniversary em {
@@ -123,7 +123,8 @@ body {
   align-self: end;
   margin: 0 0 0.1rem 0.2rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.43rem;
+  font-size: 0.43rem; /* logo mark: exempt from type scale */
+  line-height: 1;
   font-style: normal;
   letter-spacing: 0;
   text-transform: none;
@@ -135,10 +136,10 @@ body {
 }
 
 .home-header__identity strong {
-  font-size: 1.02rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 1;
+  line-height: 1.5;
   text-transform: none;
   white-space: nowrap;
 }
@@ -149,9 +150,11 @@ body {
 }
 
 .home-header__identity small {
-  font-size: 0.73rem;
+  font-size: 0.75rem;
+
+  letter-spacing: 0;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.67;
   color: #0c1115;
   white-space: nowrap;
 }
@@ -167,6 +170,8 @@ body {
   padding: 0.5rem 0;
   border: 0;
   font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   font-weight: 400;
   white-space: nowrap;
   color: #315893;
@@ -194,7 +199,9 @@ body {
   padding: 0.75rem 1.05rem;
   border: 2px solid #315893;
   border-radius: 0.35rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   text-decoration: none;
   white-space: nowrap;
   color: #315893;
@@ -203,8 +210,10 @@ body {
 }
 
 .home-header__external span {
-  font-size: 1.2rem;
-  line-height: 1;
+  font-size: 1.125rem;
+
+  letter-spacing: 0;
+  line-height: 1.44;
 }
 
 .home-header__external:hover,
@@ -236,7 +245,9 @@ body {
 
   .home-header__external {
     padding-inline: 0.8rem;
-    font-size: 0.82rem;
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    line-height: 1.57;
   }
 }
 
@@ -255,7 +266,11 @@ body {
   }
 
   .home-header__anniversary strong {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
+
+    letter-spacing: -0.04em;
+
+    line-height: 1.4;
   }
 
   .home-header__identity {
@@ -263,7 +278,11 @@ body {
   }
 
   .home-header__identity strong {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+
+    letter-spacing: 0;
+
+    line-height: 1.67;
   }
 
   .home-header__identity small {
@@ -319,7 +338,9 @@ body {
     padding: 0.9rem 0.2rem;
     border: 0;
     border-bottom: 1px solid rgba(49, 88, 147, 0.15);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    letter-spacing: 0;
+    line-height: 1.5;
     text-align: left;
     text-decoration: none;
     color: #315893;
@@ -378,7 +399,8 @@ body {
 
 .drug-free-picker__eyebrow {
   font-family: "Inter", sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -398,24 +420,26 @@ body {
 
 .drug-free-picker__statement span {
   font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   color: var(--thh-brown);
 }
 
 .drug-free-picker__statement strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.85rem;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  line-height: 1.33;
+  letter-spacing: -0.0333em;
   color: var(--thh-ink);
 }
 
 .drug-free-picker__view > p {
   margin-top: 0.5rem;
-  font-size: 0.8rem;
-  line-height: 1.55;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: var(--thh-muted);
 }
 
@@ -430,7 +454,8 @@ body {
   padding: 0.58rem 0.75rem;
   border: 1px solid rgba(49, 88, 147, 0.3);
   font-family: "Inter", sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -469,7 +494,9 @@ body {
 
 .drug-free-picker__view-header strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.1rem;
+  font-size: 1.125rem;
+  letter-spacing: 0;
+  line-height: 1.78;
   font-weight: 700;
   color: var(--thh-ink);
 }
@@ -479,6 +506,7 @@ body {
   border: 0;
   font-family: "Inter", sans-serif;
   font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -493,8 +521,9 @@ body {
 
 .drug-free-picker__view > .drug-free-picker__instruction {
   margin: 0 0 0.7rem;
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: var(--thh-muted);
 }
 
@@ -528,7 +557,8 @@ body {
 
 .drug-free-picker__year-field span {
   font-family: "Inter", sans-serif;
-  font-size: 0.66rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -539,7 +569,9 @@ body {
   padding: 0;
   border: 0;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.57;
   font-weight: 400;
   color: var(--thh-ink);
   background: transparent;
@@ -563,7 +595,8 @@ body {
 
 .drug-free-picker__field-list > button span {
   font-family: "Inter", sans-serif;
-  font-size: 0.66rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -571,7 +604,9 @@ body {
 
 .drug-free-picker__field-list > button strong {
   grid-column: 1;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.57;
   font-weight: 400;
 }
 
@@ -634,7 +669,9 @@ body {
 
 .drug-free-picker__calendar-heading > strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   text-align: center;
 }
 
@@ -645,6 +682,8 @@ body {
   place-items: center;
   border: 0;
   font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   color: var(--thh-gold);
   background: transparent;
 }
@@ -671,7 +710,9 @@ body {
 .drug-free-picker__weekdays span {
   padding: 0.25rem 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.64rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   text-align: center;
   color: var(--thh-muted);
 }
@@ -690,7 +731,9 @@ body {
   justify-self: center;
   border: 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: var(--thh-ink);
   background: transparent;
 }
@@ -755,7 +798,8 @@ body {
   place-items: center;
   padding: 1rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-align: center;
   text-transform: none;
@@ -780,7 +824,8 @@ body {
 .numbers-profile-card dt {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: #315893;
@@ -790,15 +835,18 @@ body {
   display: block;
   margin-top: 0.25rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.15rem;
+  font-size: 1.125rem;
+  letter-spacing: 0;
+  line-height: 1.78;
   color: #0c1115;
 }
 
 .numbers-profile-card__header small {
   display: block;
   margin-top: 0.12rem;
-  font-size: 0.62rem;
-  line-height: 1.35;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: rgba(12, 17, 21, 0.68);
 }
 
@@ -806,7 +854,8 @@ body {
   padding: 0;
   border: 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: rgba(12, 17, 21, 0.68);
@@ -824,7 +873,8 @@ body {
 .numbers-profile-card__stat span,
 .numbers-profile-card__stat em {
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
   text-transform: none;
@@ -833,8 +883,9 @@ body {
 
 .numbers-profile-card__stat strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
-  line-height: 1;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
   color: #0c1115;
 }
 
@@ -846,8 +897,9 @@ body {
 
 .numbers-profile-card dd {
   margin-top: 0.2rem;
-  font-size: 0.7rem;
-  line-height: 1.45;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: rgba(12, 17, 21, 0.78);
 }
 
@@ -924,14 +976,17 @@ body {
   place-items: center;
   border: 1px solid var(--thh-gold);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   font-weight: 700;
   color: var(--thh-gold);
 }
 
 .donor-header__brand span:last-child {
   font-family: "Inter", sans-serif;
-  font-size: 0.61rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -946,7 +1001,8 @@ body {
   padding: 0;
   border: 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-brown);
@@ -956,7 +1012,8 @@ body {
 .donor-header__support {
   padding: 0.85rem 1.2rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
   text-transform: none;
@@ -991,7 +1048,8 @@ body {
 .donor-eyebrow {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 0.63rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -1000,10 +1058,10 @@ body {
 .donor-hero__title {
   margin-top: 1.8rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4.3rem, 7.4vw, 8.2rem);
+  font-size: clamp(3.5rem, 5vw, 4.5rem);
   font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: -0.065em;
+  line-height: 1.33;
+  letter-spacing: -0.0667em;
 }
 
 .donor-hero__title em,
@@ -1017,8 +1075,9 @@ body {
   max-width: 35rem;
   margin: 2.4rem 0 2rem;
   font-size: 1rem;
+  letter-spacing: 0;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.5;
   color: var(--thh-brown);
 }
 
@@ -1034,16 +1093,18 @@ body {
 .donor-hero__proof strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.4rem;
-  line-height: 1;
+  font-size: 2.5rem;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
   color: var(--thh-gold);
 }
 
 .donor-hero__proof span {
   display: block;
   margin-top: 0.6rem;
-  font-size: 0.66rem;
-  line-height: 1.45;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: var(--thh-muted);
 }
 
@@ -1054,7 +1115,8 @@ body {
   padding: 1rem 1.3rem;
   border: 1px solid var(--thh-ink);
   font-family: "Inter", sans-serif;
-  font-size: 0.64rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
   text-transform: none;
@@ -1108,7 +1170,8 @@ body {
 .donor-hero__image-label span {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: #ecf2fa;
@@ -1118,7 +1181,9 @@ body {
   display: block;
   margin-top: 0.4rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-hero__scroll {
@@ -1130,7 +1195,8 @@ body {
   align-items: center;
   gap: 1rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -1156,19 +1222,20 @@ body {
 
 .donor-section__title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.4rem, 6vw, 6.5rem);
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
   font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: -0.055em;
+  line-height: 1.31;
+  letter-spacing: -0.0231em;
 }
 
 .donor-section__intro > p,
 .donor-support-flow__note p,
 .donor-trust__intro > p {
   color: var(--thh-brown);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
+  letter-spacing: 0;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.57;
 }
 
 .donor-business-heading {
@@ -1186,8 +1253,9 @@ body {
 .donor-business-heading > p {
   max-width: 30rem;
   color: var(--thh-brown);
-  font-size: 0.9rem;
-  line-height: 1.75;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.57;
 }
 
 .donor-funding-overview {
@@ -1213,7 +1281,8 @@ body {
 
 .donor-funding-overview__figures span {
   font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -1223,17 +1292,18 @@ body {
   display: block;
   margin-top: 5rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 5.5vw, 5.8rem);
-  line-height: 0.9;
-  letter-spacing: -0.06em;
+  font-size: clamp(3rem, 5.5vw, 6rem);
+  line-height: 1.17;
+  letter-spacing: -0.025em;
 }
 
 .donor-funding-overview__figures p {
   max-width: 20rem;
   margin-top: 1.2rem;
   color: var(--thh-brown);
-  font-size: 0.8rem;
-  line-height: 1.6;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-funding-overview__figures .donor-data-pending {
@@ -1242,7 +1312,8 @@ body {
 
 .donor-funding-overview__figures .donor-data-pending strong {
   font-family: "Inter", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  line-height: 1.33;
   letter-spacing: 0;
   color: var(--thh-muted);
 }
@@ -1251,7 +1322,8 @@ body {
 .donor-metric-note {
   margin-top: 1rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.53rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   color: var(--thh-muted);
 }
@@ -1272,13 +1344,18 @@ body {
 
 .donor-outcome-chain > i {
   font-size: 1.5rem;
+
+  letter-spacing: 0;
+
+  line-height: 1.33;
   font-style: normal;
   color: var(--thh-gold);
 }
 
 .donor-outcome-chain span {
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   color: var(--thh-gold);
 }
@@ -1287,14 +1364,17 @@ body {
   display: block;
   margin-top: 1rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-outcome-chain p {
   margin-top: 0.8rem;
   color: var(--thh-brown);
-  font-size: 0.78rem;
-  line-height: 1.6;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-impact__story {
@@ -1328,7 +1408,8 @@ body {
   bottom: 1rem;
   padding: 0.45rem 0.6rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.48rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-ivory);
@@ -1346,7 +1427,8 @@ body {
 .donor-impact__quote > span,
 .donor-impact__quote > em {
   font-family: "Inter", sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
   text-transform: none;
@@ -1356,24 +1438,26 @@ body {
 .donor-impact__quote > strong {
   margin: 0.4rem 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(6rem, 12vw, 12rem);
-  line-height: 0.8;
-  letter-spacing: -0.075em;
+  font-size: clamp(6rem, 12vw, 13rem);
+  line-height: 1;
+  letter-spacing: -0.0115em;
 }
 
 .donor-impact__quote p {
   max-width: 29rem;
   margin-top: 3.5rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
   font-style: italic;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 .donor-impact__quote small {
   margin-top: 1.3rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -1420,16 +1504,17 @@ body {
 .donor-impact__stats strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.4rem, 6vw, 6rem);
-  line-height: 1;
-  letter-spacing: -0.06em;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  line-height: 1.17;
+  letter-spacing: -0.025em;
 }
 
 .donor-impact__stats span {
   display: block;
   margin-top: 0.8rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.58rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -1439,8 +1524,9 @@ body {
   max-width: 17rem;
   margin-top: 1rem;
   color: var(--thh-muted);
-  font-size: 0.8rem;
-  line-height: 1.6;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-support-flow {
@@ -1465,7 +1551,8 @@ body {
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--thh-line);
   font-family: "Inter", sans-serif;
-  font-size: 0.61rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -1504,7 +1591,8 @@ body {
 .donor-partner-group__label,
 .donor-trust__points span {
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -1515,14 +1603,17 @@ body {
   margin-top: 7rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-support-flow__areas p {
   margin-top: 1.2rem;
   color: var(--thh-brown);
-  font-size: 0.83rem;
+  font-size: 0.875rem;
+  letter-spacing: 0;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.57;
 }
 
 .donor-support-flow__areas small {
@@ -1531,8 +1622,8 @@ body {
   padding-top: 1rem;
   border-top: 1px solid var(--thh-line);
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
-  line-height: 1.5;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -1547,8 +1638,9 @@ body {
 
 .donor-support-flow__note span {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.1rem;
-  line-height: 1.15;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-fundraising {
@@ -1611,10 +1703,10 @@ body {
 .donor-event__content > div {
   margin-top: 1.4rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.8rem, 5vw, 5.3rem);
+  font-size: clamp(3rem, 5vw, 6rem);
   font-weight: 700;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  line-height: 1.17;
+  letter-spacing: -0.025em;
 }
 
 .donor-event__content strong {
@@ -1622,8 +1714,8 @@ body {
   margin-top: 2rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.5rem, 6vw, 6.5rem);
-  line-height: 1;
-  letter-spacing: -0.06em;
+  line-height: 1.31;
+  letter-spacing: -0.0231em;
   color: var(--thh-gold);
 }
 
@@ -1631,8 +1723,9 @@ body {
   max-width: 24rem;
   margin-top: 1.3rem;
   color: var(--thh-brown);
-  font-size: 0.88rem;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.57;
 }
 
 .donor-event__content dl,
@@ -1648,8 +1741,9 @@ body {
   gap: 1rem;
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--thh-line);
-  font-size: 0.68rem;
-  line-height: 1.4;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-event__content dt,
@@ -1661,7 +1755,8 @@ body {
 .donor-partner-cases dd {
   margin: 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -1695,7 +1790,9 @@ body {
 
 .donor-partner-group > div:last-child span {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.45rem;
+  font-size: 1.125rem;
+  letter-spacing: 0;
+  line-height: 1.78;
 }
 
 .donor-partners__statement {
@@ -1709,7 +1806,8 @@ body {
 
 .donor-partners__statement > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.58rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -1739,9 +1837,9 @@ body {
   max-width: 56rem;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.8rem, 3.5vw, 3.5rem);
-  line-height: 1.12;
-  letter-spacing: -0.035em;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.29;
+  letter-spacing: -0.0286em;
 }
 
 .donor-partner-quotes__quote figcaption {
@@ -1754,12 +1852,15 @@ body {
 .donor-partner-quotes__quote figcaption strong {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   color: var(--thh-ink);
 }
 
 .donor-partner-quotes__quote figcaption span {
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -1825,7 +1926,8 @@ body {
 
 .donor-partner-cases > div > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.54rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -1835,7 +1937,9 @@ body {
   display: block;
   margin-top: 2rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
   color: var(--thh-muted);
 }
 
@@ -1862,7 +1966,8 @@ body {
   padding-bottom: 0.55rem;
   border-bottom: 1px solid var(--thh-gold);
   font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
   text-transform: none;
@@ -1889,14 +1994,16 @@ body {
 
 .donor-trust__points strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.5rem;
-  line-height: 1.15;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-trust__points p {
   color: var(--thh-brown);
-  font-size: 0.82rem;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.57;
 }
 
 .donor-finale {
@@ -1925,10 +2032,10 @@ body {
 .donor-finale__title {
   margin-top: 2rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4.5rem, 10vw, 10rem);
+  font-size: clamp(4.5rem, 10vw, 13rem);
   font-weight: 700;
-  line-height: 0.82;
-  letter-spacing: -0.07em;
+  line-height: 1;
+  letter-spacing: -0.0115em;
 }
 
 .donor-finale > p {
@@ -1954,7 +2061,8 @@ body {
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--thh-line);
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-decoration: none;
   text-transform: none;
@@ -1971,7 +2079,8 @@ body {
   padding-top: 1.2rem;
   border-top: 1px solid var(--thh-line);
   font-family: "Inter", sans-serif;
-  font-size: 0.53rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -2018,7 +2127,8 @@ body {
 
 .home-donor-teaser__content > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -2029,8 +2139,8 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.5rem, 6vw, 6.5rem);
   font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  line-height: 1.31;
+  letter-spacing: -0.0231em;
 }
 
 .home-donor-teaser__content em {
@@ -2051,7 +2161,8 @@ body {
   border: 0;
   border-bottom: 1px solid var(--thh-gold);
   font-family: "Inter", sans-serif;
-  font-size: 0.63rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-ink);
@@ -2061,6 +2172,8 @@ body {
 .home-donor-teaser__content button i {
   margin-left: 1rem;
   font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   font-style: normal;
   color: var(--thh-gold);
 }
@@ -2124,7 +2237,8 @@ body {
 .donor-hero__split span {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -2134,9 +2248,9 @@ body {
   display: block;
   margin: 1rem 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(7rem, 17vw, 17rem);
-  line-height: 0.8;
-  letter-spacing: -0.08em;
+  font-size: clamp(7.5rem, 17vw, 19.5rem);
+  line-height: 1.28;
+  letter-spacing: -0.00769em;
 }
 
 .donor-hero__total > small {
@@ -2152,7 +2266,11 @@ body {
 }
 
 .donor-hero__split > i {
-  font-size: 2rem;
+  font-size: 1.5rem;
+
+  letter-spacing: 0;
+
+  line-height: 1.33;
   font-style: normal;
   color: var(--thh-gold);
 }
@@ -2161,9 +2279,9 @@ body {
   display: block;
   margin-top: 1rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4rem, 8vw, 8rem);
-  line-height: 0.9;
-  letter-spacing: -0.065em;
+  font-size: clamp(4rem, 8vw, 7.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .donor-support-scroll {
@@ -2206,8 +2324,9 @@ body {
 
 .donor-support-flow__header > p {
   color: var(--thh-brown);
-  font-size: 0.82rem;
-  line-height: 1.65;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.57;
 }
 
 .donor-funding-map {
@@ -2230,7 +2349,8 @@ body {
 .donor-funding-map__source > span,
 .donor-funding-map__detail > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.54rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -2239,17 +2359,18 @@ body {
 .donor-funding-map__source > strong {
   margin-top: 1rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.7rem, 5vw, 5rem);
-  line-height: 0.85;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.33;
+  letter-spacing: -0.0667em;
 }
 
 .donor-funding-map__source > small {
   max-width: 12rem;
   margin-top: 2rem;
   color: var(--thh-muted);
-  font-size: 0.58rem;
-  line-height: 1.5;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-funding-map__line {
@@ -2301,13 +2422,17 @@ body {
 
 .donor-funding-map__nodes button > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: var(--thh-gold);
 }
 
 .donor-funding-map__nodes button > strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
 }
 
 .donor-funding-map__nodes button > i {
@@ -2364,7 +2489,8 @@ body {
   top: 1rem;
   right: 1rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.42rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-ivory);
@@ -2383,26 +2509,32 @@ body {
 .donor-funding-map__detail > strong {
   margin-top: 0.7rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-funding-map__detail > p {
   max-width: 29rem;
   margin-top: 0.7rem;
   font-size: 0.75rem;
-  line-height: 1.55;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-funding-map__detail > div:not(.donor-funding-map__image) {
   margin-top: 0.8rem;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-funding-map__detail em,
 .donor-funding-map__detail .fg-inline-italic {
   margin-right: 0.7rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
   text-transform: none;
@@ -2412,7 +2544,9 @@ body {
 .donor-funding-map__detail > small {
   margin-top: 0.7rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.48rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   text-transform: none;
   color: var(--thh-muted);
 }
@@ -2470,7 +2604,8 @@ body {
 .donor-impact-explorer__number em {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
   text-transform: none;
@@ -2481,9 +2616,9 @@ body {
   display: block;
   margin: 0.5rem 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(5rem, 10vw, 10rem);
-  line-height: 0.8;
-  letter-spacing: -0.07em;
+  font-size: clamp(4.5rem, 10vw, 13rem);
+  line-height: 1;
+  letter-spacing: -0.0115em;
 }
 
 .donor-impact-explorer__list {
@@ -2514,18 +2649,23 @@ body {
 
 .donor-impact-explorer__list button > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: var(--thh-gold);
 }
 
 .donor-impact-explorer__list button > strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-impact-explorer__list button > em {
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
   text-transform: none;
@@ -2535,8 +2675,9 @@ body {
   display: none;
   grid-column: 3;
   color: var(--thh-muted);
-  font-size: 0.66rem;
-  line-height: 1.45;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-impact-explorer__list button.is-active > p {
@@ -2583,7 +2724,8 @@ body {
   z-index: 2;
   top: 4rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.58rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -2600,9 +2742,9 @@ body {
   position: absolute;
   inset: 50% 0 auto;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(5rem, 12vw, 12rem);
-  line-height: 0.82;
-  letter-spacing: -0.07em;
+  font-size: clamp(4.5rem, 12vw, 13rem);
+  line-height: 1;
+  letter-spacing: -0.0115em;
   opacity: 0;
   transform: translateY(-30%);
   transition: opacity 0.45s, transform 0.55s;
@@ -2664,7 +2806,8 @@ body {
 .donor-campaign-explorer__evidence > span,
 .donor-campaign-explorer__amount small {
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -2675,13 +2818,17 @@ body {
   margin-top: 1.3rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-campaign-explorer__tabs em {
   display: block;
   margin-top: 0.7rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   font-style: normal;
 }
 
@@ -2710,7 +2857,8 @@ body {
   top: 1rem;
   left: 1rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.45rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-ivory);
@@ -2728,9 +2876,9 @@ body {
   display: block;
   margin-top: 0.5rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4rem, 7vw, 7rem);
-  line-height: 0.85;
-  letter-spacing: -0.065em;
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .donor-campaign-explorer__evidence {
@@ -2744,14 +2892,17 @@ body {
 .donor-campaign-explorer__evidence > strong {
   margin-top: 1rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
 }
 
 .donor-campaign-explorer__evidence > p {
   margin-top: 1rem;
   color: var(--thh-brown);
-  font-size: 0.78rem;
-  line-height: 1.6;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .donor-campaign-explorer__evidence dl {
@@ -2764,14 +2915,19 @@ body {
 }
 
 .donor-campaign-explorer__evidence dt {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+
+  letter-spacing: 0;
+
+  line-height: 1.67;
   color: var(--thh-brown);
 }
 
 .donor-campaign-explorer__evidence dd {
   margin: 0.4rem 0 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -2797,7 +2953,8 @@ body {
   border-bottom: 1px solid var(--thh-line);
   text-align: left;
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -2831,7 +2988,9 @@ body {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
   font-weight: 700;
 }
 
@@ -2841,7 +3000,8 @@ body {
   width: 10rem;
   text-align: center;
   font-family: "Inter", sans-serif;
-  font-size: 0.45rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
@@ -2857,8 +3017,9 @@ body {
   border: 1px solid var(--thh-line);
   text-align: center;
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
-  line-height: 1.4;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   color: var(--thh-brown);
   background: var(--thh-ivory);
   transform: translate(-50%, -50%);
@@ -2889,7 +3050,8 @@ body {
 
 .donor-ecosystem__detail > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -2899,6 +3061,8 @@ body {
   margin-top: 1.3rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
 }
 
 .donor-ecosystem__detail dl {
@@ -2911,13 +3075,19 @@ body {
 }
 
 .donor-ecosystem__detail dt {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+
+  letter-spacing: 0;
+
+  line-height: 1.67;
 }
 
 .donor-ecosystem__detail dd {
   margin: 0.5rem 0 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
   text-transform: none;
   color: var(--thh-muted);
 }
@@ -2968,6 +3138,8 @@ body {
   border: 1px solid var(--thh-gold);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   font-weight: 700;
   color: var(--thh-gold);
 }
@@ -2976,7 +3148,8 @@ body {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
-  line-height: 1.25;
+  letter-spacing: 0;
+  line-height: 1.5;
   color: var(--thh-ink);
 }
 
@@ -2984,9 +3157,9 @@ body {
   display: block;
   margin-top: 0.55rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.45rem;
+  font-size: 0.75rem;
   letter-spacing: 0;
-  line-height: 1.5;
+  line-height: 1.67;
   text-transform: none;
   color: var(--thh-muted);
 }
@@ -3025,7 +3198,11 @@ body {
 }
 
 .donor-trust__points > button > i {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
+
+  letter-spacing: 0;
+
+  line-height: 1.44;
   font-style: normal;
   color: var(--thh-gold);
 }
@@ -3037,8 +3214,9 @@ body {
   overflow: hidden;
   opacity: 0;
   color: var(--thh-brown);
-  font-size: 0.82rem;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  line-height: 1.57;
   transition: max-height 0.5s, opacity 0.4s, margin 0.4s;
 }
 
@@ -3068,7 +3246,8 @@ body {
   gap: 1.2rem;
   margin-bottom: 2rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   color: var(--thh-brown);
 }
@@ -3253,7 +3432,11 @@ body {
   }
 
   .donor-impact-explorer__list button > strong {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+
+    letter-spacing: 0;
+
+    line-height: 1.78;
   }
 
   .donor-model__words strong {
@@ -3274,7 +3457,11 @@ body {
   }
 
   .donor-campaign-explorer__tabs strong {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+
+    letter-spacing: 0;
+
+    line-height: 1.78;
   }
 
   .donor-campaign-explorer__stage {
@@ -3325,7 +3512,9 @@ body {
 
   .donor-support-flow__equation {
     gap: 0.6rem;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0;
+    line-height: 1.67;
   }
 
   .donor-support-flow__areas {
@@ -3448,7 +3637,11 @@ body {
   }
 
   .donor-support-scroll .donor-section__title {
-    font-size: clamp(2.4rem, 4.3vw, 4.5rem);
+    font-size: clamp(2.5rem, 4.3vw, 4.5rem);
+
+    letter-spacing: -0.0667em;
+
+    line-height: 1.33;
   }
 
   .donor-funding-map {
@@ -3461,7 +3654,11 @@ body {
   }
 
   .donor-support-flow__note span {
-    font-size: 1.3rem;
+    font-size: 1.125rem;
+
+    letter-spacing: 0;
+
+    line-height: 1.78;
   }
 }
 
@@ -3525,7 +3722,8 @@ body {
   justify-content: space-between;
   gap: 0.85rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
 }
 
@@ -3567,7 +3765,9 @@ body {
 
 .history-rail__current span:first-child {
   color: var(--thh-gold);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  line-height: 1.67;
 }
 
 .history-intro {
@@ -3598,7 +3798,8 @@ body {
   display: flex;
   justify-content: space-between;
   font-family: "Inter", sans-serif;
-  font-size: 0.63rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -3614,7 +3815,8 @@ body {
 .history-kicker {
   margin-bottom: 1.6rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.67rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -3622,10 +3824,10 @@ body {
 
 .history-intro__title {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(4rem, 10.8vw, 10.5rem);
+  font-size: clamp(4rem, 10.8vw, 13rem);
   font-weight: 700;
-  line-height: 0.78;
-  letter-spacing: -0.065em;
+  line-height: 1;
+  letter-spacing: -0.0115em;
 }
 
 .history-intro__title span {
@@ -3642,8 +3844,9 @@ body {
   max-width: 37rem;
   margin: 3.5rem auto 0;
   font-size: 1rem;
+  letter-spacing: 0;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.5;
   color: var(--thh-brown);
 }
 
@@ -3660,7 +3863,9 @@ body {
 }
 
 .history-intro__count span {
-  font-size: 0.58rem;
+  font-size: 0.75rem;
+
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
 }
@@ -3668,6 +3873,8 @@ body {
 .history-intro__count strong {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
   color: var(--thh-gold);
 }
 
@@ -3681,7 +3888,8 @@ body {
   gap: 0.8rem;
   transform: translateX(-50%);
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -3705,10 +3913,10 @@ body {
 .history-opening-note span {
   max-width: 62rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(3rem, 7vw, 7.5rem);
   font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.05em;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .history-opening-note p {
@@ -3745,10 +3953,10 @@ body {
   top: 3vh;
   left: 4vw;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(8rem, 25vw, 24rem);
+  font-size: clamp(7.5rem, 25vw, 19.5rem);
   font-weight: 700;
-  line-height: 0.8;
-  letter-spacing: -0.08em;
+  line-height: 1.28;
+  letter-spacing: -0.00769em;
   color: var(--thh-sand);
   transform-origin: left top;
 }
@@ -3784,7 +3992,8 @@ body {
   bottom: 0.8rem;
   padding: 0.45rem 0.6rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-ivory);
@@ -3803,7 +4012,8 @@ body {
   display: block;
   margin-bottom: 1.2rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -3811,19 +4021,20 @@ body {
 
 .history-milestone__heading {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.4rem, 5vw, 5.2rem);
+  font-size: clamp(2.5rem, 5vw, 6rem);
   font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.05em;
+  line-height: 1.17;
+  letter-spacing: -0.025em;
 }
 
 .history-milestone__text p {
   max-width: 25rem;
   margin-top: 1.7rem;
   color: var(--thh-brown);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
+  letter-spacing: 0;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.57;
 }
 
 .history-milestone__index {
@@ -3831,7 +4042,8 @@ body {
   left: 3rem;
   bottom: 2rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.56rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   color: var(--thh-muted);
 }
@@ -3844,7 +4056,8 @@ body {
   justify-content: space-between;
   transform: translateY(-50%);
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   color: var(--thh-line);
   writing-mode: vertical-rl;
@@ -3965,7 +4178,11 @@ body {
 }
 
 .history-milestone--quiet .history-milestone__number {
-  font-size: clamp(7rem, 20vw, 18rem);
+  font-size: clamp(7.5rem, 20vw, 19.5rem);
+
+  letter-spacing: -0.00769em;
+
+  line-height: 1.28;
   color: var(--thh-ivory);
 }
 
@@ -4004,7 +4221,8 @@ body {
 
 .decade-threshold__content span {
   font-family: "Inter", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-ivory);
@@ -4013,9 +4231,10 @@ body {
 .decade-threshold__content p {
   margin-top: 1.4rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.8rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.25;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.0375em;
 }
 
 .history-timeline {
@@ -4050,7 +4269,8 @@ body {
 .history-timeline__nav-heading span,
 .history-timeline__nav-count {
   font-family: "Inter", sans-serif;
-  font-size: 0.54rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -4058,8 +4278,9 @@ body {
 
 .history-timeline__nav-heading strong {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.4rem;
-  line-height: 1;
+  font-size: 2.5rem;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
   color: var(--thh-gold);
   transition: color 0.35s;
 }
@@ -4115,13 +4336,16 @@ body {
 
 .history-timeline__years button > span {
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
 }
 
 .history-timeline__years button > strong {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
   font-weight: 400;
 }
 
@@ -4184,10 +4408,10 @@ body {
   top: -1rem;
   left: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(7rem, 16vw, 15rem);
+  font-size: clamp(7.5rem, 16vw, 13rem);
   font-weight: 700;
-  line-height: 0.8;
-  letter-spacing: -0.08em;
+  line-height: 1;
+  letter-spacing: -0.0115em;
   color: var(--thh-paper);
   transform: translateY(2rem);
   transition: color 0.8s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
@@ -4256,7 +4480,8 @@ body {
   display: block;
   margin-bottom: 1.2rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -4266,9 +4491,10 @@ body {
   max-width: 25rem;
   margin-top: 1.7rem;
   color: var(--thh-brown);
-  font-size: 0.92rem;
+  font-size: 0.875rem;
+  letter-spacing: 0;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.57;
 }
 
 .history-timeline__index {
@@ -4277,7 +4503,8 @@ body {
   gap: 0.8rem;
   margin-top: 2rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.52rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   color: var(--thh-muted);
 }
@@ -4414,12 +4641,18 @@ body {
 
 .history-timeline__nav-heading span,
 .history-timeline__nav-count {
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+
+  line-height: 1.67;
   letter-spacing: 0;
 }
 
 .history-timeline__nav-heading strong {
-  font-size: 1.55rem;
+  font-size: 2rem;
+
+  letter-spacing: -0.025em;
+
+  line-height: 1.5;
 }
 
 .history-timeline__years button {
@@ -4434,11 +4667,19 @@ body {
 }
 
 .history-timeline__years button > span {
-  font-size: 0.44rem;
+  font-size: 0.75rem;
+
+  letter-spacing: 0;
+
+  line-height: 1.67;
 }
 
 .history-timeline__years button > strong {
-  font-size: 0.9rem;
+  font-size: 1rem;
+
+  letter-spacing: 0;
+
+  line-height: 1.5;
   font-weight: 700;
 }
 
@@ -4557,7 +4798,8 @@ body {
 
 .history-timeline__decade-note span {
   font-family: "Inter", sans-serif;
-  font-size: 0.48rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -4567,7 +4809,8 @@ body {
   margin-top: 0.6rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
-  line-height: 1.25;
+  letter-spacing: 0;
+  line-height: 1.5;
   color: var(--thh-brown);
 }
 
@@ -4580,7 +4823,8 @@ body {
   align-items: center;
   gap: 0.8rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-gold);
@@ -4595,7 +4839,8 @@ body {
   border: 1px solid var(--thh-gold);
   border-radius: 50%;
   font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
 }
@@ -4627,9 +4872,10 @@ body {
   align-items: center;
   gap: 2rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 9vw, 9rem);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: 1.2;
   font-weight: 700;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.02em;
 }
 
 .history-finale__years i {
@@ -4643,7 +4889,8 @@ body {
 .history-finale__result em {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   font-style: normal;
   letter-spacing: 0;
   text-transform: none;
@@ -4653,17 +4900,17 @@ body {
 .history-finale__statement strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(6rem, 18vw, 18rem);
-  line-height: 0.9;
-  letter-spacing: -0.08em;
+  font-size: clamp(6rem, 18vw, 19.5rem);
+  line-height: 1.28;
+  letter-spacing: -0.00769em;
 }
 
 .history-finale__result strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(6rem, 20vw, 19rem);
-  line-height: 0.78;
-  letter-spacing: -0.08em;
+  font-size: clamp(6rem, 20vw, 19.5rem);
+  line-height: 1.28;
+  letter-spacing: -0.00769em;
 }
 
 .history-finale__result em {
@@ -4686,7 +4933,8 @@ body {
   padding-top: 1.2rem;
   border-top: 1px solid var(--thh-line);
   font-family: "Inter", sans-serif;
-  font-size: 0.55rem;
+  font-size: 0.75rem;
+  line-height: 1.67;
   letter-spacing: 0;
   text-transform: none;
   color: var(--thh-muted);
@@ -4710,7 +4958,9 @@ body {
 
   .history-intro__copy {
     padding: 0 2rem;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    line-height: 1.57;
   }
 
   .history-opening-note {
@@ -4757,7 +5007,11 @@ body {
   }
 
   .history-timeline__nav-heading strong {
-    font-size: 1.35rem;
+    font-size: 1.125rem;
+
+    letter-spacing: 0;
+
+    line-height: 1.78;
   }
 
   .history-timeline__years {
@@ -4794,7 +5048,11 @@ body {
   }
 
   .history-timeline__years button > strong {
-    font-size: 0.95rem;
+    font-size: 1rem;
+
+    letter-spacing: 0;
+
+    line-height: 1.5;
   }
 
   .history-timeline__years button:hover,
@@ -4863,7 +5121,11 @@ body {
   }
 
   .history-timeline__decade-note p {
-    font-size: 0.82rem;
+    font-size: 1rem;
+
+    letter-spacing: 0;
+
+    line-height: 1.5;
   }
 
   .history-timeline__continue-cue {
@@ -4873,11 +5135,17 @@ body {
     max-width: 12rem;
     justify-content: flex-end;
     text-align: right;
-    font-size: 0.44rem;
+    font-size: 0.75rem;
+    letter-spacing: 0;
+    line-height: 1.67;
   }
 
   .history-timeline__copy .history-milestone__heading {
-    font-size: 2.65rem;
+    font-size: 2.5rem;
+
+    letter-spacing: -0.04em;
+
+    line-height: 1.4;
   }
 
   .history-timeline__threshold {
