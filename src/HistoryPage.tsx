@@ -319,216 +319,75 @@ function HistoryFinale() {
   )
 }
 
-type TimelinePhase = "COLLAPSED" | "EXPANDED" | "PAUSED" | "TRANSITIONING"
 type ScrollDirection = "forward" | "backward"
+
+// Page scroll drives the timeline. The section gets SCROLL_PER_YEAR vh of scroll per year while its
+// stage stays sticky; the scroll position inside the section picks the year, and the position inside
+// that year's slice controls how far its image is revealed (REVEAL_START..REVEAL_END of the slice).
+const SCROLL_PER_YEAR = 100
+const REVEAL_START = 0.1
+const REVEAL_END = 0.6
 
 export default function HistoryPage() {
   const [displayedIndex, setDisplayedIndex] = useState(0)
   const [displayedReveal, setDisplayedReveal] = useState(0)
-  const [phase, setPhase] = useState<TimelinePhase>("COLLAPSED")
-  const [outgoingIndex, setOutgoingIndex] = useState<number | null>(null)
-  const [outgoingReveal, setOutgoingReveal] = useState(0)
+  const [outgoing, setOutgoing] = useState<{ index: number; reveal: number; key: number } | null>(null)
   const [continueDirection, setContinueDirection] = useState<ScrollDirection | null>(null)
   const timelineRef = useRef<HTMLDivElement>(null)
-  const displayedIndexRef = useRef(0)
-  const displayedRevealRef = useRef(0)
-  const phaseRef = useRef<TimelinePhase>("COLLAPSED")
-  const interactionLockedRef = useRef(false)
-  const transitionTargetRef = useRef<{ phase: TimelinePhase; direction: ScrollDirection } | null>(null)
-  const handleGestureRef = useRef<(direction: ScrollDirection) => void>(() => {})
-
-  const setTimelinePhase = (nextPhase: TimelinePhase) => {
-    phaseRef.current = nextPhase
-    setPhase(nextPhase)
-  }
-
-  const setReveal = (nextReveal: number) => {
-    displayedRevealRef.current = nextReveal
-    setDisplayedReveal(nextReveal)
-  }
-
-  const beginYearTransition = (
-    nextIndex: number,
-    nextPhase: TimelinePhase,
-    direction: ScrollDirection,
-  ) => {
-    if (interactionLockedRef.current || nextIndex < 0 || nextIndex >= YEARS.length) return
-    interactionLockedRef.current = true
-    setOutgoingIndex(displayedIndexRef.current)
-    setOutgoingReveal(displayedRevealRef.current)
-    displayedIndexRef.current = nextIndex
-    setDisplayedIndex(nextIndex)
-    setReveal(nextPhase === "COLLAPSED" ? 0 : 1)
-    transitionTargetRef.current = { phase: nextPhase, direction }
-    setContinueDirection(null)
-    setTimelinePhase("TRANSITIONING")
-  }
-
-  handleGestureRef.current = (direction) => {
-    if (interactionLockedRef.current) return
-    const currentPhase = phaseRef.current
-    const currentIndex = displayedIndexRef.current
-
-    if (direction === "forward") {
-      if (currentPhase === "COLLAPSED") {
-        interactionLockedRef.current = true
-        setContinueDirection(null)
-        setReveal(1)
-        setTimelinePhase("EXPANDED")
-      } else if (currentPhase === "EXPANDED") {
-        setContinueDirection("forward")
-        setTimelinePhase("PAUSED")
-      } else if (currentPhase === "PAUSED" && currentIndex < YEARS.length - 1) {
-        beginYearTransition(currentIndex + 1, "COLLAPSED", "forward")
-      }
-      return
-    }
-
-    if (currentPhase === "PAUSED") {
-      setContinueDirection("backward")
-      setTimelinePhase("EXPANDED")
-    } else if (currentPhase === "EXPANDED") {
-      interactionLockedRef.current = true
-      setContinueDirection(null)
-      setReveal(0)
-      setTimelinePhase("COLLAPSED")
-    } else if (currentPhase === "COLLAPSED" && currentIndex > 0) {
-      beginYearTransition(currentIndex - 1, "PAUSED", "backward")
-    }
-  }
+  const stateRef = useRef({ index: 0, reveal: 0 })
+  const transitionKeyRef = useRef(0)
 
   useEffect(() => {
-    const wheelGestureGap = 220
-    let lastWheelTimestamp = Number.NEGATIVE_INFINITY
-    let touchStartedInTimeline = false
-    let touchGestureHandled = false
-    let touchLastY = 0
-
-    const timelineIsActive = () => {
-      const timeline = timelineRef.current
-      if (!timeline) return false
-      const bounds = timeline.getBoundingClientRect()
-      return bounds.top <= 1 && bounds.bottom >= window.innerHeight - 1
-    }
-
-    const canExitTimeline = (direction: ScrollDirection) => {
-      if (interactionLockedRef.current) return false
-      if (direction === "backward") {
-        return displayedIndexRef.current === 0 && phaseRef.current === "COLLAPSED"
-      }
-      return displayedIndexRef.current === YEARS.length - 1 && phaseRef.current === "PAUSED"
-    }
-
-    const exitTimeline = (direction: ScrollDirection) => {
+    let frame = 0
+    const update = () => {
+      frame = 0
       const timeline = timelineRef.current
       if (!timeline) return
-      const top = window.scrollY + timeline.getBoundingClientRect().top
-      window.scrollTo({
-        top: direction === "forward" ? top + timeline.offsetHeight : top - 1,
-        behavior: "auto",
-      })
-    }
+      const travel = Math.max(timeline.offsetHeight - window.innerHeight, 1)
+      const progress = Math.min(0.99999, Math.max(0, -timeline.getBoundingClientRect().top / travel))
+      const position = progress * YEARS.length
+      const index = Math.floor(position)
+      const withinYear = position - index
+      const rawReveal = (withinYear - REVEAL_START) / (REVEAL_END - REVEAL_START)
+      const reveal = Math.round(Math.min(1, Math.max(0, rawReveal)) * 1000) / 1000
+      const previous = stateRef.current
 
-    const onWheel = (event: WheelEvent) => {
-      const isNewGesture = event.timeStamp - lastWheelTimestamp > wheelGestureGap
-      lastWheelTimestamp = event.timeStamp
-      if (!timelineIsActive()) return
-
-      const direction: ScrollDirection = event.deltaY >= 0 ? "forward" : "backward"
-      event.preventDefault()
-      if (canExitTimeline(direction)) {
-        if (isNewGesture) exitTimeline(direction)
-        return
+      if (index !== previous.index) {
+        // Cross-fade: keep the old year as an outgoing layer until its fade-out animation ends
+        transitionKeyRef.current += 1
+        setOutgoing({ index: previous.index, reveal: previous.reveal, key: transitionKeyRef.current })
+        setDisplayedIndex(index)
       }
-      if (!isNewGesture || interactionLockedRef.current || event.deltaY === 0) return
-      handleGestureRef.current(direction)
+      if (index !== previous.index || reveal !== previous.reveal) setDisplayedReveal(reveal)
+      stateRef.current = { index, reveal }
+      setContinueDirection(reveal >= 1 && index < YEARS.length - 1 ? "forward" : null)
+    }
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update)
     }
 
-    const onTouchStart = (event: TouchEvent) => {
-      touchLastY = event.touches[0]?.clientY ?? 0
-      touchStartedInTimeline = timelineIsActive()
-      touchGestureHandled = false
-    }
-
-    const onTouchMove = (event: TouchEvent) => {
-      const currentY = event.touches[0]?.clientY
-      if (currentY === undefined) return
-      const delta = touchLastY - currentY
-      touchLastY = currentY
-      const isActive = timelineIsActive()
-      if (!isActive) return
-
-      if (!touchStartedInTimeline) {
-        event.preventDefault()
-        return
-      }
-
-      const direction: ScrollDirection = delta >= 0 ? "forward" : "backward"
-      if (Math.abs(delta) < 8) {
-        event.preventDefault()
-        return
-      }
-      event.preventDefault()
-      if (canExitTimeline(direction)) {
-        if (!touchGestureHandled) {
-          touchGestureHandled = true
-          exitTimeline(direction)
-        }
-        return
-      }
-      if (touchGestureHandled || interactionLockedRef.current) return
-      touchGestureHandled = true
-      handleGestureRef.current(direction)
-    }
-
-    const onTouchEnd = () => {
-      touchStartedInTimeline = false
-      touchGestureHandled = false
-    }
-
-    window.addEventListener("wheel", onWheel, { passive: false })
-    window.addEventListener("touchstart", onTouchStart, { passive: true })
-    window.addEventListener("touchmove", onTouchMove, { passive: false })
-    window.addEventListener("touchend", onTouchEnd, { passive: true })
+    update()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("resize", onScroll)
     return () => {
-      window.removeEventListener("wheel", onWheel)
-      window.removeEventListener("touchstart", onTouchStart)
-      window.removeEventListener("touchmove", onTouchMove)
-      window.removeEventListener("touchend", onTouchEnd)
+      cancelAnimationFrame(frame)
+      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onScroll)
     }
   }, [])
 
-  const completeRevealTransition = () => {
-    if (!interactionLockedRef.current || phaseRef.current === "TRANSITIONING") return
-    interactionLockedRef.current = false
-    setContinueDirection(phaseRef.current === "EXPANDED" ? "forward" : "backward")
-  }
-
-  const completeYearTransition = () => {
-    const target = transitionTargetRef.current
-    if (!target || phaseRef.current !== "TRANSITIONING") return
-    setOutgoingIndex(null)
-    transitionTargetRef.current = null
-    interactionLockedRef.current = false
-    setTimelinePhase(target.phase)
-    setContinueDirection(target.direction === "backward" ? "backward" : null)
-  }
-
+  // Clicking a year scrolls the page to the point where that year's image is fully revealed
   const displayYear = (year: string) => {
     const index = YEARS.indexOf(year)
-    if (index < 0) return
-    setOutgoingIndex(null)
-    transitionTargetRef.current = null
-    interactionLockedRef.current = false
-    displayedIndexRef.current = index
-    setDisplayedIndex(index)
-    setReveal(0)
-    setContinueDirection(null)
-    setTimelinePhase("COLLAPSED")
+    const timeline = timelineRef.current
+    if (index < 0 || !timeline) return
+    const travel = timeline.offsetHeight - window.innerHeight
+    const top = window.scrollY + timeline.getBoundingClientRect().top
+    window.scrollTo({ top: top + travel * ((index + REVEAL_END + 0.05) / YEARS.length), behavior: "auto" })
   }
 
   const displayedMilestone = MILESTONES[displayedIndex]
-  const outgoingMilestone = outgoingIndex === null ? null : MILESTONES[outgoingIndex]
+  const outgoingMilestone = outgoing === null ? null : MILESTONES[outgoing.index]
 
   return (
     <div className="history-page">
@@ -537,7 +396,11 @@ export default function HistoryPage() {
         <span>Forty years cannot be held in a straight line.</span>
         <p>So we remember them as moments — some loud, some quiet, all carried forward.</p>
       </div>
-      <div className="history-timeline" ref={timelineRef} data-phase={phase}>
+      <div
+        className="history-timeline"
+        ref={timelineRef}
+        style={{ height: `${YEARS.length * SCROLL_PER_YEAR + 100}vh` }}
+      >
         <div className="history-timeline__viewport">
           <TimelineNavigation activeIndex={displayedIndex} onSelect={displayYear} />
           <div className="history-timeline__content">
@@ -550,21 +413,22 @@ export default function HistoryPage() {
                 index={displayedIndex}
                 revealProgress={displayedReveal}
                 continueDirection={continueDirection}
-                onRevealTransitionEnd={completeRevealTransition}
               />
             </div>
-            {outgoingMilestone && outgoingIndex !== null && (
+            {outgoingMilestone && outgoing && (
               <div
                 className="history-timeline__layer is-leaving"
-                key={`outgoing-${outgoingMilestone.year}`}
+                key={`outgoing-${outgoing.key}`}
                 onAnimationEnd={(event) => {
-                  if (event.currentTarget === event.target) completeYearTransition()
+                  if (event.currentTarget !== event.target) return
+                  const finishedKey = outgoing.key
+                  setOutgoing((current) => (current?.key === finishedKey ? null : current))
                 }}
               >
                 <MilestoneScene
                   milestone={outgoingMilestone}
-                  index={outgoingIndex}
-                  revealProgress={outgoingReveal}
+                  index={outgoing.index}
+                  revealProgress={outgoing.reveal}
                   continueDirection={null}
                 />
               </div>
