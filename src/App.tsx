@@ -407,40 +407,76 @@ function parseDateValue(value: string) {
   return new Date(year, month - 1, day)
 }
 
+function ChevronIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  )
+}
+
+// Remember the chosen start date in this browser only (never sent anywhere)
+const DRUG_FREE_STORAGE_KEY = 'thh-drug-free-start'
+const YEARS_PER_PAGE = 12
+
+function readStoredStartDate() {
+  try {
+    const value = window.localStorage.getItem(DRUG_FREE_STORAGE_KEY) ?? ''
+    return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : ''
+  } catch {
+    return ''
+  }
+}
+
+// Figma "date picker": compact pill -> Edit date (Year grid -> Month/Day calendar) -> pill with day count.
 function DrugFreeDatePicker() {
   const today = new Date()
   const todayValue = toDateInputValue(today)
   const currentYear = today.getFullYear()
+  const oldestYear = currentYear - 99
   const pickerRef = useRef<HTMLDivElement>(null)
   const [view, setView] = useState<DatePickerView>('summary')
-  const [calendarOpen, setCalendarOpen] = useState(false)
-  const [startDate, setStartDate] = useState('')
-  const [selectedYear, setSelectedYear] = useState(currentYear)
-  const [calendarMonth, setCalendarMonth] = useState(() => {
-    return new Date(today.getFullYear(), today.getMonth(), 1)
+  const [startDate, setStartDate] = useState(readStoredStartDate)
+  const [selectedYear, setSelectedYear] = useState<number | null>(() => {
+    const stored = readStoredStartDate()
+    return stored ? Number(stored.slice(0, 4)) : null
   })
-  const yearOptions = Array.from({ length: 100 }, (_, index) => currentYear - index)
+  const [yearPanelOpen, setYearPanelOpen] = useState(false)
+  const [yearPage, setYearPage] = useState(0)
+  const [calendarOpen, setCalendarOpen] = useState(false)
+  const [calendarMonth, setCalendarMonth] = useState(() => new Date(today.getFullYear(), today.getMonth(), 1))
   const daysDrugFree = startDate && dateValueToUtc(todayValue) >= dateValueToUtc(startDate)
     ? Math.floor((dateValueToUtc(todayValue) - dateValueToUtc(startDate)) / DAY_MS)
     : null
 
   useEffect(() => {
-    if (view === 'summary' && !calendarOpen) return
+    try {
+      if (startDate) window.localStorage.setItem(DRUG_FREE_STORAGE_KEY, startDate)
+      else window.localStorage.removeItem(DRUG_FREE_STORAGE_KEY)
+    } catch {
+      // storage blocked (private mode etc.) - the picker still works for this visit
+    }
+  }, [startDate])
+
+  const closeEditor = () => {
+    setYearPanelOpen(false)
+    setCalendarOpen(false)
+    setView('summary')
+  }
+
+  useEffect(() => {
+    if (view === 'summary') return
     const closeOnOutsideClick = (event: PointerEvent) => {
-      const target = event.target as Node
-      if (!pickerRef.current?.contains(target) && calendarOpen) {
-        setCalendarOpen(false)
-        return
-      }
-      if (!pickerRef.current?.contains(target)) setView('summary')
+      if (!pickerRef.current?.contains(event.target as Node)) closeEditor()
     }
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return
-      if (calendarOpen) {
+      if (yearPanelOpen || calendarOpen) {
+        setYearPanelOpen(false)
         setCalendarOpen(false)
-        return
+      } else {
+        closeEditor()
       }
-      setView('summary')
     }
     document.addEventListener('pointerdown', closeOnOutsideClick)
     window.addEventListener('keydown', closeOnEscape)
@@ -448,165 +484,170 @@ function DrugFreeDatePicker() {
       document.removeEventListener('pointerdown', closeOnOutsideClick)
       window.removeEventListener('keydown', closeOnEscape)
     }
-  }, [calendarOpen, view])
+  })
 
-  const openCalendar = () => {
-    const referenceDate = startDate
-      ? parseDateValue(startDate)
-      : new Date(selectedYear, selectedYear === currentYear ? today.getMonth() : 0, 1)
-    setCalendarOpen((current) => !current)
-    setCalendarMonth(new Date(referenceDate.getFullYear(), referenceDate.getMonth(), 1))
+  const openEditor = () => {
+    setYearPage(selectedYear === null ? 0 : Math.floor((currentYear - selectedYear) / YEARS_PER_PAGE))
+    setYearPanelOpen(false)
+    setCalendarOpen(false)
+    setView('edit')
   }
 
+  const toggleYearPanel = () => {
+    setCalendarOpen(false)
+    setYearPanelOpen((open) => !open)
+  }
+
+  const chooseYear = (year: number) => {
+    if (year !== selectedYear) setStartDate('')
+    setSelectedYear(year)
+    setYearPanelOpen(false)
+    // Step 2 of the flow: go straight to the month/day calendar
+    setCalendarMonth(new Date(year, year === currentYear ? today.getMonth() : 0, 1))
+    setCalendarOpen(true)
+  }
+
+  const toggleCalendar = () => {
+    if (selectedYear === null) {
+      setYearPanelOpen(true)
+      return
+    }
+    const reference = startDate ? parseDateValue(startDate) : new Date(selectedYear, selectedYear === currentYear ? today.getMonth() : 0, 1)
+    setCalendarMonth(new Date(reference.getFullYear(), reference.getMonth(), 1))
+    setYearPanelOpen(false)
+    setCalendarOpen((open) => !open)
+  }
+
+  const pageYears = Array.from({ length: YEARS_PER_PAGE }, (_, index) => currentYear - yearPage * YEARS_PER_PAGE - index)
+    .filter((year) => year >= oldestYear)
+  const lastYearPage = Math.floor((currentYear - oldestYear) / YEARS_PER_PAGE)
+
+  const calendarYear = selectedYear ?? currentYear
   const calendarMonthIndex = calendarMonth.getMonth()
-  const firstWeekday = new Date(selectedYear, calendarMonthIndex, 1).getDay()
-  const daysInMonth = new Date(selectedYear, calendarMonthIndex + 1, 0).getDate()
+  const firstWeekday = new Date(calendarYear, calendarMonthIndex, 1).getDay()
+  const daysInMonth = new Date(calendarYear, calendarMonthIndex + 1, 0).getDate()
   const calendarDays = Array.from({ length: 42 }, (_, index) => {
     const day = index - firstWeekday + 1
     return day > 0 && day <= daysInMonth ? day : null
   })
-  const selectCalendarDate = (day: number) => {
-    const value = toDateInputValue(new Date(selectedYear, calendarMonthIndex, day))
-    setStartDate(value)
-    setCalendarOpen(false)
-  }
+  const previousMonthDisabled = calendarMonthIndex === 0
+  const nextMonthDisabled = calendarMonthIndex === 11 || (calendarYear === currentYear && calendarMonthIndex >= today.getMonth())
 
-  const renderInlineCalendar = () => {
-    const selectedValue = startDate
-    const previousMonthDisabled = calendarMonthIndex === 0
-    const nextMonthDisabled = calendarMonthIndex === 11
-      || (selectedYear === currentYear && calendarMonthIndex >= today.getMonth())
-
-    return (
-      <div className={`drug-free-picker__inline-calendar${calendarOpen ? ' is-open' : ''}`} aria-hidden={!calendarOpen}>
-        <div>
-          <div className="drug-free-picker__calendar-heading">
-            <button
-              type="button"
-              aria-label="Previous month"
-              disabled={previousMonthDisabled}
-              tabIndex={calendarOpen ? 0 : -1}
-              data-cursor="true"
-              onClick={() => setCalendarMonth(new Date(selectedYear, calendarMonthIndex - 1, 1))}
-            >←</button>
-            <strong>
-              {new Intl.DateTimeFormat('en-SG', { month: 'long' }).format(calendarMonth)}
-            </strong>
-            <button
-              type="button"
-              aria-label="Next month"
-              disabled={nextMonthDisabled}
-              tabIndex={calendarOpen ? 0 : -1}
-              data-cursor="true"
-              onClick={() => setCalendarMonth(new Date(selectedYear, calendarMonthIndex + 1, 1))}
-            >→</button>
-          </div>
-          <div className="drug-free-picker__weekdays" aria-hidden="true">
-            {CALENDAR_WEEKDAYS.map((day, index) => <span key={`${day}-${index}`}>{day}</span>)}
-          </div>
-          <div className="drug-free-picker__calendar-grid">
-            {calendarDays.map((day, index) => {
-              if (day === null) return <span key={`empty-${index}`} />
-              const value = toDateInputValue(new Date(selectedYear, calendarMonthIndex, day))
-              const disabled = value > todayValue
-              return (
-                <button
-                  key={day}
-                  type="button"
-                  className={value === selectedValue ? 'is-selected' : ''}
-                  disabled={disabled}
-                  tabIndex={calendarOpen ? 0 : -1}
-                  aria-label={formatDateValue(value)}
-                  aria-pressed={value === selectedValue}
-                  data-cursor="true"
-                  onClick={() => selectCalendarDate(day)}
-                >
-                  {day}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-    )
-  }
+  const sinceLabel = startDate
+    ? new Intl.DateTimeFormat('en-SG', { day: 'numeric', month: 'short', year: 'numeric' }).format(parseDateValue(startDate))
+    : ''
+  const monthDayLabel = startDate
+    ? new Intl.DateTimeFormat('en-SG', { day: 'numeric', month: 'short' }).format(parseDateValue(startDate))
+    : '-'
 
   return (
-    <>
-      <aside ref={pickerRef} className="drug-free-picker" data-view={view} aria-label="Drug-free day calculator">
-        {view === 'summary' && (
+    <aside ref={pickerRef} className="drug-free-picker" data-view={view} aria-label="Drug-free day calculator">
+      {view === 'summary' && (
         <div className="drug-free-picker__view">
-          <div className="drug-free-picker__statement" aria-live="polite">
-            <span>I am</span>
-            <strong>{daysDrugFree === null ? '—' : daysDrugFree.toLocaleString()}</strong>
-            <span>days drug free</span>
-          </div>
-          <button
-            type="button"
-            className="drug-free-picker__primary-action"
-            data-cursor="true"
-            onClick={() => setView('edit')}
-          >
-            <CalendarIcon />
-            <span>Edit date</span>
-          </button>
+          {daysDrugFree === null ? (
+            <div className="drug-free-picker__pill">
+              <span>I am</span>
+              <button type="button" className="drug-free-picker__link" data-cursor="true" onClick={openEditor}>
+                Select date <CalendarIcon />
+              </button>
+              <span>Days drug free</span>
+            </div>
+          ) : (
+            <>
+              <div className="drug-free-picker__pill" aria-live="polite">
+                <span>I am</span>
+                <strong>{daysDrugFree.toLocaleString()}</strong>
+                <span>Days drug free</span>
+              </div>
+              <button type="button" className="drug-free-picker__link drug-free-picker__since" data-cursor="true" onClick={openEditor}>
+                Since {sinceLabel} <CalendarIcon />
+              </button>
+            </>
+          )}
         </div>
-        )}
+      )}
 
       {view === 'edit' && (
         <div className="drug-free-picker__view" aria-label="Edit date">
           <div className="drug-free-picker__view-header">
             <strong>Edit date</strong>
-            <button
-              type="button"
-              aria-label="Close date editor"
-              data-cursor="true"
-              onClick={() => {
-                setCalendarOpen(false)
-                setView('summary')
-              }}
-            >×</button>
+            <button type="button" aria-label="Close date editor" data-cursor="true" onClick={closeEditor}>×</button>
           </div>
           <p className="drug-free-picker__instruction">Select the date you began your drug-free journey.</p>
           <div className="drug-free-picker__field-list">
-            <label className="drug-free-picker__year-field">
+            <button type="button" aria-expanded={yearPanelOpen} data-cursor="true" onClick={toggleYearPanel}>
               <span>Year</span>
-              <select
-                value={selectedYear}
-                onChange={(event) => {
-                  const year = Number(event.target.value)
-                  setSelectedYear(year)
-                  setStartDate('')
-                  setCalendarOpen(false)
-                  setCalendarMonth(new Date(year, year === currentYear ? today.getMonth() : 0, 1))
-                }}
-              >
-                {yearOptions.map((year) => <option key={year} value={year}>{year}</option>)}
-              </select>
-            </label>
-            <button type="button" data-cursor="true" onClick={openCalendar}>
-              <span>Month / Day</span>
-              <strong>{startDate ? new Intl.DateTimeFormat('en-SG', { day: '2-digit', month: 'short' }).format(parseDateValue(startDate)) : 'Select month and day'}</strong>
-              <CalendarIcon />
+              <strong>{selectedYear ?? '-'}</strong>
+              <ChevronIcon />
             </button>
-            {renderInlineCalendar()}
+            <div className={`drug-free-picker__inline-calendar${yearPanelOpen ? ' is-open' : ''}`} aria-hidden={!yearPanelOpen}>
+              <div>
+                <div className="drug-free-picker__calendar-heading">
+                  <button type="button" aria-label="Earlier years" disabled={yearPage >= lastYearPage} tabIndex={yearPanelOpen ? 0 : -1} data-cursor="true" onClick={() => setYearPage((page) => page + 1)}>‹</button>
+                  <strong>{selectedYear ?? `${pageYears[pageYears.length - 1]}–${pageYears[0]}`}</strong>
+                  <button type="button" aria-label="Later years" disabled={yearPage === 0} tabIndex={yearPanelOpen ? 0 : -1} data-cursor="true" onClick={() => setYearPage((page) => page - 1)}>›</button>
+                </div>
+                <div className="drug-free-picker__year-grid">
+                  {pageYears.map((year) => (
+                    <button
+                      key={year}
+                      type="button"
+                      className={year === selectedYear ? 'is-selected' : ''}
+                      aria-pressed={year === selectedYear}
+                      tabIndex={yearPanelOpen ? 0 : -1}
+                      data-cursor="true"
+                      onClick={() => chooseYear(year)}
+                    >{year}</button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <button type="button" aria-expanded={calendarOpen} data-cursor="true" onClick={toggleCalendar}>
+              <span>Month / Day</span>
+              <strong>{monthDayLabel}</strong>
+              <ChevronIcon />
+            </button>
+            <div className={`drug-free-picker__inline-calendar${calendarOpen ? ' is-open' : ''}`} aria-hidden={!calendarOpen}>
+              <div>
+                <div className="drug-free-picker__calendar-heading">
+                  <button type="button" aria-label="Previous month" disabled={previousMonthDisabled} tabIndex={calendarOpen ? 0 : -1} data-cursor="true" onClick={() => setCalendarMonth(new Date(calendarYear, calendarMonthIndex - 1, 1))}>‹</button>
+                  <strong>{new Intl.DateTimeFormat('en-SG', { month: 'long' }).format(calendarMonth)}</strong>
+                  <button type="button" aria-label="Next month" disabled={nextMonthDisabled} tabIndex={calendarOpen ? 0 : -1} data-cursor="true" onClick={() => setCalendarMonth(new Date(calendarYear, calendarMonthIndex + 1, 1))}>›</button>
+                </div>
+                <div className="drug-free-picker__weekdays" aria-hidden="true">
+                  {CALENDAR_WEEKDAYS.map((day, index) => <span key={`${day}-${index}`}>{day}</span>)}
+                </div>
+                <div className="drug-free-picker__calendar-grid">
+                  {calendarDays.map((day, index) => {
+                    if (day === null) return <span key={`empty-${index}`} />
+                    const value = toDateInputValue(new Date(calendarYear, calendarMonthIndex, day))
+                    return (
+                      <button
+                        key={day}
+                        type="button"
+                        className={value === startDate ? 'is-selected' : ''}
+                        disabled={value > todayValue}
+                        tabIndex={calendarOpen ? 0 : -1}
+                        aria-label={formatDateValue(value)}
+                        aria-pressed={value === startDate}
+                        data-cursor="true"
+                        onClick={() => {
+                          setStartDate(value)
+                          setCalendarOpen(false)
+                        }}
+                      >{day}</button>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
           </div>
           <p className="drug-free-picker__edit-note">Your milestone updates automatically through today.</p>
-          <button
-            type="button"
-            className="drug-free-picker__done"
-            data-cursor="true"
-            onClick={() => {
-              setCalendarOpen(false)
-              setView('summary')
-            }}
-          >
-            Done
-          </button>
+          <button type="button" className="drug-free-picker__done" data-cursor="true" onClick={closeEditor}>Done</button>
         </div>
       )}
-      </aside>
-    </>
+    </aside>
   )
 }
 

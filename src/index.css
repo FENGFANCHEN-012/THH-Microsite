@@ -473,7 +473,8 @@ body {
 }
 
 .drug-free-picker__primary-action svg,
-.drug-free-picker__field-list svg {
+.drug-free-picker__field-list svg,
+.drug-free-picker__link svg {
   width: 1rem;
   height: 1rem;
   fill: none;
@@ -5259,4 +5260,105 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 0.75rem;
   line-height: 1.67;
+}
+
+/* Date picker summary pill (Figma "Default - no days" / "Default-show days") */
+.drug-free-picker[data-view="summary"] {
+  width: auto;
+  max-width: calc(100vw - 2rem);
+  padding: 1rem 1.25rem;
+}
+
+.drug-free-picker__pill {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.75rem;
+}
+
+.drug-free-picker__pill > span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.67;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--thh-ink);
+}
+
+.drug-free-picker__pill > strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  color: #315893;
+}
+
+.drug-free-picker__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.57;
+  letter-spacing: 0;
+  color: #315893;
+  background: transparent;
+}
+
+.drug-free-picker__link:hover,
+.drug-free-picker__link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  outline: none;
+}
+
+.drug-free-picker__link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.drug-free-picker__since {
+  margin-top: 0.25rem;
+}
+
+/* Year grid (Figma "Edit date - select year") */
+.drug-free-picker__year-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.25rem;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.drug-free-picker__year-grid button {
+  height: 2rem;
+  border: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.67;
+  letter-spacing: 0;
+  color: var(--thh-ink);
+  background: transparent;
+}
+
+.drug-free-picker__year-grid button:hover,
+.drug-free-picker__year-grid button:focus-visible {
+  color: var(--thh-gold);
+  background: var(--thh-paper);
+  outline: none;
+}
+
+.drug-free-picker__year-grid button.is-selected {
+  color: var(--thh-ivory);
+  background: var(--thh-gold);
+}
+
+.drug-free-picker__field-list > .drug-free-picker__inline-calendar + button {
+  margin-top: 0.5rem;
+}
+
+.drug-free-picker__done {
+  text-transform: none;
 }
