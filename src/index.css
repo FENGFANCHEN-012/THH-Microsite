@@ -5178,19 +5178,32 @@ body {
 }
 
 /* Shared site footer (Figma "footer" component) */
+/* Footer (Figma "footer" component 785:1684): padding 40, gap 32, wordmark Inter 24 bold,
+   186 x 128 "I AM 40 YEARS" lockup, tagline 14px, 1px #D9DEE6 rule, credits 14 bold / 12 */
 .site-footer {
-  padding: 4rem 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem;
   text-align: center;
   color: #282828;
   background: #ffffff;
 }
 
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
 .site-footer__brand > strong {
   display: block;
   font-family: "Inter", sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.44;
+  line-height: 1.914rem;
   letter-spacing: 0;
   text-transform: uppercase;
   color: #31599e;
@@ -5202,64 +5215,63 @@ body {
 }
 
 .site-footer__mark {
-  display: inline-grid;
-  grid-template-columns: auto;
-  justify-items: center;
-  margin-top: 0.5rem;
+  position: relative;
+  width: 11.6rem;
+  height: 8rem;
   color: #31599e;
 }
 
 .site-footer__mark small {
+  position: absolute;
+  top: -0.175rem;
+  left: 2.13rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
+  font-size: 1.058rem;
   font-weight: 700;
-  line-height: 1.67;
+  line-height: 1.411rem;
   letter-spacing: 0;
 }
 
 .site-footer__mark small:last-child {
-  justify-self: end;
-  margin-top: -0.5rem;
+  top: 6.93rem;
+  left: 7.98rem;
 }
 
-.site-footer__mark span {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.0375em;
-  background: linear-gradient(180deg, #31599e 0%, #203d69 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.site-footer__mark img {
+  position: absolute;
+  top: 1.41rem;
+  left: 0;
+  width: 11.6rem;
+  height: 6.62rem;
 }
 
 .site-footer__brand > p {
-  margin-top: 0.5rem;
+  margin: 0;
   font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
-  line-height: 1.67;
+  font-size: 0.875rem;
+  line-height: 1.149rem;
+  letter-spacing: -0.019em;
 }
 
 .site-footer__credits {
-  max-width: 90rem;
-  margin: 1.5rem auto 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eaf0f8;
+  width: 100%;
+  max-width: 85rem;
+  padding-top: 2rem;
+  border-top: 1px solid #d9dee6;
 }
 
 .site-footer__credits strong {
   font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  line-height: 1.67;
+  line-height: 1.375rem;
 }
 
 .site-footer__credits p {
-  margin-top: 0.25rem;
+  margin: 0;
   font-family: "Inter", sans-serif;
   font-size: 0.75rem;
-  line-height: 1.67;
+  line-height: 1.25rem;
 }
 
 /* Date picker summary pill (Figma "Default - no days" / "Default-show days") */
