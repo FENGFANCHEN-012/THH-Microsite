@@ -1,0 +1,847 @@
+/* Home page + shared header — values read from Figma "Desktop/homepage" (1440px frame).
+   Sections pad 120px top/bottom and 80px left/right; titles Georgia 72/96 (-4.8px); leads Inter 24/32. */
+
+/* ---------- shared header (Figma "Nav bar": 80px, 80% white, 1px #D9DEE6 rule) ---------- */
+.home-header {
+  color: #31599e;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #d9dee6;
+  box-shadow: none;
+}
+
+.home-header .home-header__inner {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 5rem;
+}
+
+.home-header__brand {
+  gap: 0.5rem;
+}
+
+/* logo lockup 73 x 56 (Figma "microsite logo+ slogan", logo only): 56 x 32 "40" mark,
+   "I AM" above-left and "YEARS" below-right, both 5.1px (the footer lockup scaled by 0.302) */
+.home-header .home-header__anniversary {
+  position: relative;
+  display: block;
+  width: 4.58rem;
+  flex: 0 0 4.58rem;
+  height: 3.5rem;
+  padding: 0;
+}
+
+.home-header .home-header__anniversary img {
+  position: absolute;
+  top: 1.08rem;
+  left: 0.53rem;
+  width: 3.51rem;
+  max-width: none;
+  height: 2rem;
+}
+
+.home-header .home-header__anniversary small,
+.home-header .home-header__anniversary em {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  font-size: 0.32rem;
+  font-weight: 700;
+  line-height: 0.43rem;
+}
+
+.home-header .home-header__anniversary small {
+  top: 0.62rem;
+  left: 1.18rem;
+}
+
+.home-header .home-header__anniversary em {
+  top: 3.15rem;
+  left: 2.95rem;
+}
+
+.home-header__identity {
+  gap: 0;
+}
+
+.home-header__identity strong {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #31599e;
+}
+
+.home-header__identity small {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.019em;
+}
+
+/* Tabs: 502px, four equal items 74px tall, 24px padding, Inter 18/32 */
+.home-header__nav {
+  display: flex;
+  flex: 0 0 31.375rem;
+  gap: 0;
+}
+
+.home-header__nav button {
+  flex: 1 1 0;
+  height: 4.625rem;
+  padding: 0 0.5rem;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  color: #31599e;
+}
+
+.home-header__nav button.is-active {
+  color: #282828;
+  box-shadow: inset 0 -2px #31599e;
+}
+
+/* ---------- number-wall profile card (Figma "profile card": 577 x 408, photo 272) ---------- */
+.numbers-profile-card {
+  width: min(36.07rem, calc(100vw - 2rem));
+  grid-template-columns: 17rem 1fr;
+  border: 1px solid #d9dee6;
+  box-shadow: 0 1.5rem 4rem rgba(40, 40, 40, 0.1);
+}
+
+.numbers-profile-card > img,
+.numbers-profile-card__portrait-placeholder {
+  min-height: 25.5rem;
+  filter: none;
+}
+
+.numbers-profile-card__content {
+  padding: 1.5rem;
+}
+
+.numbers-profile-card__header,
+.numbers-profile-card__stat {
+  border-bottom-color: #d9dee6;
+}
+
+.numbers-profile-card__header span,
+.numbers-profile-card dt,
+.numbers-profile-card__stat span,
+.numbers-profile-card__stat em {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+.numbers-profile-card__header strong {
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.numbers-profile-card__header small,
+.numbers-profile-card dd,
+.numbers-profile-card__header button {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #282828;
+}
+
+.numbers-profile-card__stat {
+  padding: 0.5rem 0 1rem;
+  border-top: 1px solid #d9dee6;
+  margin-top: 1rem;
+}
+
+.numbers-profile-card__stat strong {
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: -0.8px;
+}
+
+/* ---------- shared home pieces ---------- */
+.hm-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hm-eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  color: #31599e;
+}
+
+.hm-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 6rem;
+  letter-spacing: -4.8px;
+  color: #282828;
+}
+
+.hm-title em,
+.hm-impact__statement em {
+  font-style: normal;
+  color: #31599e;
+}
+
+.hm-lead {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #282828;
+}
+
+/* ---------- featured story (1440 x 1080 panels) ---------- */
+.hm-story__panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 732fr 708fr;
+  background: #ffffff;
+}
+
+.hm-story__panel--reverse {
+  grid-template-columns: 708fr 732fr;
+}
+
+.hm-story__panel--blue .hm-story__text {
+  background: #eaf0f8;
+}
+
+.hm-story__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 0 5rem;
+}
+
+.hm-story__text > * {
+  max-width: 32.125rem;
+}
+
+.hm-story__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.hm-story__figure span {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  color: #31599e;
+}
+
+/* desktop/display/md/bold 144/200 */
+.hm-story__figure strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 700;
+  line-height: 1.39;
+  letter-spacing: -2.4px;
+  color: #282828;
+}
+
+.hm-story__text p,
+.hm-story__quote p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #282828;
+}
+
+.hm-story__photo {
+  position: relative;
+  overflow: hidden;
+  background: #5663d9;
+}
+
+.hm-story__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* quote step: 630px column, 120px gap to the paragraph */
+.hm-story__panel--quote,
+.hm-story__panel--count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hm-story__quote {
+  display: flex;
+  max-width: 39.35rem;
+  flex-direction: column;
+  gap: 7.5rem;
+  padding: 0 1.5rem;
+}
+
+.hm-story__quote > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hm-story__quote span {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #31599e;
+}
+
+.hm-story__quote blockquote {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  color: #282828;
+}
+
+.hm-story__quote cite {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 1.5rem;
+  text-align: right;
+  color: #31599e;
+}
+
+.hm-story__panel--count > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.hm-story__panel--count span {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #31599e;
+}
+
+.hm-story__panel--count strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(6rem, 14.45vw, 13rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2.4px;
+  color: #282828;
+}
+
+.hm-story__panel--count em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  font-style: normal;
+  line-height: 4rem;
+  color: #31599e;
+}
+
+.hm-story__panel--count p {
+  margin: 2.5rem 0 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #282828;
+}
+
+/* ---------- 40 stories wall (padding 120/80, 64px gap, 3 x 405 columns, 32px gaps) ---------- */
+.hm-wall {
+  padding: 7.5rem 5rem;
+  background: #eaf0f8;
+}
+
+.hm-wall__inner {
+  display: flex;
+  max-width: 80rem;
+  flex-direction: column;
+  gap: 4rem;
+  margin: 0 auto;
+}
+
+.hm-wall__head {
+  display: flex;
+  align-items: flex-end;
+  gap: 8.5rem;
+}
+
+.hm-wall__head .hm-lead {
+  max-width: 50rem;
+}
+
+.hm-wall__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 16.875rem;
+  grid-template-areas:
+    "big big r1"
+    "big big r2"
+    "a3 b3 tall"
+    "more b4 tall";
+  gap: 2rem;
+}
+
+.hm-wall .story-card__days strong {
+  font-size: 3.5rem;
+  line-height: 4.5rem;
+}
+
+/* desktop/display/sm/bold 104/136 on the big card */
+.hm-wall .story-card--large .story-card__days strong {
+  font-size: 6.5rem;
+  line-height: 8.5rem;
+  letter-spacing: -2.4px;
+}
+
+.hm-wall__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.hm-wall__more strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 6rem;
+  letter-spacing: -4.8px;
+  color: #31599e;
+}
+
+.hm-wall__more span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #282828;
+}
+
+/* ---------- collective impact (510 image | 628 copy; metrics 302 wide, 64/32 padding) ---------- */
+.hm-impact {
+  display: flex;
+  max-width: 90rem;
+  flex-direction: column;
+  gap: 7.5rem;
+  margin: 0 auto;
+  padding: 7.5rem 5rem;
+  background: #ffffff;
+}
+
+.hm-impact__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.hm-impact__image {
+  flex: 0 0 31.875rem;
+  height: 31.875rem;
+  overflow: hidden;
+  background: #5663d9;
+}
+
+.hm-impact__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hm-impact__copy {
+  display: flex;
+  flex: 0 1 39.25rem;
+  flex-direction: column;
+  gap: 7.5rem;
+}
+
+.hm-impact__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 18.875rem);
+  gap: 2rem 1.5rem;
+}
+
+.hm-impact__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid #d9dee6;
+  border-bottom: 1px solid #d9dee6;
+}
+
+.hm-impact__metric strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 6rem;
+  letter-spacing: -4.8px;
+  color: #282828;
+}
+
+.hm-impact__metric span {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #31599e;
+}
+
+/* desktop/heading/lg/bold 48/64 */
+.hm-impact__statement {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  color: #282828;
+}
+
+/* ---------- donor teaser (photo 708 left, copy 519 at x 840) ---------- */
+.home-donor-teaser,
+.hm-teaser {
+  display: grid;
+  grid-template-columns: 708fr 732fr;
+  min-height: 68.0625rem;
+  background: #eaf0f8;
+}
+
+.hm-teaser__image {
+  position: relative;
+  overflow: hidden;
+  background: #5663d9;
+}
+
+.hm-teaser__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hm-teaser__copy {
+  display: flex;
+  max-width: 32.4375rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7.5rem;
+  margin-left: 8.25rem;
+  padding: 7.5rem 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ---------- Beyond 40 (628px column, top 120, gaps 120 / 48) ---------- */
+.hm-next {
+  padding: 7.5rem 1.5rem;
+  background: #ffffff;
+}
+
+.hm-next__inner {
+  display: flex;
+  max-width: 39.25rem;
+  flex-direction: column;
+  gap: 7.5rem;
+  margin: 0 auto;
+}
+
+.hm-next__story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hm-next__eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  color: #31599e;
+}
+
+.hm-next__sum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 1s ease;
+}
+
+.hm-next__sum strong,
+.hm-next__result {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 700;
+  line-height: 1.39;
+  letter-spacing: -2.4px;
+  color: #282828;
+}
+
+.hm-next__sum em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 6.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 8.5rem;
+  letter-spacing: -2.4px;
+  color: #31599e;
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.hm-next__result {
+  display: block;
+  margin-top: -1.5rem;
+  background: linear-gradient(180deg, #203153 0%, #31599e 50%, #7688bc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: opacity 1s, transform 1s;
+}
+
+.hm-next__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hm-next__copy p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #282828;
+}
+
+.hm-next__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hm-next__cta > span {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #31599e;
+}
+
+.hm-next__cta > div {
+  display: flex;
+  width: max-content;
+  max-width: calc(100vw - 2rem);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* ---------- smaller screens ---------- */
+@media (max-width: 1279px) {
+  .home-header .home-header__inner {
+    padding: 0 2.5rem;
+  }
+
+  .home-header__nav {
+    flex-basis: auto;
+  }
+
+  .home-header__nav button {
+    padding: 0 1rem;
+  }
+
+  .hm-wall,
+  .hm-impact {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .hm-impact__row {
+    flex-wrap: wrap;
+  }
+
+  .hm-teaser__copy {
+    margin: 0 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-header .home-header__inner {
+    height: 4rem;
+    padding: 0 1rem;
+  }
+
+  .hm-title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -1.2px;
+  }
+
+  .hm-lead,
+  .hm-story__text p,
+  .hm-story__quote p,
+  .hm-next__copy p {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  .hm-story__panel,
+  .hm-story__panel--reverse {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 16rem;
+  }
+
+  .hm-story__panel--reverse .hm-story__photo {
+    order: 2;
+  }
+
+  .hm-story__text {
+    gap: 1.5rem;
+    padding: 5rem 1rem 1.5rem;
+  }
+
+  .hm-story__figure {
+    gap: 0.5rem;
+  }
+
+  .hm-story__quote {
+    gap: 2.5rem;
+  }
+
+  .hm-story__quote blockquote {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+
+  .hm-wall,
+  .hm-impact,
+  .hm-next {
+    padding: 4rem 1rem;
+  }
+
+  .hm-wall__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hm-wall__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 10rem;
+    grid-template-areas:
+      "big big"
+      "big big"
+      "r1 r2"
+      "a3 b3"
+      "tall b4"
+      "tall more";
+    gap: 0.75rem;
+  }
+
+  .hm-wall .story-card--large .story-card__days strong {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+  }
+
+  .hm-impact {
+    gap: 3rem;
+  }
+
+  .hm-impact__image {
+    flex-basis: 100%;
+    height: 20rem;
+  }
+
+  .hm-impact__copy {
+    gap: 3rem;
+  }
+
+  .hm-impact__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .hm-impact__metric {
+    gap: 0.75rem;
+    padding: 1.5rem 0;
+  }
+
+  .hm-impact__metric strong {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    letter-spacing: -1px;
+  }
+
+  .hm-impact__metric span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .hm-impact__statement {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+
+  .hm-teaser {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .hm-teaser__image {
+    height: 20rem;
+  }
+
+  .hm-teaser__copy {
+    gap: 2.5rem;
+    margin: 0;
+    padding: 3rem 1rem 4rem;
+  }
+
+  .hm-next__inner {
+    gap: 3rem;
+  }
+
+  .hm-next__sum em {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  .hm-next__cta > div {
+    gap: 1rem;
+  }
+}
+
+/* wall cards: labels left-aligned inside a centred block (Figma story card) */
+.hm-wall .story-card__days {
+  display: grid;
+  justify-content: center;
+  justify-items: start;
+  align-content: center;
+}
+
+.hm-wall .story-card__days > * {
+  width: auto;
+  min-width: 0;
+}
+
+.hm-wall .story-card--large .story-card__days span {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}

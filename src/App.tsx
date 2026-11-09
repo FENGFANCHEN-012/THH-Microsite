@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import HistoryPage from "./HistoryPage"
 import SiteFooter from "./SiteFooter"
 import DonorImpactPage from "./DonorImpactPage"
+import './home.css'
 import thhBuilding from "./assets/thh-building.png"
+import logo40 from "./assets/logo-40.svg"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // THH EDITORIAL PALETTE
@@ -111,46 +113,46 @@ function getOvercomerProfile(index: number) {
 }
 
 const FLOATING_NUMS = [
-  { n: 365,   x: 0,   y: 8,  fs: '4.4rem', mfs: '2.6rem', op: 0.18 },
-  { n: 2456,  x: 14,  y: 72, fs: '5.8rem', mfs: '3rem',   op: 0.15 },
-  { n: 1825,  x: 29,  y: 22, fs: '3.8rem', mfs: '2.3rem', op: 0.14 },
-  { n: 4380,  x: 41,  y: 84, fs: '4.7rem', mfs: '2.6rem', op: 0.18 },
-  { n: 730,   x: 58,  y: 13, fs: '3.4rem', mfs: '2.2rem', op: 0.12 },
-  { n: 1095,  x: 72,  y: 68, fs: '4.3rem', mfs: '2.4rem', op: 0.16 },
-  { n: 547,   x: 87,  y: 27, fs: '3.2rem', mfs: '2.2rem', op: 0.11 },
-  { n: 3285,  x: 103, y: 78, fs: '4rem',   mfs: '2.5rem', op: 0.14 },
-  { n: 182,   x: 116, y: 6,  fs: '2.8rem', mfs: '2rem',   op: 0.10 },
-  { n: 2190,  x: 132, y: 88, fs: '3.6rem', mfs: '2.3rem', op: 0.13 },
-  { n: 912,   x: 147, y: 18, fs: '3.1rem', mfs: '2rem',   op: 0.11 },
-  { n: 1460,  x: 160, y: 70, fs: '3.8rem', mfs: '2.3rem', op: 0.15 },
-  { n: 1240,  x: 176, y: 29, fs: '4.1rem', mfs: '2.5rem', op: 0.13 },
-  { n: 2856,  x: 190, y: 81, fs: '3.2rem', mfs: '2.1rem', op: 0.11 },
-  { n: 93,    x: 207, y: 10, fs: '5rem',   mfs: '2.8rem', op: 0.16 },
-  { n: 1678,  x: 221, y: 74, fs: '3.7rem', mfs: '2.3rem', op: 0.12 },
-  { n: 421,   x: 235, y: 24, fs: '3rem',   mfs: '2rem',   op: 0.10 },
+  { n: 365,   x: 0,   y: 8,  fs: '4.5rem', mfs: '2.6rem', op: 0.18 },
+  { n: 2456,  x: 14,  y: 72, fs: '4.5rem', mfs: '3rem',   op: 0.15 },
+  { n: 1825,  x: 29,  y: 22, fs: '3.5rem', mfs: '2.3rem', op: 0.14 },
+  { n: 4380,  x: 41,  y: 84, fs: '4.5rem', mfs: '2.6rem', op: 0.18 },
+  { n: 730,   x: 58,  y: 13, fs: '3.5rem', mfs: '2.2rem', op: 0.12 },
+  { n: 1095,  x: 72,  y: 68, fs: '4.5rem', mfs: '2.4rem', op: 0.16 },
+  { n: 547,   x: 87,  y: 27, fs: '3.5rem', mfs: '2.2rem', op: 0.11 },
+  { n: 3285,  x: 103, y: 78, fs: '3.5rem',   mfs: '2.5rem', op: 0.14 },
+  { n: 182,   x: 116, y: 6,  fs: '3.5rem', mfs: '2rem',   op: 0.10 },
+  { n: 2190,  x: 132, y: 88, fs: '3.5rem', mfs: '2.3rem', op: 0.13 },
+  { n: 912,   x: 147, y: 18, fs: '3.5rem', mfs: '2rem',   op: 0.11 },
+  { n: 1460,  x: 160, y: 70, fs: '3.5rem', mfs: '2.3rem', op: 0.15 },
+  { n: 1240,  x: 176, y: 29, fs: '3.5rem', mfs: '2.5rem', op: 0.13 },
+  { n: 2856,  x: 190, y: 81, fs: '3.5rem', mfs: '2.1rem', op: 0.11 },
+  { n: 93,    x: 207, y: 10, fs: '4.5rem',   mfs: '2.8rem', op: 0.16 },
+  { n: 1678,  x: 221, y: 74, fs: '3.5rem', mfs: '2.3rem', op: 0.12 },
+  { n: 421,   x: 235, y: 24, fs: '3.5rem',   mfs: '2rem',   op: 0.10 },
   { n: 3065,  x: 252, y: 86, fs: '4.5rem', mfs: '2.6rem', op: 0.15 },
-  { n: 804,   x: 266, y: 7,  fs: '3.6rem', mfs: '2.2rem', op: 0.12 },
-  { n: 1987,  x: 281, y: 69, fs: '4.2rem', mfs: '2.5rem', op: 0.14 },
-  { n: 275,   x: 297, y: 26, fs: '3.3rem', mfs: '2.1rem', op: 0.11 },
-  { n: 3520,  x: 310, y: 79, fs: '5.2rem', mfs: '2.8rem', op: 0.17 },
-  { n: 118,   x: 326, y: 12, fs: '3rem',   mfs: '2rem',   op: 0.10 },
-  { n: 2334,  x: 340, y: 88, fs: '4rem',   mfs: '2.4rem', op: 0.13 },
-  { n: 679,   x: 356, y: 20, fs: '4.6rem', mfs: '2.6rem', op: 0.15 },
-  { n: 1542,  x: 371, y: 72, fs: '3.4rem', mfs: '2.2rem', op: 0.11 },
-  { n: 398,   x: 385, y: 5,  fs: '3.8rem', mfs: '2.3rem', op: 0.13 },
-  { n: 2711,  x: 402, y: 83, fs: '4.8rem', mfs: '2.7rem', op: 0.16 },
-  { n: 1045,  x: 416, y: 28, fs: '3.1rem', mfs: '2rem',   op: 0.10 },
-  { n: 326,   x: 431, y: 68, fs: '4.1rem', mfs: '2.5rem', op: 0.14 },
+  { n: 804,   x: 266, y: 7,  fs: '3.5rem', mfs: '2.2rem', op: 0.12 },
+  { n: 1987,  x: 281, y: 69, fs: '3.5rem', mfs: '2.5rem', op: 0.14 },
+  { n: 275,   x: 297, y: 26, fs: '3.5rem', mfs: '2.1rem', op: 0.11 },
+  { n: 3520,  x: 310, y: 79, fs: '4.5rem', mfs: '2.8rem', op: 0.17 },
+  { n: 118,   x: 326, y: 12, fs: '3.5rem',   mfs: '2rem',   op: 0.10 },
+  { n: 2334,  x: 340, y: 88, fs: '3.5rem',   mfs: '2.4rem', op: 0.13 },
+  { n: 679,   x: 356, y: 20, fs: '4.5rem', mfs: '2.6rem', op: 0.15 },
+  { n: 1542,  x: 371, y: 72, fs: '3.5rem', mfs: '2.2rem', op: 0.11 },
+  { n: 398,   x: 385, y: 5,  fs: '3.5rem', mfs: '2.3rem', op: 0.13 },
+  { n: 2711,  x: 402, y: 83, fs: '4.5rem', mfs: '2.7rem', op: 0.16 },
+  { n: 1045,  x: 416, y: 28, fs: '3.5rem', mfs: '2rem',   op: 0.10 },
+  { n: 326,   x: 431, y: 68, fs: '3.5rem', mfs: '2.5rem', op: 0.14 },
   { n: 1888,  x: 448, y: 14, fs: '3.5rem', mfs: '2.2rem', op: 0.12 },
-  { n: 4520,  x: 461, y: 87, fs: '5rem',   mfs: '2.8rem', op: 0.17 },
-  { n: 756,   x: 476, y: 23, fs: '3.2rem', mfs: '2.1rem', op: 0.11 },
-  { n: 213,   x: 492, y: 76, fs: '4.3rem', mfs: '2.5rem', op: 0.14 },
-  { n: 1347,  x: 506, y: 8,  fs: '3.7rem', mfs: '2.3rem', op: 0.12 },
-  { n: 2999,  x: 523, y: 84, fs: '4.7rem', mfs: '2.7rem', op: 0.16 },
-  { n: 582,   x: 537, y: 18, fs: '3rem',   mfs: '2rem',   op: 0.10 },
-  { n: 1724,  x: 551, y: 70, fs: '4rem',   mfs: '2.4rem', op: 0.13 },
-  { n: 943,   x: 568, y: 27, fs: '3.4rem', mfs: '2.2rem', op: 0.11 },
-  { n: 3611,  x: 584, y: 80, fs: '5.1rem', mfs: '2.8rem', op: 0.17 },
+  { n: 4520,  x: 461, y: 87, fs: '4.5rem',   mfs: '2.8rem', op: 0.17 },
+  { n: 756,   x: 476, y: 23, fs: '3.5rem', mfs: '2.1rem', op: 0.11 },
+  { n: 213,   x: 492, y: 76, fs: '4.5rem', mfs: '2.5rem', op: 0.14 },
+  { n: 1347,  x: 506, y: 8,  fs: '3.5rem', mfs: '2.3rem', op: 0.12 },
+  { n: 2999,  x: 523, y: 84, fs: '4.5rem', mfs: '2.7rem', op: 0.16 },
+  { n: 582,   x: 537, y: 18, fs: '3.5rem',   mfs: '2rem',   op: 0.10 },
+  { n: 1724,  x: 551, y: 70, fs: '3.5rem',   mfs: '2.4rem', op: 0.13 },
+  { n: 943,   x: 568, y: 27, fs: '3.5rem', mfs: '2.2rem', op: 0.11 },
+  { n: 3611,  x: 584, y: 80, fs: '4.5rem', mfs: '2.8rem', op: 0.17 },
 ]
 
 const WALL_LAYOUT = [
@@ -310,7 +312,7 @@ function HomeHeader({
         <button type="button" className="home-header__brand" onClick={goHome} data-cursor="true" aria-label="THH 40th anniversary home">
           <span className="home-header__anniversary" aria-hidden="true">
             <small>I AM</small>
-            <strong>40</strong>
+            <img src={logo40} alt="" />
             <em>Years</em>
           </span>
           <span className="home-header__identity">
@@ -693,17 +695,17 @@ function HeroSection({ progress }: { progress: number }) {
 
         {/* Main type */}
         <div className="relative z-30 text-center select-none pointer-events-none" style={{ opacity: mainOpacity }}>
-          <p className="font-mono mb-5 leading-[1.33] uppercase" style={{ color: centralColor, fontSize: 'clamp(1rem, 1.8vw, 1.5rem)', opacity: 1 - morphP * 0.4 }}>
+          <p className="font-mono mb-10 uppercase" style={{ color: centralColor, fontSize: 'clamp(1rem, 1.67vw, 1.5rem)', lineHeight: '2rem', opacity: 1 - morphP * 0.4 }}>
             I AM
           </p>
-          <div className="font-display font-bold leading-[1.28] tracking-[-0.00769em]" style={{ fontSize: 'clamp(7.5rem, 18vw, 19.5rem)', color: centralColor, transform: `scale(${1 + morphP * 0.1})`, willChange: 'transform' }}>
+          <div className="font-display font-bold" style={{ fontSize: 'clamp(6rem, 14.45vw, 13rem)', lineHeight: 1, letterSpacing: '-2.4px', color: centralColor }}>
             {displayNum}
           </div>
-          <p className="font-mono mt-5 leading-[1.44] uppercase" style={{ color: BG, fontSize: 'clamp(0.875rem, 1.5vw, 1.125rem)', opacity: daysP > 0.05 ? daysP * (1 - backgroundEase) : Math.max(0, 1 - morphP * 3), transform: `translateY(${(1 - daysP) * 8}px)` }}>
+          <p className="font-mono mt-10 uppercase" style={{ color: BG2, fontSize: 'clamp(1rem, 1.67vw, 1.5rem)', lineHeight: '2rem', opacity: daysP > 0.05 ? daysP * (1 - backgroundEase) : Math.max(0, 1 - morphP * 3), transform: `translateY(${(1 - daysP) * 8}px)` }}>
             {daysP > 0.05 ? 'Days' : 'Years of restoring lives'}
           </p>
-          <div className="mt-16 text-center" style={{ opacity: subtitleP * (1 - backgroundEase), transform: `translateY(${(1 - subtitleP) * 24}px)` }}>
-            <p className="font-body font-normal leading-[1.33]" style={{ color: BG, fontSize: '1.5rem' }}>
+          <div className="mt-30 mx-auto text-center" style={{ maxWidth: '38.5rem', opacity: subtitleP * (1 - backgroundEase), transform: `translateY(${(1 - subtitleP) * 24}px)` }}>
+            <p className="font-display font-bold" style={{ color: BG, fontSize: 'clamp(1.5rem, 2.22vw, 2rem)', lineHeight: 1.5, letterSpacing: '-0.8px' }}>
               40 years of restoration.<br />14,600 days of lives being transformed.
             </p>
           </div>
@@ -860,7 +862,7 @@ function NumberSection({ progress }: { progress: number }) {
               <div className="numbers-profile-card__stat">
                 <span>I AM</span>
                 <strong>{activeItem.n.toLocaleString()}</strong>
-                <em>days</em>
+                <em>DAYS DRUG FREE</em>
               </div>
               <dl>
                 <div>
@@ -881,9 +883,9 @@ function NumberSection({ progress }: { progress: number }) {
         )}
 
         <div className="absolute inset-0 z-20 flex items-center justify-center px-6 text-center pointer-events-none" style={{ opacity: 1 - mainOpacity }}>
-          <div className="max-w-2xl">
-            <p className="font-body font-normal leading-[1.33]" style={{ color: INK3, fontSize: 'clamp(1rem, 1.5vw, 1.5rem)' }}>14,600 days tell the story of overcoming odds and prejudices</p>
-            <p className="font-display font-bold mt-1 leading-[1.5] tracking-[-0.025em]" style={{ fontSize: '2rem', color: INK }}>Every single day brings possibilities to our residents&apos; lives.</p>
+          <div style={{ maxWidth: '37.75rem' }}>
+            <p className="font-body font-normal" style={{ color: INK3, fontSize: '1.125rem', lineHeight: '1.625rem' }}>14,600 days tell the story of overcoming odds and prejudices</p>
+            <p className="font-display font-bold mt-6" style={{ fontSize: '2rem', lineHeight: '3rem', letterSpacing: '-0.8px', color: INK }}>Every single day brings possibilities to our residents&apos; lives.</p>
           </div>
         </div>
 
@@ -1071,65 +1073,6 @@ function TransformationSection() {
 
 // ── Section 6: Overcomers Wall ────────────────────────────────────────────
 
-function OvercomersWall() {
-  const { ref, inView } = useInView(0.05)
-  const [hovId, setHovId] = useState<number | null>(null)
-
-  return (
-    <div id="home-stories" ref={ref} className="py-20 px-16 home-stories-section" style={{ background: BG2 }}>
-      <div className="max-w-[1440px] mx-auto">
-        <div className="flex justify-between items-end mb-16">
-          <div>
-            <p className="font-mono text-[0.75rem] mb-4 leading-[1.67] uppercase" style={{ color: GOLD, opacity: inView ? 1 : 0, transition: 'opacity 0.8s' }}>The Overcomers</p>
-            <h2 className="font-display font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 8vw, 7.5rem)', color: INK, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(20px)', transition: 'opacity 0.9s 0.1s, transform 0.9s 0.1s' }}>
-              40 lives.<br />40 stories.
-            </h2>
-          </div>
-          <p className="font-body text-[0.875rem] max-w-xs text-right leading-[1.57]" style={{ color: INK3 }}>Each number represents the number of days a resident successfully lives drug free.</p>
-        </div>
-
-        <div className="grid gap-1" style={{ gridTemplateColumns: 'repeat(4, 1fr)', gridAutoRows: '190px', background: GAP }}>
-          {OVERCOMERS.map((person, i) => {
-            const layout = WALL_LAYOUT[i] ?? 'col-span-1 row-span-1'
-            const isLarge = layout.includes('col-span-2')
-            const isHov   = hovId === person.id
-            return (
-              <div key={person.id} className={`${layout} story-card${isHov ? ' is-hovered' : ''}${isLarge ? ' story-card--large' : ''}`} style={{ opacity: inView ? 1 : 0, transition: `opacity 0.7s ${i * 0.035}s` }} data-cursor="true" onMouseEnter={() => setHovId(person.id)} onMouseLeave={() => setHovId(null)}>
-                {/* Figma "story card": photo at 20% on light blue by default, full photo + white fade on hover */}
-                <img src={person.img} alt={person.name} className="story-card__image" />
-                <div className="story-card__fade" aria-hidden="true" />
-
-                {/* Default: I AM / days / DAYS OF FREEDOM (fades out on hover) */}
-                <div className="story-card__days">
-                  <span>I AM</span>
-                  <strong>{person.days.toLocaleString()}</strong>
-                  <span>DAYS OF FREEDOM</span>
-                </div>
-
-                {/* Hover: name + role over the clear photo */}
-                <div className="story-card__person">
-                  <span>{person.name}</span>
-                  <p>{person.role}</p>
-                </div>
-              </div>
-            )
-          })}
-
-          {/* +33 more */}
-          <div className="col-span-1 row-span-1 relative flex items-center justify-center cursor-pointer" style={{ background: BG, border: `1px solid ${BORDER}`, transition: 'border-color 0.3s' }} data-cursor="true"
-            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = GOLD)}
-            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = BORDER)}>
-            <div className="text-center">
-              <div className="font-display font-bold leading-[1.4] tracking-[-0.04em]" style={{ fontSize: '2.5rem', color: GOLD }}>+33</div>
-              <p className="font-mono mt-2 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK4 }}>More Overcomers</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // ── Section 7: Ecosystem ──────────────────────────────────────────────────
 
 function EcosystemSection() {
@@ -1215,101 +1158,6 @@ function EcosystemSection() {
 // The PAST phase uses a warm sepia-dark tone. The visual journey from
 // warm-dark → bright ivory communicates restoration through colour.
 
-function FeaturedStory() {
-  const ref  = useRef<HTMLDivElement>(null)
-  const prog = useScrollProgress(ref)
-
-  const phase  = prog < 0.18 ? 0 : prog < 0.36 ? 1 : prog < 0.54 ? 2 : prog < 0.74 ? 3 : 4
-  const phaseP = phase === 0 ? prog / 0.18 : phase === 1 ? (prog - 0.18) / 0.18 : phase === 2 ? (prog - 0.36) / 0.18 : phase === 3 ? (prog - 0.54) / 0.2 : (prog - 0.74) / 0.26
-  const pOp    = (ph: number) => phase === ph ? 1 : phase === ph + 1 ? Math.max(0, 1 - phaseP * 3) : 0
-
-  return (
-    <div ref={ref} style={{ height: '520vh' }}>
-      <div className="sticky top-0 h-screen overflow-hidden" style={{ background: BG }}>
-
-        {/* Phase 0 — Opening: portrait on right, text on left */}
-        <div className="absolute inset-0 flex" style={{ opacity: phase === 0 ? 1 : phase === 1 ? Math.max(0, 1 - phaseP * 4) : 0 }}>
-          <div className="w-1/2 flex items-center justify-start" style={{ background: BG, padding: '0 5rem' }}>
-            <div>
-              <p className="font-mono text-[0.75rem] mb-4 leading-[1.67] uppercase" style={{ color: GOLD }}>Featured Story</p>
-              <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(4.5rem, 13vw, 13rem)', color: INK }}>9,490</div>
-              <div className="font-mono text-[0.875rem] mt-3 mb-8 leading-[1.57] uppercase" style={{ color: GOLD }}>DAYS FREE</div>
-              <p className="font-body text-[1.125rem] font-normal leading-[1.44]" style={{ maxWidth: '380px', color: INK3 }}>
-                Moses was fifteen when he began taking cannabis. Heroin followed. By his mid-twenties, both he and his twin brother were struggling with drug addiction.
-              </p>
-            </div>
-          </div>
-          <div className="w-1/2 relative">
-            <img src="https://images.unsplash.com/photo-1542207342-464d0c94c21c?w=720&h=900&fit=crop&auto=format" alt="Daniel" className="w-full h-full object-cover" style={{ filter: 'grayscale(40%) contrast(0.95) brightness(0.88)' }} />
-            <div className="absolute inset-0" style={{ background: `linear-gradient(to right, ${BG} 0%, transparent 35%)` }} />
-          </div>
-        </div>
-
-        {/* Phase 1 — Past: intentionally warm-dark for emotional contrast */}
-        <div className="absolute inset-0 flex" style={{ opacity: pOp(1) }}>
-          <div className="w-1/2 flex items-center justify-center p-20" style={{ background: BG2 }}>
-            <div>
-              <p className="font-mono text-[0.75rem] mb-6 leading-[1.67] uppercase" style={{ color: GOLD }}>Past</p>
-              <div className="font-display font-bold mb-3 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 9vw, 7.5rem)', color: INK }}>1,825</div>
-              <div className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>DAYS INCARCERATED</div>
-              <p className="font-body text-[1rem] font-normal max-w-xs leading-[1.5]" style={{ color: INK3 }}>Five years behind walls. Every day the same. He counted not in hope, but in habit.</p>
-            </div>
-          </div>
-          <div className="w-1/2 relative">
-            <img src="https://images.unsplash.com/photo-1635214961752-160496fd3145?w=720&h=900&fit=crop&auto=format" alt="Past" className="w-full h-full object-cover" style={{ filter: 'grayscale(100%) contrast(1.0) brightness(0.45)' }} />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(40, 40, 40, 0.7) 0%, transparent 40%)' }} />
-          </div>
-        </div>
-
-        {/* Phase 2 — Turning Point: open ivory */}
-        <div className="absolute inset-0 flex items-center justify-center" style={{ opacity: pOp(2), background: BG }}>
-          <div className="text-center max-w-3xl px-12">
-            <p className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>The recovery journey at The Helping Hand</p>
-            <blockquote className="font-display font-bold leading-[1.25] tracking-[-0.0375em]" style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', color: INK }}>
-              &ldquo;I met men who had nothing to gain from being kind to me. But they were. That was God.&rdquo;
-            </blockquote>
-            <p className="font-body text-[0.875rem] mt-8 font-normal leading-[1.57]" style={{ color: GOLD }}>— Daniel T., resident since 2018</p>
-            <p className="font-body text-[0.875rem] mt-5 max-w-md mx-auto leading-[1.57]" style={{ color: INK3 }}>The Helping Hand offered Daniel a room, a community, and the slow work of becoming someone new.</p>
-          </div>
-        </div>
-
-        {/* Phase 3 — Present: warm and open */}
-        <div className="absolute inset-0 flex" style={{ opacity: pOp(3) }}>
-          <div className="w-1/2 relative">
-            <img src="https://images.unsplash.com/photo-1542207342-464d0c94c21c?w=720&h=900&fit=crop&auto=format" alt="Present" className="w-full h-full object-cover" style={{ filter: 'grayscale(10%) contrast(1.0) brightness(0.92)' }} />
-            <div className="absolute inset-0" style={{ background: `linear-gradient(to right, transparent, ${BG2}55)` }} />
-          </div>
-          <div className="w-1/2 flex items-center justify-center p-20" style={{ background: BG2 }}>
-            <div>
-              <p className="font-mono text-[0.75rem] mb-6 leading-[1.67] uppercase" style={{ color: GOLD }}>Present</p>
-              <div className="font-display font-bold mb-3 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3.5rem, 9vw, 7.5rem)', color: INK }}>9,490</div>
-              <div className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>DAYS FREE</div>
-              <p className="font-body text-[1rem] font-normal max-w-xs leading-[1.5]" style={{ color: INK3 }}>Through perseverance and in god&apos;s grace, Clement is deepening his professional skills in Facilities Management.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Phase 4 — And Counting */}
-        <div className="absolute inset-0 flex items-center justify-center" style={{ opacity: phase === 4 ? 1 : 0, transition: 'opacity 1s', background: BG }}>
-          <div className="text-center">
-            <p className="font-mono text-[0.75rem] mb-5 leading-[1.67] uppercase" style={{ color: GOLD }}>I AM</p>
-            <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(6rem, 17vw, 13rem)', color: INK }}>2,456</div>
-            <div className="font-display font-normal mt-4 leading-[1.33] tracking-[-0.0333em]" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: GOLD }}>AND COUNTING.</div>
-            <p className="font-body text-[1rem] mt-10 font-normal leading-[1.5]" style={{ color: INK4 }}>Tomorrow, he will be 2,457.</p>
-          </div>
-        </div>
-
-        {/* Phase dots */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
-          {[0, 1, 2, 3, 4].map(i => (
-            <div key={i} className="rounded-full transition-all duration-500" style={{ width: phase === i ? '20px' : '4px', height: '4px', background: phase === i ? GOLD : BORDER }} />
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // ── Section 9: Leadership ─────────────────────────────────────────────────
 
 function LeadershipSection() {
@@ -1376,63 +1224,6 @@ function LeadershipSection() {
 }
 
 // ── Section 10: Collective Impact ─────────────────────────────────────────
-
-function ImpactStat({ label, value, suffix = '', prefix = '' }: { label: string; value: number; suffix?: string; prefix?: string }) {
-  const { ref, inView } = useInView()
-  const count = useCounter(value, 2600, inView)
-  return (
-    <div ref={ref} className="pt-8" style={{ borderTop: `1px solid ${BORDER}` }}>
-      <div className="font-display font-bold mb-2 leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: INK }}>
-        {prefix}{count.toLocaleString()}{suffix}
-      </div>
-      <p className="font-body leading-[1.57]" style={{ fontSize: '0.875rem', color: GOLD }}>{label}</p>
-    </div>
-  )
-}
-
-function CollectiveImpact() {
-  const { ref, inView } = useInView(0.1)
-  return (
-    <div ref={ref} className="py-32 px-16" style={{ background: BG }}>
-      <div className="max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-12 gap-8 items-center">
-          {/* Portrait mosaic */}
-          <div className="col-span-5 grid grid-cols-2 gap-1" style={{ gridAutoRows: '200px', background: GAP }}>
-            {OVERCOMERS.slice(0, 6).map((p, i) => (
-              <div key={p.id} className={`relative overflow-hidden ${i === 0 ? 'row-span-2' : ''}`} style={{ background: BG3 }}>
-                <img src={p.img} alt={p.name} className="w-full h-full object-cover" style={{ filter: 'grayscale(50%) contrast(0.9) brightness(1.0)', opacity: inView ? 0.65 : 0, transform: inView ? 'scale(1)' : 'scale(1.05)', transition: `opacity 1s ${i * 0.1}s, transform 1s ${i * 0.1}s` }} />
-                <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BG3}cc 0%, transparent 50%)` }} />
-                <div className="absolute bottom-2 left-3">
-                  <span className="font-mono leading-[1.67]" style={{ fontSize: '0.75rem', color: GOLD }}>I AM {p.days.toLocaleString()}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Stats */}
-          <div className="col-span-7 pl-12">
-            <p className="font-mono text-[0.75rem] mb-6 leading-[1.67] uppercase" style={{ color: GOLD }}>Collective Impact</p>
-            <h2 className="font-display font-bold mb-16 leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: INK }}>
-              One day.<br />One life.<br /><span style={{ color: GOLD }}>40 years of<br />second chances.</span>
-            </h2>
-            <div className="grid grid-cols-2 gap-10">
-              <ImpactStat label="Residents Served"        value={3100}  suffix="+" />
-              <ImpactStat label="Hours of Work Therapy"   value={95040} />
-              <ImpactStat label="Counselling Sessions"    value={1301} />
-              <ImpactStat label="Spiritual Sessions"      value={1296} />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-20 pt-16 text-center" style={{ borderTop: `1px solid ${BORDER}` }}>
-          <p className="font-display font-bold leading-[1.29] tracking-[-0.0286em]" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: INK, opacity: inView ? 1 : 0, transition: 'opacity 1.2s 0.4s' }}>
-            The Helping Hand&apos;s story is about <span style={{ color: GOLD }}>lives, powered by individuals&apos; faith, commitments to change, and community support.</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 // ── Section 11: Organisation ──────────────────────────────────────────────
 
@@ -1602,6 +1393,186 @@ function OrganisationSection() {
 
 // ── Section 12: The Next Day ──────────────────────────────────────────────
 
+function FeaturedStory() {
+  const ref  = useRef<HTMLDivElement>(null)
+  const prog = useScrollProgress(ref)
+
+  const phase  = prog < 0.18 ? 0 : prog < 0.36 ? 1 : prog < 0.54 ? 2 : prog < 0.74 ? 3 : 4
+  const phaseP = phase === 0 ? prog / 0.18 : phase === 1 ? (prog - 0.18) / 0.18 : phase === 2 ? (prog - 0.36) / 0.18 : phase === 3 ? (prog - 0.54) / 0.2 : (prog - 0.74) / 0.26
+  const pOp    = (ph: number) => phase === ph ? 1 : phase === ph + 1 ? Math.max(0, 1 - phaseP * 3) : 0
+
+  // Figma "Featured story step 1-4": text column at x 80 (514px wide) beside a 708px photo
+  const StoryText = ({ label, value, unit, copy }: { label: string; value: string; unit: string; copy: string }) => (
+    <div className="hm-story__text">
+      <div className="hm-story__figure">
+        <span>{label}</span>
+        <strong>{value}</strong>
+        <span>{unit}</span>
+      </div>
+      <p>{copy}</p>
+    </div>
+  )
+
+  return (
+    <div ref={ref} style={{ height: '520vh' }}>
+      <div className="sticky top-0 h-screen overflow-hidden" style={{ background: BG }}>
+
+        <div className="hm-story__panel" style={{ opacity: phase === 0 ? 1 : phase === 1 ? Math.max(0, 1 - phaseP * 4) : 0 }}>
+          <StoryText label="Featured story" value="9,490" unit="Days free" copy="Moses was fifteen when he began taking cannabis. Heroin followed. By his mid-twenties, both he and his twin brother were struggling with drug addiction." />
+          <div className="hm-story__photo"><img src="https://images.unsplash.com/photo-1542207342-464d0c94c21c?w=900&h=1300&fit=crop&auto=format" alt="Moses" /></div>
+        </div>
+
+        <div className="hm-story__panel hm-story__panel--blue" style={{ opacity: pOp(1) }}>
+          <StoryText label="Past" value="1,825" unit="Days incarcerated" copy="Five years behind walls. Every day the same. He counted not in hope, but in habit." />
+          <div className="hm-story__photo"><img src="https://images.unsplash.com/photo-1635214961752-160496fd3145?w=900&h=1300&fit=crop&auto=format" alt="" style={{ filter: 'grayscale(100%)' }} /></div>
+        </div>
+
+        <div className="hm-story__panel hm-story__panel--quote" style={{ opacity: pOp(2) }}>
+          <div className="hm-story__quote">
+            <div>
+              <span>The recovery journey at The Helping Hand</span>
+              <blockquote>&ldquo;I met men who had nothing to gain from being kind to me. But they were. That was God.&rdquo;</blockquote>
+              <cite>— Daniel T. , resident since 2018</cite>
+            </div>
+            <p>The Helping Hand offered Daniel a room, a community, and the slow work of becoming someone new.</p>
+          </div>
+        </div>
+
+        <div className="hm-story__panel hm-story__panel--reverse hm-story__panel--blue" style={{ opacity: pOp(3) }}>
+          <div className="hm-story__photo"><img src="https://images.unsplash.com/photo-1542207342-464d0c94c21c?w=900&h=1300&fit=crop&auto=format" alt="Present" /></div>
+          <StoryText label="Present" value="9,490" unit="Days free" copy="Through perseverance and in god's grace, Clement is deepening his professional skills in Facilities Management." />
+        </div>
+
+        <div className="hm-story__panel hm-story__panel--count" style={{ opacity: phase === 4 ? 1 : 0, transition: 'opacity 1s' }}>
+          <div>
+            <span>I AM</span>
+            <strong>2,456</strong>
+            <em>AND COUNTING.</em>
+            <p>Tomorrow, he will be 2,457.</p>
+          </div>
+        </div>
+
+        {/* Phase dots */}
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
+          {[0, 1, 2, 3, 4].map(i => (
+            <div key={i} className="rounded-full transition-all duration-500" style={{ width: phase === i ? '20px' : '4px', height: '4px', background: phase === i ? GOLD : BORDER }} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Section: Overcomers wall (Figma "The overcomers wall": 3 columns, 32px gaps) ──
+
+// Tile placement copied from Figma: big 2x2 card, two singles on the right, a tall card bottom-right
+const WALL_TILES = [
+  { area: 'big', size: 'l', idx: 0 },
+  { area: 'r1', size: 's', idx: 4 },
+  { area: 'r2', size: 's', idx: 1 },
+  { area: 'a3', size: 's', idx: 10 },
+  { area: 'b3', size: 's', idx: 5 },
+  { area: 'tall', size: 's', idx: 2 },
+  { area: 'b4', size: 's', idx: 6 },
+] as const
+
+function OvercomersWall() {
+  const { ref, inView } = useInView(0.05)
+  const [hovId, setHovId] = useState<number | null>(null)
+
+  return (
+    <div id="home-stories" ref={ref} className="hm-wall home-stories-section">
+      <div className="hm-wall__inner">
+        <div className="hm-wall__head">
+          <div className="hm-heading">
+            <span className="hm-eyebrow">The Overcomers</span>
+            <div className="hm-title">40 lives.<br />40 stories.</div>
+          </div>
+          <p className="hm-lead">Each number represents the number of days a resident successfully lives drug free.</p>
+        </div>
+
+        <div className="hm-wall__grid">
+          {WALL_TILES.map((tile, i) => {
+            const person = OVERCOMERS[tile.idx]
+            const isHov = hovId === person.id
+            return (
+              <div
+                key={person.id}
+                className={`story-card${isHov ? ' is-hovered' : ''}${tile.size === 'l' ? ' story-card--large' : ''}`}
+                style={{ gridArea: tile.area, opacity: inView ? 1 : 0, transition: `opacity 0.7s ${i * 0.05}s` }}
+                data-cursor="true"
+                onMouseEnter={() => setHovId(person.id)}
+                onMouseLeave={() => setHovId(null)}
+              >
+                {/* Figma "story card": photo at 20% on light blue by default, full photo + white fade on hover */}
+                <img src={person.img} alt={person.name} className="story-card__image" />
+                <div className="story-card__fade" aria-hidden="true" />
+                <div className="story-card__days">
+                  <span>I AM</span>
+                  <strong>{person.days.toLocaleString()}</strong>
+                  <span>DAYS OF FREEDOM</span>
+                </div>
+                <div className="story-card__person">
+                  <span>{person.name}</span>
+                  <p>{person.role}</p>
+                </div>
+              </div>
+            )
+          })}
+
+          <div className="hm-wall__more" style={{ gridArea: 'more' }} data-cursor="true">
+            <strong>+ 33</strong>
+            <span>MORE OVERCOMERS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Section: Collective impact (Figma "Impact": 510px image | 628px copy, metrics 2x2) ──
+
+function ImpactStat({ label, value, suffix = '', prefix = '' }: { label: string; value: number; suffix?: string; prefix?: string }) {
+  const { ref, inView } = useInView()
+  const count = useCounter(value, 2600, inView)
+  return (
+    <div ref={ref} className="hm-impact__metric">
+      <strong>{prefix}{count.toLocaleString()}{suffix}</strong>
+      <span>{label}</span>
+    </div>
+  )
+}
+
+function CollectiveImpact() {
+  const { ref, inView } = useInView(0.1)
+  return (
+    <div ref={ref} className="hm-impact">
+      <div className="hm-impact__row">
+        <div className="hm-impact__image">
+          <img src={OVERCOMERS[0].img} alt="" style={{ opacity: inView ? 1 : 0, transition: 'opacity 1s' }} />
+        </div>
+        <div className="hm-impact__copy">
+          <div className="hm-heading">
+            <span className="hm-eyebrow">Collective Impact</span>
+            <div className="hm-title">One day.<br />One life.<br /><em>40 years of<br />second chances.</em></div>
+          </div>
+          <div className="hm-impact__grid">
+            <ImpactStat label="Residents Served"      value={3100} suffix="+" />
+            <ImpactStat label="Hours of Work Therapy" value={95040} />
+            <ImpactStat label="Counselling Sessions"  value={1301} />
+            <ImpactStat label="Spiritual Sessions"    value={1296} />
+          </div>
+        </div>
+      </div>
+      <p className="hm-impact__statement" style={{ opacity: inView ? 1 : 0, transition: 'opacity 1.2s 0.4s' }}>
+        The Helping Hand&apos;s story is about <em>lives, powered by individuals&apos; faith, commitments to change, and community support.</em>
+      </p>
+    </div>
+  )
+}
+
+// ── Next day / Beyond 40 (Figma "Next day": 628px centred column, gaps 120 / 48) ──
+
 function NextDay() {
   const { ref, inView } = useInView(0.2)
   const [showPlus,   setShowPlus]   = useState(false)
@@ -1617,34 +1588,23 @@ function NextDay() {
   }, [inView])
 
   return (
-    <div ref={ref} className="min-h-screen flex flex-col items-center justify-center py-32 px-16 relative overflow-hidden" style={{ background: BG }}>
-      {/* Warm ambient glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(ellipse 65% 65% at 50% 50%, ${GOLDA} 0%, transparent 70%)` }} />
-
-      <div className="max-w-[1440px] mx-auto w-full relative">
-        <div className="text-center mb-30">
-          <p className="font-mono text-[0.75rem] mb-16 leading-[1.67] uppercase" style={{ color: GOLD }}>Beyond 40</p>
-
-          <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(4.5rem, 14vw, 13rem)', color: INK }}>14,600</div>
-
-          <div className="font-display font-bold mt-1 leading-[1.2] tracking-[-0.02em]" style={{ fontSize: 'clamp(3rem, 9vw, 7.5rem)', color: GOLD, opacity: showPlus ? 1 : 0, transform: showPlus ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 0.7s, transform 0.7s' }}>+1</div>
-
-          <div className="mx-auto my-4" style={{ width: showLine ? '360px' : '0px', height: '1px', background: `${GOLD}66`, transition: 'width 1s ease' }} />
-
-          <div className="font-display font-bold leading-[1] tracking-[-0.0115em]" style={{ fontSize: 'clamp(4.5rem, 14vw, 13rem)', background: `linear-gradient(135deg, ${INK} 0%, ${GOLD} 100%)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', opacity: showResult ? 1 : 0, transform: showResult ? 'translateY(0)' : 'translateY(24px)', transition: 'opacity 1s, transform 1s' }}>14,601</div>
-
-          <p className="font-body text-[1.125rem] font-normal mt-16 leading-[1.44]" style={{ color: INK3 }}>
-            40 years is a long journey. We thank all our partners, donors and community for helping us restore and renew lives.
-          </p>
-          <p className="font-body text-[1.125rem] font-normal mt-4 leading-[1.44] max-w-[640px] mx-auto" style={{ color: INK3 }}>
-            It is on the shoulders of all who came before us that we continue to stand tall as we strive towards a better tomorrow for all who came through our door! Join us today!
-          </p>
+    <div ref={ref} className="hm-next">
+      <div className="hm-next__inner">
+        <div className="hm-next__story">
+          <span className="hm-next__eyebrow">Beyond 40</span>
+          <div className="hm-next__sum" style={{ borderBottomColor: showLine ? '#d9dee6' : 'transparent' }}>
+            <strong>14,600</strong>
+            <em style={{ opacity: showPlus ? 1 : 0, transform: showPlus ? 'translateY(0)' : 'translateY(16px)' }}>+1</em>
+          </div>
+          <strong className="hm-next__result" style={{ opacity: showResult ? 1 : 0, transform: showResult ? 'translateY(0)' : 'translateY(24px)' }}>14,601</strong>
+          <div className="hm-next__copy">
+            <p>40 years is a long journey. We thank all our partners, donors and community for helping us restore and renew lives.</p>
+            <p>It is on the shoulders of all who came before us that we continue to stand tall as we strive towards a better tomorrow for all who came through our door! Join us today!</p>
+          </div>
         </div>
-
-        {/* CTAs */}
-        <div className="text-center mb-20">
-          <p className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>Be Part of the Next Chapter</p>
-          <div className="flex gap-4 justify-center flex-wrap">
+        <div className="hm-next__cta">
+          <span>Be Part of the Next Chapter</span>
+          <div>
             {[{ label: 'Donate', primary: true }, { label: 'Volunteer With Us', primary: false }, { label: 'Partner With THH', primary: false }].map(({ label, primary }) => (
               <button key={label} type="button" className={`thh-button ${primary ? 'thh-button--primary' : 'thh-button--secondary'}`} data-cursor="true">
                 {label} <i aria-hidden="true">↗</i>
@@ -1652,33 +1612,33 @@ function NextDay() {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   )
 }
 
-// ── Donor Impact Teaser ────────────────────────────────────────────────────
+// ── Donor Impact Teaser (Figma "Donor impact": 708px photo | copy at x 840, 519px) ──
 
 function DonorImpactTeaser({ onExplore }: { onExplore: () => void }) {
   const { ref, inView } = useInView(0.16)
   return (
-    <div ref={ref} className="home-donor-teaser">
-      <div className="home-donor-teaser__image">
+    <div ref={ref} className="hm-teaser">
+      <div className="hm-teaser__image">
         <img
-          src="https://images.unsplash.com/photo-1707286380312-ad352aa56cde?w=1200&h=1200&fit=crop&auto=format"
+          src="https://images.unsplash.com/photo-1707286380312-ad352aa56cde?w=1200&h=1800&fit=crop&auto=format"
           alt="A community walking forward together"
         />
       </div>
-      <div className="home-donor-teaser__content" style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)' }}>
-        <span>Impact made possible together</span>
-        <div>See what support<br /><em>makes possible.</em></div>
-        <p>Discover how donors and partners have supported THH’s work — and how funding is translated into programmes, outcomes and lasting impact.</p>
+      <div className="hm-teaser__copy" style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)' }}>
+        <div className="hm-heading">
+          <span className="hm-eyebrow">Impact brings lasting change</span>
+          <div className="hm-title">See what<br />support<br /><em>makes<br />possible.</em></div>
+        </div>
+        <p className="hm-lead">Discover how donors and partners have supported THH’s work — and how funding is translated into programmes, outcomes and lasting impact.</p>
         <button type="button" className="thh-button thh-button--primary" onClick={onExplore} data-cursor="true">
           Explore our impact <i aria-hidden="true">↗</i>
         </button>
       </div>
-      <div className="home-donor-teaser__number" aria-hidden="true">+1</div>
     </div>
   )
 }
