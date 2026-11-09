@@ -8,33 +8,33 @@ import thhBuilding from "./assets/thh-building.png"
 // THH EDITORIAL PALETTE
 //
 //  page bg       #ffffff   white
-//  section alt   #ecf2fa   very light blue
+//  section alt   #eaf0f8   very light blue
 //  card / cell   #ffffff   white
-//  grid gap      #ecf2fa   light blue divider
+//  grid gap      #eaf0f8   light blue divider
 //
-//  ink           #0c1115   dark charcoal
+//  ink           #282828   dark charcoal
 //  muted inks    rgba(12,17,21,…) at decreasing emphasis
 //
-//  border        #ecf2fa   hairline
-//  border-2      #315893   stronger
+//  border        #eaf0f8   hairline
+//  border-2      #31599e   stronger
 //
-//  brand         #315893   THH medium blue
-//  brand-light   rgba(49,88,147,0.10)  tinted wash
+//  brand         #31599e   THH medium blue
+//  brand-light   rgba(49, 89, 158, 0.10)  tinted wash
 // ─────────────────────────────────────────────────────────────────────────────
 
 const BG     = '#ffffff'
-const BG2    = '#ecf2fa'
+const BG2    = '#eaf0f8'
 const BG3    = '#ffffff'
-const GAP    = '#ecf2fa'
-const INK    = '#0c1115'
-const INK2   = 'rgba(12,17,21,0.88)'
-const INK3   = 'rgba(12,17,21,0.78)'
-const INK4   = 'rgba(12,17,21,0.68)'
-const INK5   = 'rgba(12,17,21,0.58)'
-const BORDER = '#ecf2fa'
-const BORD2  = '#315893'
-const GOLD   = '#315893'
-const GOLDA  = 'rgba(49,88,147,0.10)'
+const GAP    = '#eaf0f8'
+const INK    = '#282828'
+const INK2   = '#282828'
+const INK3   = '#282828'
+const INK4   = 'rgba(40, 40, 40, 0.68)'
+const INK5   = 'rgba(40, 40, 40, 0.58)'
+const BORDER = '#eaf0f8'
+const BORD2  = '#31599e'
+const GOLD   = '#31599e'
+const GOLDA  = 'rgba(49, 89, 158, 0.10)'
 
 // ── Hooks ─────────────────────────────────────────────────────────────────
 
@@ -1258,7 +1258,7 @@ function FeaturedStory() {
           </div>
           <div className="w-1/2 relative">
             <img src="https://images.unsplash.com/photo-1635214961752-160496fd3145?w=720&h=900&fit=crop&auto=format" alt="Past" className="w-full h-full object-cover" style={{ filter: 'grayscale(100%) contrast(1.0) brightness(0.45)' }} />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(12,17,21,0.7) 0%, transparent 40%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(40, 40, 40, 0.7) 0%, transparent 40%)' }} />
           </div>
         </div>
 
@@ -1335,7 +1335,7 @@ function LeadershipSection() {
           <div className="col-span-4 relative" style={{ opacity: inView ? 1 : 0, transition: 'opacity 1s 0.2s' }}>
             <div className="relative" style={{ aspectRatio: '3/4' }}>
               <img src={featured.img} alt={featured.name} className="w-full h-full object-cover" style={{ filter: 'grayscale(20%) contrast(1.0) brightness(0.92)' }} />
-              <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BG2} 0%, rgba(236,242,250,0.2) 40%, transparent 65%)` }} />
+              <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BG2} 0%, rgba(234, 240, 248, 0.2) 40%, transparent 65%)` }} />
               <div className="absolute bottom-6 left-6">
                 <p className="font-mono text-[0.75rem] leading-[1.67]" style={{ color: GOLD }}>{featured.role}</p>
                 <p className="font-display font-bold text-[1.125rem] mt-1 leading-[1.78]" style={{ color: INK }}>{featured.name}</p>
@@ -1361,7 +1361,7 @@ function LeadershipSection() {
             {others.map((person, i) => (
               <div key={i} className="relative overflow-hidden cursor-pointer" style={{ opacity: inView ? 1 : 0, transition: `opacity 0.8s ${0.4 + i * 0.1}s`, aspectRatio: '3/4' }} data-cursor="true" onMouseEnter={() => setHovIdx(i)} onMouseLeave={() => setHovIdx(null)}>
                 <img src={person.img} alt={person.name} className="w-full h-full object-cover" style={{ filter: hovIdx === i ? 'grayscale(15%) contrast(1.0) brightness(0.9)' : 'grayscale(100%) contrast(0.85) brightness(1.05)', transform: hovIdx === i ? 'scale(1.04)' : 'scale(1)', transition: 'filter 0.6s, transform 0.6s' }} />
-                <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BG2} 0%, rgba(236,242,250,0.25) 45%, transparent 70%)` }} />
+                <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${BG2} 0%, rgba(234, 240, 248, 0.25) 45%, transparent 70%)` }} />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="font-mono mb-1 leading-[1.67]" style={{ fontSize: '0.75rem', color: GOLD }}>{person.role}</p>
                   <p className="font-display font-bold text-[1.125rem] leading-[1.78]" style={{ color: INK }}>{person.name}</p>
@@ -1386,7 +1386,7 @@ function ImpactStat({ label, value, suffix = '', prefix = '' }: { label: string;
       <div className="font-display font-bold mb-2 leading-[1.33] tracking-[-0.0667em]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', color: INK }}>
         {prefix}{count.toLocaleString()}{suffix}
       </div>
-      <p className="font-mono leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: INK4 }}>{label}</p>
+      <p className="font-body leading-[1.57]" style={{ fontSize: '0.875rem', color: GOLD }}>{label}</p>
     </div>
   )
 }
@@ -1647,7 +1647,7 @@ function NextDay() {
           <p className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>Be Part of the Next Chapter</p>
           <div className="flex gap-4 justify-center flex-wrap">
             {[{ label: 'Donate', primary: true }, { label: 'Volunteer With Us', primary: false }, { label: 'Partner With THH', primary: false }].map(({ label, primary }) => (
-              <button key={label} className="font-mono text-[0.875rem] leading-[1.57] uppercase" data-cursor="true"
+              <button key={label} className="font-mono text-[0.875rem] leading-[1.57]" data-cursor="true"
                 style={{ padding: '1rem 2.5rem', background: primary ? GOLD : 'transparent', color: primary ? BG : INK, border: primary ? 'none' : `1px solid ${BORD2}`, transition: 'all 0.3s ease' }}
                 onMouseEnter={e => { const el = e.currentTarget; if (primary) el.style.background = INK; else { el.style.borderColor = GOLD; el.style.color = GOLD } }}
                 onMouseLeave={e => { const el = e.currentTarget; if (primary) el.style.background = GOLD; else { el.style.borderColor = BORD2; el.style.color = INK } }}
