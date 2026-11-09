@@ -415,6 +415,14 @@ function ChevronIcon() {
   )
 }
 
+function CrossIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" />
+    </svg>
+  )
+}
+
 // Remember the chosen start date in this browser only (never sent anywhere)
 const DRUG_FREE_STORAGE_KEY = 'thh-drug-free-start'
 const YEARS_PER_PAGE = 12
@@ -526,7 +534,8 @@ function DrugFreeDatePicker() {
   const calendarMonthIndex = calendarMonth.getMonth()
   const firstWeekday = new Date(calendarYear, calendarMonthIndex, 1).getDay()
   const daysInMonth = new Date(calendarYear, calendarMonthIndex + 1, 0).getDate()
-  const calendarDays = Array.from({ length: 42 }, (_, index) => {
+  // Only as many week rows as the month needs (Figma shows no empty trailing row)
+  const calendarDays = Array.from({ length: Math.ceil((firstWeekday + daysInMonth) / 7) * 7 }, (_, index) => {
     const day = index - firstWeekday + 1
     return day > 0 && day <= daysInMonth ? day : null
   })
@@ -571,7 +580,7 @@ function DrugFreeDatePicker() {
         <div className="drug-free-picker__view" aria-label="Edit date">
           <div className="drug-free-picker__view-header">
             <strong>Edit date</strong>
-            <button type="button" aria-label="Close date editor" data-cursor="true" onClick={closeEditor}>×</button>
+            <button type="button" aria-label="Close date editor" data-cursor="true" onClick={closeEditor}><CrossIcon /></button>
           </div>
           <p className="drug-free-picker__instruction">Select the date you began your drug-free journey.</p>
           <div className="drug-free-picker__field-list">
@@ -583,9 +592,9 @@ function DrugFreeDatePicker() {
             <div className={`drug-free-picker__inline-calendar${yearPanelOpen ? ' is-open' : ''}`} aria-hidden={!yearPanelOpen}>
               <div>
                 <div className="drug-free-picker__calendar-heading">
-                  <button type="button" aria-label="Earlier years" disabled={yearPage >= lastYearPage} tabIndex={yearPanelOpen ? 0 : -1} data-cursor="true" onClick={() => setYearPage((page) => page + 1)}>‹</button>
+                  <button type="button" aria-label="Earlier years" disabled={yearPage >= lastYearPage} tabIndex={yearPanelOpen ? 0 : -1} data-cursor="true" onClick={() => setYearPage((page) => page + 1)}><ChevronIcon /></button>
                   <strong>{selectedYear ?? `${pageYears[pageYears.length - 1]}–${pageYears[0]}`}</strong>
-                  <button type="button" aria-label="Later years" disabled={yearPage === 0} tabIndex={yearPanelOpen ? 0 : -1} data-cursor="true" onClick={() => setYearPage((page) => page - 1)}>›</button>
+                  <button type="button" aria-label="Later years" disabled={yearPage === 0} tabIndex={yearPanelOpen ? 0 : -1} data-cursor="true" onClick={() => setYearPage((page) => page - 1)}><ChevronIcon /></button>
                 </div>
                 <div className="drug-free-picker__year-grid">
                   {pageYears.map((year) => (
@@ -611,9 +620,9 @@ function DrugFreeDatePicker() {
             <div className={`drug-free-picker__inline-calendar${calendarOpen ? ' is-open' : ''}`} aria-hidden={!calendarOpen}>
               <div>
                 <div className="drug-free-picker__calendar-heading">
-                  <button type="button" aria-label="Previous month" disabled={previousMonthDisabled} tabIndex={calendarOpen ? 0 : -1} data-cursor="true" onClick={() => setCalendarMonth(new Date(calendarYear, calendarMonthIndex - 1, 1))}>‹</button>
+                  <button type="button" aria-label="Previous month" disabled={previousMonthDisabled} tabIndex={calendarOpen ? 0 : -1} data-cursor="true" onClick={() => setCalendarMonth(new Date(calendarYear, calendarMonthIndex - 1, 1))}><ChevronIcon /></button>
                   <strong>{new Intl.DateTimeFormat('en-SG', { month: 'long' }).format(calendarMonth)}</strong>
-                  <button type="button" aria-label="Next month" disabled={nextMonthDisabled} tabIndex={calendarOpen ? 0 : -1} data-cursor="true" onClick={() => setCalendarMonth(new Date(calendarYear, calendarMonthIndex + 1, 1))}>›</button>
+                  <button type="button" aria-label="Next month" disabled={nextMonthDisabled} tabIndex={calendarOpen ? 0 : -1} data-cursor="true" onClick={() => setCalendarMonth(new Date(calendarYear, calendarMonthIndex + 1, 1))}><ChevronIcon /></button>
                 </div>
                 <div className="drug-free-picker__weekdays" aria-hidden="true">
                   {CALENDAR_WEEKDAYS.map((day, index) => <span key={`${day}-${index}`}>{day}</span>)}
@@ -771,13 +780,13 @@ function NumberSection({ progress }: { progress: number }) {
               <button
                 key={i}
                 type="button"
-                className="numbers-float absolute z-10 p-0 border-0 bg-transparent text-left"
+                className={`numbers-float absolute z-10 p-0 border-0 bg-transparent text-left${isActive ? ' is-active' : ''}`}
                 style={{
                   '--number-x': `${item.x * 0.55}vw`,
                   '--number-y': `${item.y}%`,
                   '--number-size': item.fs,
                   '--number-mobile-size': item.mfs,
-                  opacity: numbersVisibility * (isActive ? 1 : item.op),
+                  opacity: numbersVisibility,
                   transform: `translateY(${(1 - numbersVisibility) * 24}px)`,
                   pointerEvents: numbersVisibility > 0.01 ? 'auto' : 'none',
                   transition: 'opacity 0.25s ease',
@@ -806,8 +815,9 @@ function NumberSection({ progress }: { progress: number }) {
                   else showProfile(i)
                 }}
               >
-                <span className="block font-mono mb-1 leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
-                <div className="font-display font-bold leading-none" style={{ fontSize: 'var(--number-size)', letterSpacing: '-0.04em', color: INK }}>{item.n.toLocaleString()}</div>
+                <span className="numbers-float__label">I AM</span>
+                <div className="numbers-float__number">{item.n.toLocaleString()}</div>
+                <span className="numbers-float__label">DAYS DRUG FREE</span>
               </button>
             )
           })}
@@ -1084,33 +1094,22 @@ function OvercomersWall() {
             const isLarge = layout.includes('col-span-2')
             const isHov   = hovId === person.id
             return (
-              <div key={person.id} className={`${layout} relative overflow-hidden cursor-pointer`} style={{ background: BG3, opacity: inView ? 1 : 0, transform: isHov ? 'scale(1.01)' : 'scale(1)', transition: `opacity 0.7s ${i * 0.035}s, transform 0.4s ease` }} data-cursor="true" onMouseEnter={() => setHovId(person.id)} onMouseLeave={() => setHovId(null)}>
-                <img
-                  src={person.img} alt={person.name}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  style={{
-                    filter: isHov ? 'grayscale(0%) contrast(1.0) brightness(0.95)' : 'grayscale(100%) contrast(0.85) brightness(1.05)',
-                    opacity: isHov ? 0.85 : 0.3,
-                    transform: isHov ? 'scale(1.06)' : 'scale(1)',
-                    transition: 'filter 0.7s ease, opacity 0.7s ease, transform 0.7s ease',
-                  }}
-                />
-                {/* Bottom gradient for text on hover */}
-                <div className="absolute inset-0" style={{ background: isHov ? 'linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0.75) 30%, transparent 60%)' : 'none', transition: 'background 0.5s' }} />
+              <div key={person.id} className={`${layout} story-card${isHov ? ' is-hovered' : ''}${isLarge ? ' story-card--large' : ''}`} style={{ opacity: inView ? 1 : 0, transition: `opacity 0.7s ${i * 0.035}s` }} data-cursor="true" onMouseEnter={() => setHovId(person.id)} onMouseLeave={() => setHovId(null)}>
+                {/* Figma "story card": photo at 20% on light blue by default, full photo + white fade on hover */}
+                <img src={person.img} alt={person.name} className="story-card__image" />
+                <div className="story-card__fade" aria-hidden="true" />
 
                 {/* Default: I AM / days / DAYS OF FREEDOM (fades out on hover) */}
-                <div className="absolute inset-0 flex flex-col items-start justify-center px-8" style={{ opacity: isHov ? 0 : 1, transition: 'opacity 0.4s ease' }}>
-                  <span className="font-mono block leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>I AM</span>
-                  <div className="font-display font-bold leading-[1.33]" style={{ fontSize: isLarge ? '4.5rem' : '2rem', letterSpacing: isLarge ? '-0.0667em' : '-0.025em', color: INK }}>
-                    {person.days.toLocaleString()}
-                  </div>
-                  <span className="font-mono block leading-[1.67] uppercase" style={{ fontSize: '0.75rem', color: GOLD }}>Days of freedom</span>
+                <div className="story-card__days">
+                  <span>I AM</span>
+                  <strong>{person.days.toLocaleString()}</strong>
+                  <span>DAYS OF FREEDOM</span>
                 </div>
 
                 {/* Hover: name + role over the clear photo */}
-                <div className="absolute bottom-0 left-0 right-0 p-6" style={{ opacity: isHov ? 1 : 0, transform: isHov ? 'translateY(0)' : 'translateY(10px)', transition: 'all 0.4s ease' }}>
-                  <p className="font-mono text-[0.875rem] leading-[1.57] uppercase" style={{ color: GOLD }}>{person.name}</p>
-                  <p className="font-body text-[1rem] mt-1 leading-[1.5]" style={{ color: INK }}>{person.role}</p>
+                <div className="story-card__person">
+                  <span>{person.name}</span>
+                  <p>{person.role}</p>
                 </div>
               </div>
             )
@@ -1647,11 +1646,9 @@ function NextDay() {
           <p className="font-mono text-[0.75rem] mb-10 leading-[1.67] uppercase" style={{ color: GOLD }}>Be Part of the Next Chapter</p>
           <div className="flex gap-4 justify-center flex-wrap">
             {[{ label: 'Donate', primary: true }, { label: 'Volunteer With Us', primary: false }, { label: 'Partner With THH', primary: false }].map(({ label, primary }) => (
-              <button key={label} className="font-mono text-[0.875rem] leading-[1.57]" data-cursor="true"
-                style={{ padding: '1rem 2.5rem', background: primary ? GOLD : 'transparent', color: primary ? BG : INK, border: primary ? 'none' : `1px solid ${BORD2}`, transition: 'all 0.3s ease' }}
-                onMouseEnter={e => { const el = e.currentTarget; if (primary) el.style.background = INK; else { el.style.borderColor = GOLD; el.style.color = GOLD } }}
-                onMouseLeave={e => { const el = e.currentTarget; if (primary) el.style.background = GOLD; else { el.style.borderColor = BORD2; el.style.color = INK } }}
-              >{label}</button>
+              <button key={label} type="button" className={`thh-button ${primary ? 'thh-button--primary' : 'thh-button--secondary'}`} data-cursor="true">
+                {label} <i aria-hidden="true">↗</i>
+              </button>
             ))}
           </div>
         </div>
@@ -1677,8 +1674,8 @@ function DonorImpactTeaser({ onExplore }: { onExplore: () => void }) {
         <span>Impact made possible together</span>
         <div>See what support<br /><em>makes possible.</em></div>
         <p>Discover how donors and partners have supported THH’s work — and how funding is translated into programmes, outcomes and lasting impact.</p>
-        <button type="button" onClick={onExplore} data-cursor="true">
-          Explore our impact <i>→</i>
+        <button type="button" className="thh-button thh-button--primary" onClick={onExplore} data-cursor="true">
+          Explore our impact <i aria-hidden="true">↗</i>
         </button>
       </div>
       <div className="home-donor-teaser__number" aria-hidden="true">+1</div>

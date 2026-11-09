@@ -5466,3 +5466,647 @@ em {
 .donor-button i {
   color: currentColor;
 }
+
+/* ==========================================================================
+   Figma interaction specs (DESIGN page, node 343:4427), read 2026-11-09:
+   "button interaction", "image interaction", "I am number interaction",
+   "date picker", "accordion", "year interaction". Values copied 1:1.
+   ========================================================================== */
+:root {
+  --thh-button-primary: #31599e;       /* Background/button-primary-default */
+  --thh-button-primary-hover: #294578; /* Background/button-primary-hover */
+  --thh-button-secondary-hover: #e9e9e9;
+  --thh-border-primary: #d9dee6;       /* border/primary */
+}
+
+/* --- Buttons: primary / secondary / text (Inter body 18/26, 11px 16px, gap 8, radius 0) --- */
+.thh-button,
+.donor-button,
+.donor-text-link,
+.home-header__external,
+.drug-free-picker__done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.6875rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  transform: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.thh-button:hover,
+.donor-button:hover {
+  transform: none;
+}
+
+.thh-button i,
+.donor-button i,
+.donor-text-link i,
+.home-header__external span {
+  display: inline-grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  place-items: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  line-height: 1;
+  color: currentColor;
+}
+
+/* Primary: #31599E -> #294578, white label */
+.thh-button.thh-button--primary,
+.donor-button.donor-button--primary,
+.drug-free-picker .drug-free-picker__done {
+  border-color: var(--thh-button-primary);
+  color: #ffffff;
+  background: var(--thh-button-primary);
+}
+
+.thh-button.thh-button--primary:hover,
+.thh-button.thh-button--primary:focus-visible,
+.donor-button.donor-button--primary:hover,
+.donor-button.donor-button--primary:focus-visible,
+.drug-free-picker .drug-free-picker__done:hover,
+.drug-free-picker .drug-free-picker__done:focus-visible {
+  border-color: var(--thh-button-primary-hover);
+  background: var(--thh-button-primary-hover);
+  outline: none;
+}
+
+/* Secondary: white with 2px #31599E border -> #E9E9E9, blue label */
+.thh-button.thh-button--secondary,
+.donor-button.donor-button--secondary,
+.home-header__external {
+  border-color: var(--thh-button-primary);
+  color: var(--thh-button-primary);
+  background: #ffffff;
+}
+
+.thh-button.thh-button--secondary:hover,
+.thh-button.thh-button--secondary:focus-visible,
+.donor-button.donor-button--secondary:hover,
+.donor-button.donor-button--secondary:focus-visible,
+.home-header__external:hover,
+.home-header__external:focus-visible {
+  color: var(--thh-button-primary);
+  background: var(--thh-button-secondary-hover);
+  outline: none;
+}
+
+/* Text button: no box, label + icon #31599E -> #294578 */
+.donor-text-link {
+  justify-content: flex-start;
+  border: 0;
+  color: var(--thh-button-primary);
+  background: transparent;
+}
+
+.donor-text-link i,
+.donor-finale__links i {
+  color: currentColor;
+}
+
+.donor-text-link:hover,
+.donor-text-link:focus-visible {
+  color: var(--thh-button-primary-hover);
+  outline: none;
+}
+
+.home-donor-teaser__content button.thh-button {
+  margin-top: 2rem;
+  padding: 0.6875rem 1rem;
+  border: 2px solid var(--thh-button-primary);
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  text-transform: none;
+}
+
+.home-donor-teaser__content button.thh-button i {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: currentColor;
+}
+
+/* --- Story card (image interaction): bg #EAF0F8, photo 20% -> 100% + white fade --- */
+.story-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #eaf0f8;
+}
+
+.story-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  transition: opacity 0.4s ease;
+}
+
+.story-card__fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.story-card__days {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.story-card__days > * {
+  width: max-content;
+  min-width: 9.3rem;
+}
+
+.story-card__days span,
+.story-card__person span {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #31599e;
+}
+
+.story-card__days strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 4.5rem;
+  letter-spacing: -1.6px;
+  color: #282828;
+}
+
+.story-card--large .story-card__days strong {
+  font-size: 4.5rem;
+  line-height: 5.5rem;
+}
+
+.story-card__person {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.story-card__person p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  color: #282828;
+}
+
+.story-card.is-hovered .story-card__image,
+.story-card.is-hovered .story-card__fade,
+.story-card.is-hovered .story-card__person {
+  opacity: 1;
+}
+
+.story-card.is-hovered .story-card__days {
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .story-card__days strong,
+  .story-card--large .story-card__days strong {
+    font-size: 2.25rem;
+    line-height: 3rem;
+  }
+}
+
+/* --- Floating I AM numbers: #EAF0F8 by default, #282828 on hover / open --- */
+.numbers-float {
+  color: #eaf0f8;
+  transition: color 0.25s ease, opacity 0.25s ease !important;
+}
+
+.numbers-float:hover,
+.numbers-float:focus-visible,
+.numbers-float.is-active {
+  color: #282828;
+  outline: none;
+}
+
+.numbers-float__label {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.numbers-float__number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: var(--number-size);
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.0286em;
+}
+
+/* --- Accordion (Donor 07): number Inter 24/32 blue, title Georgia 32/48, bold when open --- */
+.donor-trust__points > button {
+  grid-template-columns: 2rem 1fr 1.25rem;
+  column-gap: 2.5rem;
+  align-items: start;
+  padding: 3rem 0;
+  border-bottom: 0;
+}
+
+.donor-trust__points > button > span {
+  padding-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  color: #31599e;
+}
+
+.donor-trust__points > button > strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: -0.8px;
+  color: #282828;
+}
+
+.donor-trust__points > button.is-open > strong {
+  font-weight: 700;
+}
+
+.donor-trust__points > button > i {
+  padding-top: 1rem;
+  color: #31599e;
+}
+
+.donor-trust__points > button > p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  color: rgba(12, 17, 21, 0.78);
+}
+
+.donor-trust__points > button.is-open > p {
+  max-height: 12rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .donor-trust__points > button {
+    column-gap: 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .donor-trust__points > button > strong {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  .donor-trust__points > button > span {
+    padding-top: 0.25rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* --- Timeline years: Georgia 18/32 #31599E; hover + selected = 8px dash, gap 12, bold #294578 --- */
+.history-timeline__years button {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: 3rem;
+  padding: 0.5rem;
+  color: #31599e;
+  transform: none;
+  transition: color 0.2s ease, padding 0.2s ease;
+}
+
+.history-timeline__years button > i,
+.history-timeline__years button.is-active > i {
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-right: 0;
+  border: 0;
+  border-radius: 0;
+  background: currentColor;
+  transform: none;
+  transition: width 0.2s ease, margin 0.2s ease;
+}
+
+.history-timeline__years button > strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.history-timeline__years button:hover,
+.history-timeline__years button:focus-visible,
+.history-timeline__years button.is-active {
+  padding-left: 0;
+  color: #294578;
+  transform: none;
+}
+
+.history-timeline__years button:hover > i,
+.history-timeline__years button:focus-visible > i,
+.history-timeline__years button.is-active > i {
+  width: 0.5rem;
+  margin-right: 0.75rem;
+}
+
+.history-timeline__years button:hover > strong,
+.history-timeline__years button:focus-visible > strong,
+.history-timeline__years button.is-active > strong {
+  font-weight: 700;
+}
+
+/* --- Date picker (Figma "date picker", desktop 378px / mobile 335px) --- */
+.drug-free-picker {
+  width: 23.625rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--thh-border-primary);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+}
+
+.drug-free-picker[data-view="summary"] {
+  width: auto;
+  padding: 1rem 1.5rem;
+}
+
+.drug-free-picker__view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.drug-free-picker__pill {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drug-free-picker__pill > span {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #282828;
+}
+
+.drug-free-picker__pill > strong {
+  font-size: 2rem;
+  line-height: 3rem;
+  color: #31599e;
+}
+
+.drug-free-picker__link {
+  gap: 0.5rem;
+  padding: 0.6875rem 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+  color: #31599e;
+  transition: color 0.2s ease;
+}
+
+.drug-free-picker__link:hover,
+.drug-free-picker__link:focus-visible {
+  color: var(--thh-button-primary-hover);
+  text-decoration: none;
+}
+
+.drug-free-picker__link svg,
+.drug-free-picker__field-list svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.drug-free-picker__since {
+  align-self: flex-start;
+  margin: -0.5rem 0 0;
+  padding-left: 0;
+}
+
+.drug-free-picker__view-header {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--thh-border-primary);
+}
+
+.drug-free-picker__view-header strong {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  color: #282828;
+}
+
+.drug-free-picker__view-header button {
+  display: grid;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  place-items: center;
+  color: #31599e;
+}
+
+.drug-free-picker__view-header button:hover,
+.drug-free-picker__view-header button:focus-visible {
+  color: var(--thh-button-primary-hover);
+}
+
+.drug-free-picker__view > .drug-free-picker__instruction,
+.drug-free-picker__view > .drug-free-picker__edit-note {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #282828;
+}
+
+.drug-free-picker__field-list > button {
+  gap: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
+  border: 0;
+  background: #eaf0f8;
+}
+
+.drug-free-picker__field-list > button:hover,
+.drug-free-picker__field-list > button:focus-visible {
+  border: 0;
+  background: #eaf0f8;
+}
+
+.drug-free-picker__field-list > button span {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  text-transform: none;
+  color: #31599e;
+}
+
+.drug-free-picker__field-list > button strong {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #282828;
+}
+
+.drug-free-picker__field-list > button svg {
+  color: #31599e;
+  transition: transform 0.2s ease;
+}
+
+.drug-free-picker__field-list > button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.drug-free-picker__field-list > .drug-free-picker__inline-calendar + button,
+.drug-free-picker__inline-calendar + button {
+  margin-top: 1rem;
+}
+
+.drug-free-picker__inline-calendar {
+  background: #eaf0f8;
+}
+
+.drug-free-picker__inline-calendar.is-open {
+  margin-top: 1rem;
+}
+
+.drug-free-picker__inline-calendar.is-open > div {
+  padding: 1rem 1rem 1.5rem;
+}
+
+.drug-free-picker__calendar-heading {
+  grid-template-columns: 1.75rem 1fr 1.75rem;
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+
+.drug-free-picker__calendar-heading > strong {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: #282828;
+}
+
+.drug-free-picker__calendar-heading button {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #31599e;
+}
+
+.drug-free-picker__calendar-heading button:first-child svg {
+  transform: rotate(90deg);
+}
+
+.drug-free-picker__calendar-heading button:last-child svg {
+  transform: rotate(-90deg);
+}
+
+.drug-free-picker__calendar-heading button:hover:not(:disabled),
+.drug-free-picker__calendar-heading button:focus-visible {
+  color: var(--thh-button-primary-hover);
+  background: transparent;
+}
+
+.drug-free-picker__weekdays,
+.drug-free-picker__calendar-grid,
+.drug-free-picker__year-grid {
+  padding: 0;
+  row-gap: 0.5rem;
+}
+
+.drug-free-picker__weekdays span,
+.drug-free-picker__calendar-grid button,
+.drug-free-picker__year-grid button {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #282828;
+}
+
+.drug-free-picker__calendar-grid button,
+.drug-free-picker__calendar-grid > span {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.drug-free-picker__year-grid button {
+  height: 1.75rem;
+  justify-self: center;
+  padding: 0.125rem 0.25rem;
+}
+
+.drug-free-picker__calendar-grid button:hover:not(:disabled),
+.drug-free-picker__calendar-grid button:focus-visible,
+.drug-free-picker__calendar-grid button.is-selected,
+.drug-free-picker__year-grid button:hover,
+.drug-free-picker__year-grid button:focus-visible,
+.drug-free-picker__year-grid button.is-selected {
+  color: #ffffff;
+  background: #31599e;
+  outline: none;
+}
+
+.drug-free-picker .drug-free-picker__done {
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  /* Desktop: one line "I AM [Select date] DAYS DRUG FREE", left aligned */
+  .drug-free-picker__pill {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile: 335px card, statement centred over two lines */
+  .drug-free-picker {
+    width: auto;
+  }
+
+  .drug-free-picker[data-view="summary"] {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .drug-free-picker[data-view="summary"] .drug-free-picker__view {
+    align-items: center;
+    text-align: center;
+  }
+
+  .drug-free-picker__pill {
+    justify-content: center;
+  }
+
+  .drug-free-picker__since {
+    align-self: center;
+  }
+}
