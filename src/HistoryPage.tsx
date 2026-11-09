@@ -1,12 +1,7 @@
 import { useEffect, useRef, useState } from "react"
+import "./timeline.css"
 
 const YEARS = ["1987", "1988", "1990", "1995", "1997", "2006", "2010", "2019", "2020", "2024", "2025", "2027"]
-
-const DECADE_NOTES: Record<string, string> = {
-  "1990": "The first years give way to a new decade.",
-  "2006": "A new century. The same belief in change.",
-  "2020": "The story moves closer to the present.",
-}
 
 const MILESTONES = [
   {
@@ -194,8 +189,8 @@ function HistoryIntro() {
         <div className="history-intro__center">
           <div className="history-kicker">From 1987 to today</div>
           <div className="history-intro__title">
-            <span style={{ transform: `translateX(${-progress * 6}vw)` }}>40 YEARS.</span>
-            <span className="history-intro__outline" style={{ transform: `translateX(${progress * 6}vw)` }}>ONE JOURNEY.</span>
+            <span>40 YEARS.</span>
+            <span className="history-intro__outline">ONE JOURNEY.</span>
           </div>
           <p className="history-intro__copy">
             Not simply a sequence of dates, but years of people, change, growth, challenge and lives transformed.
@@ -214,73 +209,67 @@ function HistoryIntro() {
   )
 }
 
+// Figma "timeline" year panels (1440 x 1080): white / light-blue alternate, photo on the right
+// except 2006 and 2024 (photo left); 1997 and 2027 are grey checker panels without a photo.
+const PANEL_STYLE: Record<string, { tone: "white" | "light" | "dark"; reverse?: boolean }> = {
+  "1987": { tone: "white" },
+  "1988": { tone: "light" },
+  "1990": { tone: "white" },
+  "1995": { tone: "light" },
+  "1997": { tone: "dark" },
+  "2006": { tone: "white", reverse: true },
+  "2010": { tone: "white" },
+  "2019": { tone: "light" },
+  "2020": { tone: "light" },
+  "2024": { tone: "white", reverse: true },
+  "2025": { tone: "light" },
+  "2027": { tone: "dark" },
+}
+
 function MilestoneScene({
   milestone,
-  index,
   revealProgress,
   continueDirection,
-  onRevealTransitionEnd,
 }: {
   milestone: (typeof MILESTONES)[number]
   index: number
   revealProgress: number
   continueDirection: "forward" | "backward" | null
-  onRevealTransitionEnd?: () => void
 }) {
-  const decadeNote = DECADE_NOTES[milestone.year]
+  const style = PANEL_STYLE[milestone.year] ?? { tone: "white" }
   const verticalInset = (1 - revealProgress) * 46
   const horizontalInset = (1 - revealProgress) * 10
 
   return (
     <section
-      className={`history-timeline__milestone history-timeline__milestone--${milestone.layout} is-active`}
+      className={`tl-panel tl-panel--${style.tone}${style.reverse ? " tl-panel--reverse" : ""}`}
       data-year={milestone.year}
       aria-labelledby={`journey-${milestone.year}-title`}
     >
-      <div className="history-timeline__milestone-stage">
-        <div className="history-timeline__year" aria-hidden="true">{milestone.year}</div>
-        <div
-          className="history-timeline__image"
-          style={{ clipPath: `inset(${verticalInset}% ${horizontalInset}%)` }}
-          onTransitionEnd={(event) => {
-            if (event.currentTarget === event.target && event.propertyName === "clip-path") {
-              onRevealTransitionEnd?.()
-            }
-          }}
-        >
-          <img
-            src={milestone.image}
-            alt="Documentary-style community moment"
-            style={{
-              filter: `grayscale(${Math.max(0, 100 - index * 11)}%) sepia(${Math.max(0, 24 - index * 2.5)}%)`,
-            }}
-          />
-          <div className="history-milestone__image-wash" />
-          <span className="history-milestone__caption">Documentary image / placeholder</span>
+      <div className="tl-panel__stage">
+        <div className="tl-panel__year" aria-hidden="true">{milestone.year}</div>
+        <div className="tl-panel__content">
+          <div className="tl-panel__copy">
+            <div className="tl-panel__heading">
+              <span>{milestone.eyebrow}</span>
+              <div id={`journey-${milestone.year}-title`}>{milestone.title}</div>
+            </div>
+            <p>{milestone.copy}</p>
+          </div>
+          {style.tone !== "dark" && (
+            <div className="tl-panel__image" style={{ clipPath: `inset(${verticalInset}% ${horizontalInset}%)` }}>
+              <img src={milestone.image} alt="Documentary-style community moment" />
+              <span>Residential care, structured programmes and a stable environment for rehabilitation.</span>
+            </div>
+          )}
         </div>
-        <div className="history-timeline__copy">
-          <span>{milestone.eyebrow}</span>
-          <div className="history-milestone__heading" id={`journey-${milestone.year}-title`}>{milestone.title}</div>
-          <p>{milestone.copy}</p>
-          <div className="history-timeline__index">
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <i />
-            <span>{YEARS.length}</span>
-          </div>
-        </div>
-        {decadeNote && (
-          <div className="history-timeline__decade-note">
-            <span>A threshold in time</span>
-            <p>{decadeNote}</p>
-          </div>
-        )}
-        {continueDirection && (
-          <div className="history-timeline__continue-cue" aria-live="polite">
-            <span>{continueDirection === "forward" ? "Scroll to explore the next chapter" : "Scroll to revisit the previous chapter"}</span>
-            <i aria-hidden="true">{continueDirection === "forward" ? "↓" : "↑"}</i>
-          </div>
-        )}
       </div>
+      {continueDirection && (
+        <div className="history-timeline__continue-cue" aria-live="polite">
+          <span>{continueDirection === "forward" ? "Scroll to explore the next chapter" : "Scroll to revisit the previous chapter"}</span>
+          <i aria-hidden="true">{continueDirection === "forward" ? "↓" : "↑"}</i>
+        </div>
+      )}
     </section>
   )
 }
@@ -288,9 +277,9 @@ function MilestoneScene({
 function HistoryFinale() {
   const ref = useRef<HTMLDivElement>(null)
   const progress = useSectionProgress(ref)
-  const first = Math.max(0, 1 - progress * 3.5)
-  const second = Math.min(1, Math.max(0, (progress - 0.2) / 0.2)) * Math.max(0, 1 - Math.max(0, progress - 0.58) * 6)
-  const third = Math.min(1, Math.max(0, (progress - 0.58) / 0.18))
+  const first = Math.max(0, 1 - progress / 0.25)
+  const second = Math.min(1, Math.max(0, (progress - 0.3) / 0.12)) * Math.max(0, 1 - Math.max(0, progress - 0.55) / 0.07)
+  const third = Math.min(1, Math.max(0, (progress - 0.64) / 0.14))
 
   return (
     <div className="history-finale" ref={ref}>

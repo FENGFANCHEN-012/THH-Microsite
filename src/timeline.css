@@ -1,0 +1,366 @@
+/* Timeline page — values read from Figma "Timeline" desktop frame (1440 x 1080 panels).
+   Hero 959:16365, start 959:16370, year panels in 959:16376. */
+
+/* Figma hero is a single 1080px screen: no long sticky hold */
+.history-page .history-intro {
+  height: 100vh;
+}
+
+/* ---------- hero: eyebrow 24/32, 144/200 title left-aligned in a centred 1171px block ---------- */
+.history-page .history-intro__topline,
+.history-page .history-intro__count,
+.history-page .history-scroll-cue,
+.history-page .history-grain {
+  display: none;
+}
+
+.history-page .history-intro__center {
+  width: min(73.1875rem, calc(100vw - 2rem));
+  max-width: none;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.history-page .history-kicker {
+  margin-bottom: 5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #31599e;
+}
+
+.history-page .history-intro__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 700;
+  line-height: 1.39;
+  letter-spacing: -2.4px;
+  text-align: left;
+}
+
+.history-page .history-intro__title span {
+  display: block;
+  color: #282828;
+  -webkit-text-stroke: 0;
+}
+
+.history-page .history-intro__title .history-intro__outline {
+  color: #31599e;
+}
+
+.history-page .history-intro__copy {
+  max-width: 52.8125rem;
+  margin: 5rem auto 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: left;
+  color: #282828;
+}
+
+/* ---------- start: light blue, block at top 413 / x 80; 72px title, 80px gap, bordered aside ---------- */
+.history-page .history-opening-note {
+  display: flex;
+  min-height: 72.625rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5rem;
+  padding: 25.8125rem 5rem 7.5rem;
+  background: #eaf0f8;
+}
+
+.history-page .history-opening-note span {
+  max-width: 80rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 6rem;
+  letter-spacing: -4.8px;
+  text-transform: none;
+  color: #282828;
+}
+
+.history-page .history-opening-note p {
+  align-self: flex-end;
+  width: 42.4375rem;
+  max-width: 100%;
+  margin: 0 calc((100% - 80rem) / 2) 0 0;
+  padding: 0 1.25rem;
+  border-left: 1px solid #d9dee6;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #282828;
+}
+
+/* ---------- year index (Figma "Timeline indicator": x 80, top 80, 85px wide) ---------- */
+.history-page .history-timeline__nav {
+  top: 6.5rem; /* Figma 80px, plus room for the fixed 80px header */
+  left: max(5rem, calc((100vw - 90rem) / 2 + 5rem));
+  width: 5.3125rem;
+  transform: none;
+}
+
+.history-page .history-timeline__nav::before {
+  display: none;
+}
+
+.history-page .history-timeline__nav-heading span,
+.history-page .history-timeline__nav-count {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  text-transform: none;
+  color: #282828;
+}
+
+.history-page .history-timeline__nav-heading strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  letter-spacing: -0.8px;
+  color: #282828;
+}
+
+/* ---------- year panel ---------- */
+.tl-panel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.tl-panel--light {
+  background: #eaf0f8;
+}
+
+.tl-panel--dark {
+  background-color: #a3a3a3;
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.12) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.12) 75%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.12) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.12) 75%);
+  background-position: 0 0, 2.75rem 2.75rem;
+  background-size: 5.5rem 5.5rem;
+}
+
+.tl-panel__stage {
+  position: relative;
+  width: 100%;
+  max-width: 90rem;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* desktop/display/xl/bold 312/400, decorative */
+.tl-panel__year {
+  position: absolute;
+  top: 3.17rem;
+  left: 11.8125rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(10rem, 21.7vw, 19.5rem);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -2.4px;
+  color: #eaf0f8;
+  pointer-events: none;
+}
+
+.tl-panel--light .tl-panel__year,
+.tl-panel--dark .tl-panel__year {
+  color: #ffffff;
+}
+
+/* content frame: x 189, top 171, 1168 wide; 652px copy (bottom-aligned) + 24px + 492 x 738 photo */
+.tl-panel__content {
+  position: absolute;
+  top: 10.6875rem;
+  left: 11.8125rem;
+  right: max(5rem, calc(100% - 11.8125rem - 73rem));
+  display: flex;
+  height: min(46.125rem, calc(100% - 12rem));
+  gap: 1.5rem;
+}
+
+.tl-panel--reverse .tl-panel__content {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.tl-panel__copy {
+  display: flex;
+  flex: 0 1 40.75rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.tl-panel__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.tl-panel__heading span {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #31599e;
+}
+
+.tl-panel__heading div {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -4.8px;
+  color: #282828;
+}
+
+.tl-panel__copy p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #282828;
+}
+
+
+.tl-panel__image {
+  position: relative;
+  flex: 0 0 30.75rem;
+  overflow: hidden;
+  background: #5663d9;
+  transition: clip-path 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tl-panel__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tl-panel__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.tl-panel__image span {
+  position: absolute;
+  z-index: 1;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #282828;
+}
+
+/* ---------- smaller screens ---------- */
+@media (max-width: 1100px) {
+  .tl-panel__year {
+    left: 9rem;
+  }
+
+  .tl-panel__content {
+    left: 9rem;
+    right: 2rem;
+  }
+
+  .tl-panel__image {
+    flex-basis: 40%;
+  }
+}
+
+@media (max-width: 767px) {
+  .history-page .history-kicker {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .history-page .history-intro__copy {
+    margin-top: 2.5rem;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  .history-page .history-opening-note {
+    min-height: 0;
+    gap: 2.5rem;
+    padding: 6rem 1rem;
+  }
+
+  .history-page .history-opening-note span {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    letter-spacing: -1.2px;
+  }
+
+  .history-page .history-opening-note p {
+    width: auto;
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  .tl-panel__year {
+    top: 6rem;
+    left: 1rem;
+    font-size: 7rem;
+  }
+
+  .tl-panel__content,
+  .tl-panel--reverse .tl-panel__content {
+    top: 9rem;
+    right: 1rem;
+    bottom: 1.5rem;
+    left: 1rem;
+    height: auto;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .tl-panel__image {
+    flex: 1 1 auto;
+    min-height: 10rem;
+  }
+
+  .tl-panel__copy {
+    flex: 0 0 auto;
+    gap: 0.75rem;
+  }
+
+  .tl-panel__heading {
+    gap: 0.5rem;
+  }
+
+  .tl-panel__heading span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .tl-panel__heading div {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -1px;
+  }
+
+  .tl-panel__copy p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
