@@ -82,7 +82,7 @@
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 6rem;
-  letter-spacing: -4.8px;
+  letter-spacing: -0.0667em; /* Figma -4.8px at 72px, scales with size */
   text-transform: none;
   color: #282828;
 }
@@ -220,7 +220,7 @@
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 700;
   line-height: 1.33;
-  letter-spacing: -4.8px;
+  letter-spacing: -0.0667em; /* Figma -4.8px at 72px, scales with size */
   color: #282828;
 }
 
@@ -362,5 +362,64 @@
   .tl-panel__copy p {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+}
+
+/* ---------- phone fixes (390px review, 2026-11-10) ----------
+   The desktop year index is an 85px column; on a phone it becomes one row
+   under the 64px header ("Our journey 1987" + a swipeable year strip), and the
+   panel content starts below it so nothing overlaps. */
+@media (max-width: 767px) {
+  .history-page .history-intro__copy {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .history-page .history-timeline__nav {
+    top: 4.75rem;
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+  }
+
+  .history-page .history-timeline__nav-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .history-page .history-timeline__nav-heading strong {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.5px;
+  }
+
+  .tl-panel__year {
+    top: 9.5rem;
+    font-size: 6rem;
+  }
+
+  .tl-panel__content,
+  .tl-panel--reverse .tl-panel__content {
+    top: 11rem;
+    bottom: 4rem;
+  }
+
+  .history-page .history-timeline__continue-cue {
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  /* no-photo panels (1997, 2027): copy drops to the bottom, clear of the big year */
+  .tl-panel--dark .tl-panel__content {
+    justify-content: flex-start;
   }
 }

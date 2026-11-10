@@ -92,7 +92,7 @@
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 6rem;
-  letter-spacing: -4.8px;
+  letter-spacing: -0.0667em; /* Figma -4.8px at 72px, scales with size */
   color: var(--dn-ink);
 }
 
@@ -1051,5 +1051,32 @@
 @media (prefers-reduced-motion: reduce) {
   .dn-marquee__track {
     animation: none;
+  }
+}
+
+/* ---------- phone fixes (390px review, 2026-11-10) ---------- */
+@media (max-width: 1279px) {
+  /* the 156px offset only lines "General Fund" up with the desktop divider */
+  .dn-fund-map__source {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* "catalyst" was being hyphenated at phone width; only break long words if they must */
+  .dn-title--narrow {
+    hyphens: manual;
+  }
+
+  .dn-fund-map {
+    gap: 1.5rem;
+  }
+
+  .dn-fund-map__list button {
+    padding-left: 0;
+  }
+
+  .dn-fund-map__list span {
+    flex-basis: 1.5rem;
   }
 }

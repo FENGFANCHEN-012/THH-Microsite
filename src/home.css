@@ -177,7 +177,7 @@
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 6rem;
-  letter-spacing: -4.8px;
+  letter-spacing: -0.0667em; /* Figma -4.8px at 72px, scales with size */
   color: #282828;
 }
 
@@ -423,7 +423,7 @@
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 6rem;
-  letter-spacing: -4.8px;
+  letter-spacing: -0.0667em; /* Figma -4.8px at 72px, scales with size */
   color: #31599e;
 }
 
@@ -492,7 +492,7 @@
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 6rem;
-  letter-spacing: -4.8px;
+  letter-spacing: -0.0667em; /* Figma -4.8px at 72px, scales with size */
   color: #282828;
 }
 
@@ -844,4 +844,102 @@
 .hm-wall .story-card--large .story-card__days span {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+/* ---------- phone fixes (390px review, 2026-11-10) ---------- */
+@media (max-width: 767px) {
+  /* header: compact external link, keep the menu button square */
+  .home-header .home-header__inner {
+    gap: 0.5rem;
+  }
+
+  .home-header .home-header__external {
+    margin-left: auto;
+    padding: 0.375rem 0.625rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .home-header .home-header__menu-toggle {
+    flex: 0 0 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* floating I AM numbers: smaller labels so neighbours stop colliding */
+  .numbers-float .numbers-float__label {
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+  }
+
+  /* featured story: phase dots sit in their own gutter, clear of the text */
+  .hm-story__text {
+    padding-right: 2.5rem;
+  }
+
+  .hm-story__quote {
+    padding: 0 2.5rem 0 1rem;
+  }
+
+  .hm-story__dots {
+    right: 0.75rem;
+  }
+
+  /* "2,456 AND COUNTING." must fit 390px with a 16px gutter */
+  .hm-story__panel--count > div {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .hm-story__panel--count span {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  .hm-story__panel--count strong {
+    font-size: 5rem;
+    letter-spacing: -1.5px;
+  }
+
+  .hm-story__panel--count em {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .hm-story__panel--count p {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* no room for the wordmark beside the logo, link and menu button */
+  .home-header .home-header__identity {
+    display: none;
+  }
+}
+
+/* ---------- tablet fixes (768px review, 2026-11-10) ---------- */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hm-title {
+    font-size: 3.5rem;
+    line-height: 4.25rem;
+  }
+
+  .hm-lead,
+  .hm-story__text p,
+  .hm-next__copy p {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* title and lead stack instead of squeezing "40 lives." into a narrow column */
+  .hm-wall__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
 }

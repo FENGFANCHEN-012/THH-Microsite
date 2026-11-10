@@ -952,7 +952,7 @@ function MissionVisionSection() {
           </div>
         </div>
 
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
+        <div className="hm-story__dots absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
           {[0, 1, 2].map(i => (
             <div key={i} className="rounded-full transition-all duration-500" style={{ width: dot === i ? '20px' : '4px', height: '4px', background: dot === i ? GOLD : BORDER }} />
           ))}
@@ -1453,7 +1453,7 @@ function FeaturedStory() {
         </div>
 
         {/* Phase dots */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
+        <div className="hm-story__dots absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
           {[0, 1, 2, 3, 4].map(i => (
             <div key={i} className="rounded-full transition-all duration-500" style={{ width: phase === i ? '20px' : '4px', height: '4px', background: phase === i ? GOLD : BORDER }} />
           ))}
