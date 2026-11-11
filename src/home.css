@@ -943,3 +943,79 @@
     gap: 2rem;
   }
 }
+
+/* ---------- hero slogan (I AM 40 -> 14,600), moved out of inline styles 2026-11-11 ---------- */
+.hm-hero__label {
+  font-size: clamp(1rem, 1.67vw, 1.5rem);
+  line-height: 2rem;
+}
+.hm-hero__label--top { margin-bottom: 2.5rem; }
+.hm-hero__label--bottom { margin-top: 2.5rem; }
+.hm-hero__num {
+  font-size: clamp(6rem, 14.45vw, 13rem);
+  line-height: 1;
+  letter-spacing: -2.4px;
+}
+.hm-hero__sub {
+  max-width: 38.5rem;
+  margin-top: 7.5rem;
+}
+.hm-hero__sub-text {
+  font-size: clamp(1.5rem, 2.22vw, 2rem);
+  line-height: 1.5;
+  letter-spacing: -0.8px;
+}
+
+@media (max-width: 767px) {
+  /* 96px minimum made "14,600" fill (or overflow) a phone; scale with the screen instead */
+  .hm-hero__label {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .hm-hero__label--top { margin-bottom: 1rem; }
+  .hm-hero__label--bottom { margin-top: 1rem; }
+  .hm-hero__num {
+    font-size: clamp(3.5rem, 19vw, 6rem);
+    letter-spacing: -0.02em;
+  }
+  .hm-hero__sub {
+    margin-top: 2rem;
+    padding: 0 var(--phone-gutter);
+  }
+  .hm-hero__sub-text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.2px;
+  }
+}
+
+@media (max-width: 359px) {
+  /* 320px phones: the full external link no longer fits beside the logo and menu */
+  .home-header .home-header__external {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .home-header .home-header__external span {
+    display: none;
+  }
+
+  .home-header .home-header__inner {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 700px) {
+  /* short phones: keep the hero subtitle clear of the floating "I AM / Select date" bar */
+  .hm-hero__label--top { margin-bottom: 0.5rem; }
+  .hm-hero__label--bottom { margin-top: 0.5rem; }
+  .hm-hero__num { font-size: clamp(3.5rem, 17vw, 5rem); }
+  .hm-hero__sub { margin-top: 1rem; }
+  /* the bar floats 8rem up on phones; on short screens that lands on the slogan, so drop it to the bottom edge */
+  body .drug-free-picker { bottom: 1rem; }
+  .hm-hero__sub-text {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}

@@ -695,17 +695,17 @@ function HeroSection({ progress }: { progress: number }) {
 
         {/* Main type */}
         <div className="relative z-30 text-center select-none pointer-events-none" style={{ opacity: mainOpacity }}>
-          <p className="font-mono mb-10 uppercase" style={{ color: centralColor, fontSize: 'clamp(1rem, 1.67vw, 1.5rem)', lineHeight: '2rem', opacity: 1 - morphP * 0.4 }}>
+          <p className="hm-hero__label hm-hero__label--top font-mono uppercase" style={{ color: centralColor, opacity: 1 - morphP * 0.4 }}>
             I AM
           </p>
-          <div className="font-display font-bold" style={{ fontSize: 'clamp(6rem, 14.45vw, 13rem)', lineHeight: 1, letterSpacing: '-2.4px', color: centralColor }}>
+          <div className="hm-hero__num font-display font-bold" style={{ color: centralColor }}>
             {displayNum}
           </div>
-          <p className="font-mono mt-10 uppercase" style={{ color: BG2, fontSize: 'clamp(1rem, 1.67vw, 1.5rem)', lineHeight: '2rem', opacity: daysP > 0.05 ? daysP * (1 - backgroundEase) : Math.max(0, 1 - morphP * 3), transform: `translateY(${(1 - daysP) * 8}px)` }}>
+          <p className="hm-hero__label hm-hero__label--bottom font-mono uppercase" style={{ color: BG2, opacity: daysP > 0.05 ? daysP * (1 - backgroundEase) : Math.max(0, 1 - morphP * 3), transform: `translateY(${(1 - daysP) * 8}px)` }}>
             {daysP > 0.05 ? 'Days' : 'Years of restoring lives'}
           </p>
-          <div className="mt-30 mx-auto text-center" style={{ maxWidth: '38.5rem', opacity: subtitleP * (1 - backgroundEase), transform: `translateY(${(1 - subtitleP) * 24}px)` }}>
-            <p className="font-display font-bold" style={{ color: BG, fontSize: 'clamp(1.5rem, 2.22vw, 2rem)', lineHeight: 1.5, letterSpacing: '-0.8px' }}>
+          <div className="hm-hero__sub mx-auto text-center" style={{ opacity: subtitleP * (1 - backgroundEase), transform: `translateY(${(1 - subtitleP) * 24}px)` }}>
+            <p className="hm-hero__sub-text font-display font-bold" style={{ color: BG }}>
               40 years of restoration.<br />14,600 days of lives being transformed.
             </p>
           </div>
