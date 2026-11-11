@@ -1019,3 +1019,38 @@
     line-height: 1.5rem;
   }
 }
+
+/* ---------- header between phone and full desktop (861-1180px) ---------- */
+/* the brand was shrinking under the tabs, so the tabs sat on top of "THE HELPING HAND" */
+.home-header__brand {
+  flex-shrink: 0;
+}
+
+@media (min-width: 861px) and (max-width: 1180px) {
+  .home-header .home-header__inner {
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  /* drop the tagline line; the wordmark stays */
+  .home-header__identity small {
+    display: none;
+  }
+
+  .home-header__nav {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .home-header__nav button {
+    padding: 0 0.625rem;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .home-header .home-header__external {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+}
