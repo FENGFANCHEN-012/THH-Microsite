@@ -28,6 +28,7 @@ body {
 }
 
 :root {
+  --phone-gutter: 1.5rem; /* 24px side margin on phones (design-system step) */
   --thh-ivory: #f5f0e8;
   --thh-paper: #ede7db;
   --thh-sand: #e3dacd;

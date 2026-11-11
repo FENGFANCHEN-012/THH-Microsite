@@ -300,13 +300,13 @@
   .history-page .history-opening-note {
     min-height: 0;
     gap: 2.5rem;
-    padding: 6rem 1rem;
+    padding: 6rem var(--phone-gutter);
   }
 
   .history-page .history-opening-note span {
     font-size: 2.5rem;
-    line-height: 3rem;
-    letter-spacing: -1.2px;
+    line-height: 3.25rem;
+    letter-spacing: -0.4px;
   }
 
   .history-page .history-opening-note p {
@@ -318,16 +318,16 @@
 
   .tl-panel__year {
     top: 6rem;
-    left: 1rem;
+    left: var(--phone-gutter);
     font-size: 7rem;
   }
 
   .tl-panel__content,
   .tl-panel--reverse .tl-panel__content {
     top: 9rem;
-    right: 1rem;
+    right: var(--phone-gutter);
     bottom: 1.5rem;
-    left: 1rem;
+    left: var(--phone-gutter);
     height: auto;
     flex-direction: column-reverse;
     justify-content: flex-end;
@@ -356,7 +356,7 @@
   .tl-panel__heading div {
     font-size: 2rem;
     line-height: 2.5rem;
-    letter-spacing: -1px;
+    letter-spacing: -0.3px;
   }
 
   .tl-panel__copy p {
@@ -377,8 +377,8 @@
 
   .history-page .history-timeline__nav {
     top: 4.75rem;
-    right: 1rem;
-    left: 1rem;
+    right: var(--phone-gutter);
+    left: var(--phone-gutter);
     width: auto;
   }
 
@@ -410,9 +410,9 @@
 
   .history-page .history-timeline__continue-cue {
     top: auto;
-    right: 1rem;
+    right: var(--phone-gutter);
     bottom: 1rem;
-    left: 1rem;
+    left: var(--phone-gutter);
     max-width: none;
   }
 }

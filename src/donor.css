@@ -878,7 +878,7 @@
 
 @media (max-width: 767px) {
   .donor-page {
-    --dn-pad-x: 1rem;
+    --dn-pad-x: var(--phone-gutter);
   }
 
   .dn-section,
@@ -946,8 +946,8 @@
 
   .dn-title {
     font-size: 2.5rem;
-    line-height: 3rem;
-    letter-spacing: -1.2px;
+    line-height: 3.25rem;
+    letter-spacing: -0.4px;
   }
 
   .dn-lead {
@@ -1040,7 +1040,7 @@
   .dn-finale__title {
     font-size: 3rem;
     line-height: 3.75rem;
-    letter-spacing: -1.2px;
+    letter-spacing: -0.4px;
   }
 
   .dn-finale__actions {
