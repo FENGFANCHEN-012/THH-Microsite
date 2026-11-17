@@ -738,6 +738,10 @@ function NumberSection({ progress }: { progress: number }) {
       }
   const activeItem = profileIndex === null ? null : FLOATING_NUMS[profileIndex]
   const activeScreenX = activeItem ? -5 + activeItem.x * 0.55 - numbersP * 220 : 0
+  // Card goes to the side away from the number. It never sits bottom-right, where the
+  // fixed "I am ... days drug free" picker is, so a right-hand card always goes to the top.
+  const cardOnLeft = activeScreenX > 55
+  const cardOnTop = !cardOnLeft || (activeItem ? Number(activeItem.y) > 55 : false)
 
   useEffect(() => {
     return () => {
@@ -833,10 +837,10 @@ function NumberSection({ progress }: { progress: number }) {
             aria-label={`Overcomer profile: ${activeProfile.name}`}
             aria-live="polite"
             style={{
-              '--profile-left': activeScreenX > 55 ? 'clamp(1rem, 5vw, 5rem)' : 'auto',
-              '--profile-right': activeScreenX > 55 ? 'auto' : 'clamp(1rem, 5vw, 5rem)',
-              '--profile-top': parseFloat(activeItem.y) > 55 ? 'clamp(5rem, 10vh, 7rem)' : 'auto',
-              '--profile-bottom': parseFloat(activeItem.y) > 55 ? 'auto' : 'clamp(2rem, 7vh, 5rem)',
+              '--profile-left': cardOnLeft ? 'clamp(1rem, 5vw, 5rem)' : 'auto',
+              '--profile-right': cardOnLeft ? 'auto' : 'clamp(1rem, 5vw, 5rem)',
+              '--profile-top': cardOnTop ? 'clamp(5rem, 10vh, 7rem)' : 'auto',
+              '--profile-bottom': cardOnTop ? 'auto' : 'clamp(2rem, 7vh, 5rem)',
               opacity: profileOpen ? 1 : 0,
               transform: profileOpen ? 'scale(1) translateY(0)' : 'scale(0.97) translateY(0.75rem)',
               pointerEvents: profileOpen ? 'auto' : 'none',

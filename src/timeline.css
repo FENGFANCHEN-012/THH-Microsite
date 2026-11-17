@@ -72,7 +72,7 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 5rem;
-  padding: 25.8125rem 5rem 7.5rem;
+  padding: 25.8125rem max(5rem, calc((100% - 80rem) / 2)) 7.5rem;
   background: #eaf0f8;
 }
 
@@ -91,7 +91,7 @@
   align-self: flex-end;
   width: 42.4375rem;
   max-width: 100%;
-  margin: 0 calc((100% - 80rem) / 2) 0 0;
+  margin: 0;
   padding: 0 1.25rem;
   border-left: 1px solid #d9dee6;
   font-family: "Inter", sans-serif;

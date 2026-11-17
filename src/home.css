@@ -12,7 +12,7 @@
 .home-header .home-header__inner {
   display: flex;
   width: 100%;
-  max-width: none;
+  max-width: 90rem; /* logo + tabs stop spreading above 1440px; bar background stays full width */
   height: 5rem;
   align-items: center;
   justify-content: space-between;
@@ -200,12 +200,22 @@
   position: absolute;
   inset: 0;
   display: grid;
+  padding-inline: max(0px, calc((100% - 90rem) / 2)); /* 1440 frame, centred on wider screens */
   grid-template-columns: 732fr 708fr;
   background: #ffffff;
 }
 
 .hm-story__panel--reverse {
   grid-template-columns: 708fr 732fr;
+}
+
+/* wider than 1440: the side band next to the blue text column stays blue */
+.hm-story__panel--blue {
+  background: linear-gradient(90deg, #eaf0f8 50%, #ffffff 50%);
+}
+
+.hm-story__panel--reverse.hm-story__panel--blue {
+  background: linear-gradient(270deg, #eaf0f8 50%, #ffffff 50%);
 }
 
 .hm-story__panel--blue .hm-story__text {
@@ -519,6 +529,7 @@
   display: grid;
   grid-template-columns: 708fr 732fr;
   min-height: 68.0625rem;
+  padding-inline: max(0px, calc((100% - 90rem) / 2));
   background: #eaf0f8;
 }
 

@@ -166,6 +166,7 @@
   display: grid;
   grid-template-columns: 731fr 709fr;
   min-height: 69.875rem;
+  padding-inline: max(0px, calc((100% - 90rem) / 2));
   background: #ffffff;
 }
 

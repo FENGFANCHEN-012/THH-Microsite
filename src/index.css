@@ -64,7 +64,7 @@ body {
 }
 
 .home-header__inner {
-  width: min(100%, 92rem);
+  width: min(100%, 90rem); /* content frozen above 1440px */
   height: 5.5rem;
   display: grid;
   grid-template-columns: minmax(22rem, 1.2fr) auto minmax(16rem, 1fr);
@@ -4880,7 +4880,7 @@ body {
 }
 
 .history-finale__years i {
-  width: 13vw;
+  width: min(13vw, 11.7rem);
   height: 1px;
   background: var(--thh-gold);
 }
@@ -4901,7 +4901,7 @@ body {
 .history-finale__statement strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(6rem, 18vw, 19.5rem);
+  font-size: clamp(6rem, 18vw, 16.2rem); /* 18vw at 1440 */
   line-height: 1.28;
   letter-spacing: -0.00769em;
 }
@@ -4909,7 +4909,7 @@ body {
 .history-finale__result strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(6rem, 20vw, 19.5rem);
+  font-size: clamp(6rem, 20vw, 18rem); /* 20vw at 1440 */
   line-height: 1.28;
   letter-spacing: -0.00769em;
 }
@@ -5868,8 +5868,9 @@ em {
   width: 23.625rem;
   padding: 1rem 1.5rem;
   border: 2px solid var(--thh-border-primary);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1); /* 90% transparent (user request 2026-11-17) */
   box-shadow: none;
+  backdrop-filter: none; /* no blur, so the page behind stays sharp */
 }
 
 .drug-free-picker[data-view="summary"] {
@@ -5966,13 +5967,13 @@ em {
   gap: 0.5rem 1rem;
   padding: 0.5rem 1rem;
   border: 0;
-  background: #eaf0f8;
+  background: rgba(234, 240, 248, 0.1);
 }
 
 .drug-free-picker__field-list > button:hover,
 .drug-free-picker__field-list > button:focus-visible {
   border: 0;
-  background: #eaf0f8;
+  background: rgba(234, 240, 248, 0.1);
 }
 
 .drug-free-picker__field-list > button span {
@@ -6004,7 +6005,7 @@ em {
 }
 
 .drug-free-picker__inline-calendar {
-  background: #eaf0f8;
+  background: rgba(234, 240, 248, 0.1);
 }
 
 .drug-free-picker__inline-calendar.is-open {
