@@ -1,0 +1,849 @@
+{
+  "categories": [
+    "New Beginnings",
+    "Family & Relationships",
+    "Work & Purpose",
+    "Community & Belonging",
+    "Looking Forward"
+  ],
+  "stories": [
+    {
+      "id": "journey",
+      "slug": "stories/jason-gwee",
+      "displayName": "Jason Gwee",
+      "title": "A journey of giving back.",
+      "summary": "Once a resident, Jason returned to The Helping Hand as Assistant Chaplain, using his experiences to support others on their own journeys.",
+      "thumbnail": {
+        "src": "/media/jason/jason-speaking-2560.webp",
+        "alt": "Jason Gwee speaking into a microphone, standing behind a music stand.",
+        "width": 2560,
+        "height": 1708,
+        "caption": "Jason Gwee speaking into a microphone."
+      },
+      "theme": "Giving back",
+      "relatedStoryIds": [
+        "nadia",
+        "sam"
+      ],
+      "status": "published",
+      "storyPage": "/stories/jason-gwee",
+      "storyId": "jason-gwee",
+      "categories": [
+        "New Beginnings",
+        "Work & Purpose",
+        "Community & Belonging"
+      ],
+      "daysFree": 5840,
+      "milestoneLabel": "DAYS DRUG FREE",
+      "preserveListingThumbnail": true,
+      "internalStoryLink": true
+    },
+    {
+      "id": "nadia",
+      "slug": "stories/a-journey-of-change",
+      "displayName": "Nadia",
+      "title": "Making room for a different tomorrow.",
+      "summary": "Nadia is learning that changing her mind can be a form of care. A new routine, an unfinished conversation and a small invitation help her imagine what comes next.",
+      "thumbnail": {
+        "src": "/media/thh/garden-details.webp",
+        "alt": "Flowering potted plants, growing columns and a paved walkway at The Helping Hand urban farm.",
+        "width": 2560,
+        "height": 1440,
+        "caption": "The Helping Hand urban farm. Photo: The Helping Hand, used with permission. Objects are shown as context for fictional reflections, not evidence of Daniel’s activities."
+      },
+      "theme": "Change & relationships",
+      "relatedStoryIds": [
+        "journey",
+        "sam"
+      ],
+      "status": "published",
+      "storyPage": "/stories/a-journey-of-change",
+      "storyId": "nadia",
+      "categories": [
+        "New Beginnings",
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "sam",
+      "slug": "stories/finding-purpose",
+      "displayName": "Sam",
+      "title": "A good day, in the making.",
+      "summary": "Sam finds meaning in useful tasks, shared interests and the pleasure of learning something slowly. His fictional story makes room for curiosity, company and an ordinary day well spent.",
+      "thumbnail": {
+        "src": "/media/thh/pastries.webp",
+        "alt": "An assortment of pastries from The Helping Hand bakery.",
+        "width": 536,
+        "height": 358,
+        "caption": "Pastries from The Helping Hand bakery; not a photograph of a fictional family meal. Photo: The Helping Hand. Context photograph; people pictured are not the fictional characters in this prototype."
+      },
+      "theme": "Purpose & belonging",
+      "relatedStoryIds": [
+        "journey",
+        "nadia"
+      ],
+      "status": "published",
+      "storyPage": "/stories/finding-purpose",
+      "storyId": "sam",
+      "categories": [
+        "Work & Purpose",
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-4",
+      "slug": "planned-4",
+      "displayName": "Contributor 04 · name pending",
+      "title": "A place at the table",
+      "summary": "A future conversation about joining in without feeling the need to impress. This planned story will explore ordinary invitations, shared meals and the beginnings of trust.",
+      "thumbnail": {
+        "src": "/media/v2/story-04.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "A quiet wooden table beside a window — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Connection",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Community & Belonging",
+        "Family & Relationships"
+      ]
+    },
+    {
+      "id": "planned-5",
+      "slug": "planned-5",
+      "displayName": "Contributor 05 · name pending",
+      "title": "Learning something new",
+      "summary": "An editorial space for a contributor to describe being a beginner. The eventual account may explore questions, patient practice and the freedom to learn at an individual pace.",
+      "thumbnail": {
+        "src": "/media/v2/story-05.webp",
+        "width": 1400,
+        "height": 520,
+        "alt": "An open book on a table — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Curiosity",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings",
+        "Work & Purpose"
+      ]
+    },
+    {
+      "id": "planned-6",
+      "slug": "planned-6",
+      "displayName": "Contributor 06 · name pending",
+      "title": "The long way home",
+      "summary": "A planned reflection on routes, familiar places and small changes in a daily journey. A contributor’s own words and approved photographs will shape the finished story.",
+      "thumbnail": {
+        "src": "/media/v2/story-06.webp",
+        "width": 1400,
+        "height": 934,
+        "alt": "A path through a grassy clearing — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Everyday life",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings",
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-7",
+      "slug": "planned-7",
+      "displayName": "Contributor 07 · name pending",
+      "title": "Time for a conversation",
+      "summary": "A future story about making time to listen. This placeholder suggests a focus on everyday exchanges, different perspectives and relationships that do not need an immediate resolution.",
+      "thumbnail": {
+        "src": "/media/v2/story-07.webp",
+        "width": 1400,
+        "height": 788,
+        "alt": "A cup of coffee seen from above — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Relationships",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Family & Relationships",
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-8",
+      "slug": "planned-8",
+      "displayName": "Contributor 08 · name pending",
+      "title": "Something worth practising",
+      "summary": "An invitation to explore the satisfaction of returning to a skill. The future contributor will choose which details, difficulties and moments of enjoyment they want to share.",
+      "thumbnail": {
+        "src": "/media/v2/story-08.webp",
+        "width": 1400,
+        "height": 930,
+        "alt": "Wooden wheels and workshop details — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Skills",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose"
+      ]
+    },
+    {
+      "id": "planned-9",
+      "slug": "planned-9",
+      "displayName": "Contributor 09 · name pending",
+      "title": "A morning of my own",
+      "summary": "A planned account of choosing how a day begins. This editorial direction leaves room for personal preferences, changing routines and the meaning of having a little choice.",
+      "thumbnail": {
+        "src": "/media/v2/story-09.webp",
+        "width": 1280,
+        "height": 901,
+        "alt": "A patterned mug resting on books — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Independence",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings"
+      ]
+    },
+    {
+      "id": "planned-10",
+      "slug": "planned-10",
+      "displayName": "Contributor 10 · name pending",
+      "title": "Company in the quiet",
+      "summary": "An editorial space for a story about comfortable silence. The finished contribution could explore shared interests and the people with whom conversation does not have to be constant.",
+      "thumbnail": {
+        "src": "/media/v2/story-10.webp",
+        "width": 1280,
+        "height": 960,
+        "alt": "Empty benches beside the water — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Belonging",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-11",
+      "slug": "planned-11",
+      "displayName": "Contributor 11 · name pending",
+      "title": "Keeping a small promise",
+      "summary": "A future reflection on manageable commitments and what happens when plans change. The contributor’s perspective will guide the story rather than a prescribed idea of progress.",
+      "thumbnail": {
+        "src": "/media/v2/story-11.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "Fresh leaves catching the light — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Change",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings",
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-12",
+      "slug": "planned-12",
+      "displayName": "Contributor 12 · name pending",
+      "title": "The things we carry",
+      "summary": "A planned story about an object with personal significance. Its meaning, photographs and any memories will be supplied and approved by the future contributor before publication.",
+      "thumbnail": {
+        "src": "/media/v2/story-12.webp",
+        "width": 1400,
+        "height": 921,
+        "alt": "Everyday objects arranged on a surface — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Reflection",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Family & Relationships"
+      ]
+    },
+    {
+      "id": "planned-13",
+      "slug": "planned-13",
+      "displayName": "Contributor 13 · name pending",
+      "title": "Making time for rest",
+      "summary": "An invitation to discuss pauses and personal boundaries. This placeholder proposes a thoughtful account of rest, without assuming what recovery or a good day means to someone else.",
+      "thumbnail": {
+        "src": "/media/v2/story-13.webp",
+        "width": 1400,
+        "height": 1050,
+        "alt": "An empty wooden bench against a wall — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Wellbeing",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-14",
+      "slug": "planned-14",
+      "displayName": "Contributor 14 · name pending",
+      "title": "A question worth asking",
+      "summary": "A future contribution about curiosity in an ordinary moment. The planned story will leave space for uncertainty, unexpected answers and the contributor’s own way of seeing things.",
+      "thumbnail": {
+        "src": "/media/v2/story-14.webp",
+        "width": 1400,
+        "height": 939,
+        "alt": "Notebooks and stationery arranged for work — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Curiosity",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose",
+        "New Beginnings"
+      ]
+    },
+    {
+      "id": "planned-15",
+      "slug": "planned-15",
+      "displayName": "Contributor 15 · name pending",
+      "title": "Finding my own rhythm",
+      "summary": "An editorial direction about routines that support rather than restrict. The future account may consider work, leisure and the adjustments that make a day feel more personal.",
+      "thumbnail": {
+        "src": "/media/v2/story-15.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "A turntable and record — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Everyday life",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose"
+      ]
+    },
+    {
+      "id": "planned-16",
+      "slug": "planned-16",
+      "displayName": "Contributor 16 · name pending",
+      "title": "An invitation to return",
+      "summary": "A planned story about a place someone chooses to revisit. The contributor will decide which relationships, interests or small details make that place meaningful to them.",
+      "thumbnail": {
+        "src": "/media/v2/story-16.webp",
+        "width": 1200,
+        "height": 1800,
+        "alt": "A weathered wooden doorway — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Belonging",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-17",
+      "slug": "planned-17",
+      "displayName": "Contributor 17 · name pending",
+      "title": "Growing an interest",
+      "summary": "A future conversation about an interest that developed gradually. This placeholder makes room for enjoyment and experimentation without turning every hobby into a measure of achievement.",
+      "thumbnail": {
+        "src": "/media/v2/story-17.webp",
+        "width": 1400,
+        "height": 934,
+        "alt": "Grasses in a green meadow — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Skills",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose",
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-18",
+      "slug": "planned-18",
+      "displayName": "Contributor 18 · name pending",
+      "title": "Saying what matters",
+      "summary": "An invitation to explore expressing a preference or a need. The future contributor’s words will guide an account of being heard, with no predetermined lesson or outcome.",
+      "thumbnail": {
+        "src": "/media/v2/story-18.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "A notebook and laptop on a wooden desk — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Voice",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Family & Relationships",
+        "New Beginnings"
+      ]
+    },
+    {
+      "id": "planned-19",
+      "slug": "planned-19",
+      "displayName": "Contributor 19 · name pending",
+      "title": "A different view",
+      "summary": "A planned reflection on seeing something familiar in another way. The eventual story will follow a contributor’s own observations rather than a scripted turning point.",
+      "thumbnail": {
+        "src": "/media/v2/story-19.webp",
+        "width": 1280,
+        "height": 805,
+        "alt": "Raindrops gathered on a surface — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Reflection",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-20",
+      "slug": "planned-20",
+      "displayName": "Contributor 20 · name pending",
+      "title": "Keeping in touch",
+      "summary": "An editorial space for the small habits that sustain a connection. The future account may explore messages, visits or shared time, as chosen by its contributor.",
+      "thumbnail": {
+        "src": "/media/v2/story-20.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "A boat resting beside a jetty — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Relationships",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Family & Relationships"
+      ]
+    },
+    {
+      "id": "planned-21",
+      "slug": "planned-21",
+      "displayName": "Contributor 21 · name pending",
+      "title": "One afternoon, unplanned",
+      "summary": "A future story about leaving some time open. This placeholder suggests attention to ordinary pleasures and unexpected moments, without inventing an event or a person’s history.",
+      "thumbnail": {
+        "src": "/media/v2/story-21.webp",
+        "width": 1280,
+        "height": 960,
+        "alt": "Clouds moving across an open sky — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Everyday life",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-22",
+      "slug": "planned-22",
+      "displayName": "Contributor 22 · name pending",
+      "title": "Room to decide",
+      "summary": "A planned conversation about making a choice at an individual pace. The finished story will respect the contributor’s boundaries and their right to leave some questions open.",
+      "thumbnail": {
+        "src": "/media/v2/story-22.webp",
+        "width": 1400,
+        "height": 927,
+        "alt": "A wooden fence in warm evening light — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Independence",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings",
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-23",
+      "slug": "planned-23",
+      "displayName": "Contributor 23 · name pending",
+      "title": "Working alongside someone",
+      "summary": "An invitation to describe the company found in a shared task. The eventual contribution will centre personal experience rather than an organisation’s targets or achievements.",
+      "thumbnail": {
+        "src": "/media/v2/story-23.webp",
+        "width": 1400,
+        "height": 938,
+        "alt": "Hands and cups around a shared table — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Connection",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose",
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-24",
+      "slug": "planned-24",
+      "displayName": "Contributor 24 · name pending",
+      "title": "The pleasure of making",
+      "summary": "A future reflection on making something with care. This editorial placeholder leaves the object, process and personal significance for the contributor to identify in their own words.",
+      "thumbnail": {
+        "src": "/media/v2/story-24.webp",
+        "width": 1200,
+        "height": 1800,
+        "alt": "Grapes growing on a vine — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Skills",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose"
+      ]
+    },
+    {
+      "id": "planned-25",
+      "slug": "planned-25",
+      "displayName": "Contributor 25 · name pending",
+      "title": "A familiar welcome",
+      "summary": "A planned story about feeling expected somewhere. The finished account could explore greetings, small gestures and the ordinary details of belonging, subject to the contributor’s choices.",
+      "thumbnail": {
+        "src": "/media/v2/story-25.webp",
+        "width": 1400,
+        "height": 930,
+        "alt": "A bicycle beside a timber building — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Belonging",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-26",
+      "slug": "planned-26",
+      "displayName": "Contributor 26 · name pending",
+      "title": "A list for tomorrow",
+      "summary": "An editorial direction about things someone would like to try. The future story will welcome modest wishes and uncertainty, without requiring an ambitious plan or promised ending.",
+      "thumbnail": {
+        "src": "/media/v2/story-26.webp",
+        "width": 1400,
+        "height": 915,
+        "alt": "An open notebook beside a laptop — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Hopes",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-27",
+      "slug": "planned-27",
+      "displayName": "Contributor 27 · name pending",
+      "title": "Changing a plan",
+      "summary": "A future conversation about adapting when an intention no longer fits. This placeholder makes room for reconsideration, practical support and the contributor’s own understanding of change.",
+      "thumbnail": {
+        "src": "/media/v2/story-27.webp",
+        "width": 1400,
+        "height": 930,
+        "alt": "Railway tracks leading between trees — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Change",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings",
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-28",
+      "slug": "planned-28",
+      "displayName": "Contributor 28 · name pending",
+      "title": "An ordinary celebration",
+      "summary": "A planned reflection on something worth marking in daily life. The future contributor will choose the occasion and its meaning; no milestone or personal achievement is assumed.",
+      "thumbnail": {
+        "src": "/media/v2/story-28.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "Soft coloured lights out of focus — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Joy",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Family & Relationships",
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-29",
+      "slug": "planned-29",
+      "displayName": "Contributor 29 · name pending",
+      "title": "The art of listening",
+      "summary": "An invitation to explore a conversation from the listener’s perspective. The eventual account will be developed with its contributor and will respect the privacy of other people.",
+      "thumbnail": {
+        "src": "/media/v2/story-29.webp",
+        "width": 1400,
+        "height": 934,
+        "alt": "Quiet water beside a rocky shore — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Relationships",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Family & Relationships"
+      ]
+    },
+    {
+      "id": "planned-30",
+      "slug": "planned-30",
+      "displayName": "Contributor 30 · name pending",
+      "title": "Something to look forward to",
+      "summary": "A future story about anticipation in an ordinary week. This editorial placeholder leaves room for a small pleasure, a shared plan or a personal interest to emerge.",
+      "thumbnail": {
+        "src": "/media/v2/story-30.webp",
+        "width": 1371,
+        "height": 1800,
+        "alt": "Sunlight through golden grasses — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Hopes",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-31",
+      "slug": "planned-31",
+      "displayName": "Contributor 31 · name pending",
+      "title": "Learning to ask",
+      "summary": "A planned conversation about asking a question or accepting support. Its focus and language will be chosen with the contributor, without assumptions about their circumstances.",
+      "thumbnail": {
+        "src": "/media/v2/story-31.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "A laptop and coffee on a wooden table — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Connection",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Community & Belonging",
+        "New Beginnings"
+      ]
+    },
+    {
+      "id": "planned-32",
+      "slug": "planned-32",
+      "displayName": "Contributor 32 · name pending",
+      "title": "My own definition",
+      "summary": "An editorial space for someone to describe what matters to them. The eventual story will prioritise personal language over labels, expected narratives or someone else’s definition of success.",
+      "thumbnail": {
+        "src": "/media/v2/story-32.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "A pair of binoculars on a table — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Voice",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings",
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-33",
+      "slug": "planned-33",
+      "displayName": "Contributor 33 · name pending",
+      "title": "A little more patience",
+      "summary": "A future reflection on allowing something to take time. This planned contribution may explore practice, relationships or everyday frustrations, depending on the contributor’s own interests.",
+      "thumbnail": {
+        "src": "/media/v2/story-33.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "Wind moving through dry grasses — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Reflection",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-34",
+      "slug": "planned-34",
+      "displayName": "Contributor 34 · name pending",
+      "title": "A shared interest",
+      "summary": "An invitation to describe a connection that begins with something enjoyable. The future story will explore the contributor’s chosen interest without claiming a particular experience in advance.",
+      "thumbnail": {
+        "src": "/media/v2/story-34.webp",
+        "width": 1400,
+        "height": 1764,
+        "alt": "Forks arranged on a dark surface — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Belonging",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-35",
+      "slug": "planned-35",
+      "displayName": "Contributor 35 · name pending",
+      "title": "A place for curiosity",
+      "summary": "A planned story about following a question for its own sake. The contributor will decide what they noticed and how much of the experience they wish to share.",
+      "thumbnail": {
+        "src": "/media/v2/story-35.webp",
+        "width": 1400,
+        "height": 910,
+        "alt": "A path through green woodland — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Curiosity",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose"
+      ]
+    },
+    {
+      "id": "planned-36",
+      "slug": "planned-36",
+      "displayName": "Contributor 36 · name pending",
+      "title": "Noticing the everyday",
+      "summary": "A future contribution centred on a familiar detail that deserves attention. This placeholder suggests an observational story, with its subject and photographs still to be confirmed.",
+      "thumbnail": {
+        "src": "/media/v2/story-36.webp",
+        "width": 1400,
+        "height": 931,
+        "alt": "Small blossoms on a branch — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Everyday life",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Looking Forward"
+      ]
+    },
+    {
+      "id": "planned-37",
+      "slug": "planned-37",
+      "displayName": "Contributor 37 · name pending",
+      "title": "Doing things differently",
+      "summary": "An editorial direction about trying another approach. The eventual account will allow for mixed feelings and unfinished questions, rather than presenting personal change as a simple transformation.",
+      "thumbnail": {
+        "src": "/media/v2/story-37.webp",
+        "width": 1400,
+        "height": 788,
+        "alt": "Sunlight reflected through green leaves — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Change",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "New Beginnings"
+      ]
+    },
+    {
+      "id": "planned-38",
+      "slug": "planned-38",
+      "displayName": "Contributor 38 · name pending",
+      "title": "A choice to share",
+      "summary": "A planned conversation about deciding what to tell and what to keep private. The future contributor’s consent and preferences will shape the scope of the finished story.",
+      "thumbnail": {
+        "src": "/media/v2/story-38.webp",
+        "width": 1400,
+        "height": 933,
+        "alt": "Pine cones arranged in rows — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Voice",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Family & Relationships"
+      ]
+    },
+    {
+      "id": "planned-39",
+      "slug": "planned-39",
+      "displayName": "Contributor 39 · name pending",
+      "title": "Time well spent",
+      "summary": "An invitation to reflect on a day that felt worthwhile. The contributor will define that feeling in their own terms, whether through company, quiet, learning or something unexpected.",
+      "thumbnail": {
+        "src": "/media/v2/story-39.webp",
+        "width": 1400,
+        "height": 930,
+        "alt": "Fresh seedlings in small growing pots — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Joy",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Work & Purpose",
+        "Community & Belonging"
+      ]
+    },
+    {
+      "id": "planned-40",
+      "slug": "planned-40",
+      "displayName": "Contributor 40 · name pending",
+      "title": "The next small step",
+      "summary": "A future closing contribution about what comes next without demanding a conclusion. This placeholder leaves the person, their hopes and the shape of the story open for development.",
+      "thumbnail": {
+        "src": "/media/v2/story-40.webp",
+        "width": 1400,
+        "height": 946,
+        "alt": "A wooden pier leading towards open water — illustrative stock, not a THH contributor or site.",
+        "caption": "Illustrative stock photograph. Photographer and source are recorded in the photography inventory."
+      },
+      "theme": "Hopes",
+      "relatedStoryIds": [],
+      "status": "coming-soon",
+      "categories": [
+        "Looking Forward"
+      ]
+    }
+  ]
+}

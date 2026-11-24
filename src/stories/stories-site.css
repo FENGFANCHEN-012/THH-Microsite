@@ -1,0 +1,5 @@
+/* Hand-written glue between the generated Make styles (stories.css) and our site. */
+.stories-page {
+  padding-top: var(--site-header-h, 5.5rem); /* sit below the fixed .home-header */
+  background: #fff;
+}

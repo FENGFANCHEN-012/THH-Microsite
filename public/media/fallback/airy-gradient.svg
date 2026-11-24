@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="none"><defs>
+<linearGradient id="base" x2=".8" y2="1"><stop stop-color="#DFEAF6"/><stop offset=".48" stop-color="#C9DDED"/><stop offset="1" stop-color="#DFE9EE"/></linearGradient>
+<radialGradient id="edge"><stop stop-color="#F5F6FC" stop-opacity=".85"/><stop offset="1" stop-color="#F5F6FC" stop-opacity="0"/></radialGradient>
+<filter id="soft" filterUnits="userSpaceOnUse" x="-300" y="-300" width="1800" height="1400"><feGaussianBlur stdDeviation="30"/></filter>
+<filter id="glow" filterUnits="userSpaceOnUse" x="-300" y="-300" width="1800" height="1400"><feGaussianBlur stdDeviation="40"/></filter>
+</defs><rect width="1200" height="800" fill="url(#base)"/>
+<ellipse cx="1110" cy="70" rx="400" ry="430" fill="url(#edge)"/>
+<path d="M-110 555C200 500 440 310 650 365C900 402 1010 530 1310 510" fill="none" stroke="#FAFCFE" stroke-opacity=".8" stroke-width="80" filter="url(#soft)"/>
+<ellipse cx="550" cy="640" rx="460" ry="190" fill="#BAD3E7" opacity=".45" filter="url(#glow)"/>
+<path d="M-100 510C30 500 40 660 10 860" fill="none" stroke="#F5F7F6" stroke-opacity=".75" stroke-width="115" filter="url(#soft)"/>
+</svg>

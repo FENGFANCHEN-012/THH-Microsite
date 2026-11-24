@@ -1,0 +1,329 @@
+{
+  "article": {
+    "fictional": true,
+    "title": "A little more life\nin the day.",
+    "person": "Daniel",
+    "introduction": "A notebook, an ordinary conversation, and the things Daniel is beginning to make time for.",
+    "hero": {
+      "src": "/media/anniversary/thh-29.webp",
+      "width": 2000,
+      "height": 1125,
+      "alt": "Hands shaping dough on a work surface with trays of baked goods.",
+      "caption": "Hands shaping dough on a work surface with trays of baked goods. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+    },
+    "heroAlignment": "left",
+    "blocks": [
+      {
+        "id": "opening",
+        "type": "paragraph",
+        "paragraphs": [
+          "Daniel likes the hour before the streets become busy. He notices which shop has opened early, whether the pavement is still wet, and the smell of bread near the corner. He usually takes the same route, although he enjoys having enough time to choose a different one.",
+          "At home, there is a notebook beside the kettle. It contains shopping lists, measurements for a shelf he wants to make, and recipes copied from conversations. His handwriting gets smaller towards the bottom of a page. He dislikes wasting the last few lines, even when the next page is empty.",
+          "He has strong opinions about small things: a mug should have a handle big enough for two fingers, and a good walk should include somewhere to sit. He enjoys fixing a loose hinge more than buying something new. His sister teases him about keeping screws in an old biscuit tin. He says they may be useful."
+        ]
+      },
+      {
+        "id": "notebook-image",
+        "type": "image",
+        "image": {
+          "src": "/media/anniversary/thh-33.webp",
+          "width": 1842,
+          "height": 1226,
+          "alt": "People gathered around a table in a garden activity.",
+          "caption": "People seated together around a table at a gathering. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+        }
+      },
+      {
+        "id": "earlier",
+        "type": "subheadline",
+        "text": "When the days lost their shape"
+      },
+      {
+        "id": "uncertainty",
+        "type": "paragraph",
+        "paragraphs": [
+          "There was a period when those ordinary details were harder to notice. Work was uncertain, plans kept changing, and Daniel found himself putting off decisions that had once seemed straightforward. A letter could stay unopened on the table for days. He would move it aside to make room for his cup.",
+          "When someone asked how he was, he tended to say that he was getting things sorted. The answer was not entirely untrue. He was trying. But it allowed him to end a conversation before he had to explain how tiring the trying had become. Afterwards, he sometimes wished the person had stayed.",
+          "His sister called on Sundays. Some weeks he answered; on others, he watched the phone until it stopped ringing. He wanted to have something reassuring to tell her. Waiting for that moment meant they spoke less, and the longer they went without speaking, the more difficult an ordinary call began to feel."
+        ]
+      },
+      {
+        "id": "uncertainty-photo",
+        "type": "image",
+        "image": {
+          "src": "/media/anniversary/thh-09.webp",
+          "width": 2000,
+          "height": 1334,
+          "alt": "A person carrying an item through a corridor during moving work.",
+          "caption": "A person carrying an item through a corridor during moving work. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+        }
+      },
+      {
+        "id": "turning",
+        "type": "subheadline",
+        "text": "A smaller answer"
+      },
+      {
+        "id": "a-call",
+        "type": "paragraph",
+        "paragraphs": [
+          "One Sunday, he answered before he had decided what to say. His sister asked about the week. He started with his usual reply, then admitted that he did not know where to begin. She did not produce a plan. They talked about a meal she had cooked and a neighbour who had borrowed her ladder.",
+          "Before they hung up, Daniel asked whether they could speak again the following week. It was a smaller request than explaining everything. On Monday, he wrote three things in his notebook: get up, arrive on time, call his sister. He left space underneath. The list was for that week, not a promise about the rest of his life."
+        ]
+      },
+      {
+        "id": "reflection",
+        "type": "quoteReveal",
+        "quote": "I didn’t need a plan for everything. I needed to know we could talk again.",
+        "name": "Daniel · fictional reflection"
+      },
+      {
+        "id": "after-the-call",
+        "type": "paragraph",
+        "paragraphs": [
+          "After they hung up, Daniel left the phone on the table rather than putting it away. His sister had asked whether he still had the recipe she once sent him. He found it folded inside the notebook, beneath a list he had stopped using.",
+          "The next evening he tried it. He sent her a message about an ingredient he had forgotten, and she suggested something else. For once, keeping in touch did not depend on having a reassuring account of the whole week."
+        ]
+      },
+      {
+        "id": "table-image",
+        "type": "image",
+        "image": {
+          "src": "/media/anniversary/thh-31.webp",
+          "width": 1852,
+          "height": 1246,
+          "alt": "Tables, chairs and a service counter in a café interior.",
+          "caption": "Tables, chairs and a service counter in a café interior. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+        },
+        "presentation": "carousel",
+        "title": "A few familiar details",
+        "images": [
+          {
+            "src": "/media/anniversary/thh-31.webp",
+            "width": 1852,
+            "height": 1246,
+            "alt": "Tables, chairs and a service counter in a café interior.",
+            "caption": "Tables, chairs and a service counter in a café interior. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences.",
+            "narrativeHeading": "He asked if they could talk again.",
+            "overlayPosition": "bottom-left",
+            "editorialStyle": "statement",
+            "overlayTone": "dark"
+          },
+          {
+            "src": "/media/anniversary/thh-14.webp",
+            "width": 1165,
+            "height": 776,
+            "alt": "Two people behind a striped stall canopy at an outdoor event.",
+            "caption": "Two people behind a striped stall canopy at an outdoor event. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences.",
+            "narrativeHeading": "Three things. Space for the rest.",
+            "overlayPosition": "top-right",
+            "editorialStyle": "reflection",
+            "overlayTone": "light"
+          },
+          {
+            "src": "/media/anniversary/thh-34.webp",
+            "width": 1836,
+            "height": 1210,
+            "alt": "Cyclists approaching a The Helping Hand event arch.",
+            "caption": "Cyclists approaching a The Helping Hand event arch. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences.",
+            "narrativeHeading": "Sometimes he stays for tea.",
+            "overlayPosition": "top-left",
+            "editorialStyle": "aside",
+            "overlayTone": "dark"
+          }
+        ],
+        "cleanCarousel": true
+      },
+      {
+        "id": "help",
+        "type": "paragraph",
+        "paragraphs": [
+          "Accepting support did not make him suddenly comfortable with uncertainty. In this fictional account, The Helping Hand becomes part of the network around him. He appreciates practical conversations: what needs doing today, what he understands already, and where another person can show him. Being able to ask a second question matters."
+        ]
+      },
+      {
+        "id": "thh-link",
+        "type": "linkedParagraph",
+        "content": [
+          {
+            "text": "To learn more about the organisation behind the contextual photographs, visit "
+          },
+          {
+            "text": "The Helping Hand’s official website",
+            "href": "https://thehelpinghand.org.sg/"
+          },
+          {
+            "text": ". Its own information is the place to explore its work and community."
+          }
+        ]
+      },
+      {
+        "id": "present",
+        "type": "subheadline",
+        "text": "The useful part of an ordinary day"
+      },
+      {
+        "id": "work",
+        "type": "paragraph",
+        "paragraphs": [
+          "Daniel enjoys a task with a visible result. He likes the care involved in preparing something properly and the satisfaction of putting the tools away afterwards. He is less interested in being the quickest person in the room. These days, he would rather understand why something works than pretend he already knows.",
+          "There are still mornings when he arrives feeling distracted. A familiar sequence helps: set out what is needed, check the first step, begin. Sometimes he needs a reminder. Sometimes he can offer one to someone else. He is learning that both can happen in the same week without cancelling each other out."
+        ]
+      },
+      {
+        "id": "daniel-pair",
+        "type": "image",
+        "image": {
+          "src": "/media/anniversary/thh-10.webp",
+          "width": 2000,
+          "height": 1206,
+          "alt": "A person tending plants at The Helping Hand urban farm.",
+          "caption": "A person tending plants at The Helping Hand urban farm. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+        },
+        "presentation": "gallery",
+        "title": "The Helping Hand work and community. Contextual organisational photography, used with permission; pictured people are not the fictional characters and these images do not document the story.",
+        "images": [
+          {
+            "src": "/media/anniversary/thh-10.webp",
+            "width": 2000,
+            "height": 1206,
+            "alt": "A person tending plants at The Helping Hand urban farm.",
+            "caption": "A person tending plants at The Helping Hand urban farm. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+          },
+          {
+            "src": "/media/anniversary/thh-03.webp",
+            "width": 1620,
+            "height": 1080,
+            "alt": "Four people standing together behind a counter in a bakery kitchen.",
+            "caption": "Four people standing together behind a counter in a bakery kitchen. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+          },
+          {
+            "src": "/media/anniversary/thh-14.webp",
+            "width": 1165,
+            "height": 776,
+            "alt": "Two people behind a striped stall canopy at an outdoor event.",
+            "caption": "Two people behind a striped stall canopy at an outdoor event. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+          },
+          {
+            "src": "/media/anniversary/thh-1710.webp",
+            "width": 1143,
+            "height": 756,
+            "alt": "People serving food at a community event.",
+            "caption": "People serving food at a community event. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+          },
+          {
+            "src": "/media/anniversary/thh-2317.webp",
+            "width": 1182,
+            "height": 665,
+            "alt": "A group taking part in an activity in a room with a stage.",
+            "caption": "A group taking part in an activity in a room with a stage. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+          }
+        ]
+      },
+      {
+        "id": "shelf-at-home",
+        "type": "paragraph",
+        "paragraphs": [
+          "At home, the shelf gives him a different sort of practice. He measures twice, makes a pencil mark, and changes his mind about where it should go. A friend suggests a simpler bracket. Daniel tries it. The project does not need to become a lesson about his life; he would just like somewhere to put his books."
+        ]
+      },
+      {
+        "id": "gallery-continuation",
+        "type": "paragraph",
+        "paragraphs": [
+          "The moments that shape a person’s journey are not always dramatic. Often, they emerge through familiar routines, shared responsibilities and the relationships built along the way."
+        ]
+      },
+      {
+        "id": "film-introduction",
+        "type": "paragraph",
+        "paragraphs": [
+          "Beyond individual experiences, The Helping Hand’s wider work brings together people and communities in different ways. The following organisational film offers that wider context."
+        ]
+      },
+      {
+        "id": "optional-film",
+        "type": "video",
+        "title": "Ride and Run to Restore 2024 Event Highlights — The Helping Hand Singapore",
+        "poster": {
+          "src": "https://i.ytimg.com/vi/IVe37ANriXM/hqdefault.jpg",
+          "width": 480,
+          "height": 360,
+          "alt": "Official THH event video thumbnail"
+        },
+        "embedUrl": "https://www.youtube.com/embed/IVe37ANriXM?autoplay=0&controls=1&rel=0",
+        "watchUrl": "https://www.youtube.com/watch?v=IVe37ANriXM",
+        "caption": "Official THH organisational footage: Ride and Run to Restore 2024 Event Highlights. This video provides context about THH and does not depict Daniel or document his fictional experiences."
+      },
+      {
+        "id": "tea",
+        "type": "paragraph",
+        "paragraphs": [
+          "The part he had not expected to value comes after the work. Someone makes tea, and the conversation moves between practical matters and nothing much at all. Daniel used to look for a reason to leave. Now he sometimes stays, even when he has nothing useful to add. He likes hearing what other people notice."
+        ]
+      },
+      {
+        "id": "relationships",
+        "type": "subheadline",
+        "text": "Making room at the table"
+      },
+      {
+        "id": "lunch",
+        "type": "paragraph",
+        "paragraphs": [
+          "His sister eventually invites him to lunch. He brings more bread than they need because he cannot decide which kind to choose. They talk about the food before they talk about anything difficult. Some memories remain uncomfortable. Neither of them tries to turn one afternoon into proof that everything has been repaired.",
+          "On the way home, he writes down a recipe she mentioned. The following week, he asks about one of the ingredients. It gives them another small conversation. He has begun to understand that keeping in touch does not always require finding the right words for the largest things between them.",
+          "They do not speak every Sunday. Sometimes one of them is busy, or neither has much energy for a call. Daniel is trying to say so rather than disappear. A brief message can keep the next conversation from becoming a larger undertaking. His sister sends photographs of meals that have gone wrong, which he particularly enjoys."
+        ]
+      },
+      {
+        "id": "quiet-portrait",
+        "type": "image",
+        "image": {
+          "src": "/media/anniversary/thh-21.webp",
+          "width": 2000,
+          "height": 1125,
+          "alt": "People gathered in a large covered communal space.",
+          "caption": "People gathered in a large covered communal space. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+        }
+      },
+      {
+        "id": "forward",
+        "type": "subheadline",
+        "text": "The space he has left"
+      },
+      {
+        "id": "tomorrow",
+        "type": "paragraph",
+        "paragraphs": [
+          "There are things Daniel hopes to make more dependable: his work, the time he spends with his sister, and the way he responds when a week becomes difficult. There are also things he wants simply because they interest him. The shelf is still unfinished. He has circled a recipe he would like to try.",
+          "He has not stopped making lists, but they look different now. Alongside the appointments and shopping, there might be a walk, a question to ask, or an afternoon with nothing written beside it. He no longer feels obliged to fill every line before turning the page. Tomorrow will have room for something he has not thought of yet."
+        ]
+      }
+    ],
+    "daysFree": 4380
+  },
+  "relatedPhotos": [
+    {
+      "src": "/media/anniversary/thh-03.webp",
+      "width": 1620,
+      "height": 1080,
+      "alt": "Four people standing together behind a counter in a bakery kitchen.",
+      "caption": "Four people standing together behind a counter in a bakery kitchen. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+    },
+    {
+      "src": "/media/anniversary/thh-10.webp",
+      "width": 2000,
+      "height": 1206,
+      "alt": "A person tending plants at The Helping Hand urban farm.",
+      "caption": "A person tending plants at The Helping Hand urban farm. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+    },
+    {
+      "src": "/media/anniversary/thh-14.webp",
+      "width": 1165,
+      "height": 776,
+      "alt": "Two people behind a striped stall canopy at an outdoor event.",
+      "caption": "Two people behind a striped stall canopy at an outdoor event. THH context photograph, used with permission; people pictured are not the fictional characters or a record of their experiences."
+    }
+  ]
+}

@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import HistoryPage from "./HistoryPage"
 import SiteFooter from "./SiteFooter"
 import DonorImpactPage from "./DonorImpactPage"
+// "40 stories" pages are loaded only when visited (they carry the large Figma Make stylesheet).
+const StoriesPages = lazy(() => import("./stories/StoriesPages"))
 import './home.css'
 import thhBuilding from "./assets/thh-building.png"
 import logo40 from "./assets/logo-40.svg"
@@ -324,7 +326,7 @@ function HomeHeader({
         <nav className="home-header__nav" aria-label="Main navigation">
           <button type="button" className={currentPath === '/' ? 'is-active' : ''} aria-current={currentPath === '/' ? 'page' : undefined} onClick={goHome} data-cursor="true">Home</button>
           <button type="button" className={currentPath === '/journey' ? 'is-active' : ''} aria-current={currentPath === '/journey' ? 'page' : undefined} onClick={() => goToPage('/journey')} data-cursor="true">Timeline</button>
-          <button type="button" aria-disabled="true" data-cursor="true">40 stories</button>
+          <button type="button" className={currentPath.startsWith('/stories') ? 'is-active' : ''} aria-current={currentPath === '/stories' ? 'page' : undefined} onClick={() => goToPage('/stories')} data-cursor="true">40 stories</button>
           <button type="button" className={currentPath === '/impact' ? 'is-active' : ''} aria-current={currentPath === '/impact' ? 'page' : undefined} onClick={() => goToPage('/impact')} data-cursor="true">Donor impact</button>
         </nav>
 
@@ -357,7 +359,7 @@ function HomeHeader({
       <div id="home-mobile-menu" className={`home-header__mobile-menu${menuOpen ? ' is-open' : ''}`}>
         <button type="button" className={currentPath === '/' ? 'is-active' : ''} aria-current={currentPath === '/' ? 'page' : undefined} onClick={goHome}>Home</button>
         <button type="button" className={currentPath === '/journey' ? 'is-active' : ''} aria-current={currentPath === '/journey' ? 'page' : undefined} onClick={() => goToPage('/journey')}>Timeline</button>
-        <button type="button" aria-disabled="true">40 stories</button>
+        <button type="button" className={currentPath.startsWith('/stories') ? 'is-active' : ''} aria-current={currentPath === '/stories' ? 'page' : undefined} onClick={() => goToPage('/stories')}>40 stories</button>
         <button type="button" className={currentPath === '/impact' ? 'is-active' : ''} aria-current={currentPath === '/impact' ? 'page' : undefined} onClick={() => goToPage('/impact')}>Donor impact</button>
         <a href="https://thehelpinghand.org.sg" target="_blank" rel="noreferrer">
           Back to THH website <span aria-hidden="true">↗</span>
@@ -1670,7 +1672,9 @@ export default function App() {
   }
 
 
-  const page = path === '/journey'
+  const page = path === '/stories' || path.startsWith('/stories/')
+    ? <Suspense fallback={null}><StoriesPages path={path} onNavigate={navigate} /></Suspense>
+    : path === '/journey'
     ? <HistoryPage />
     : path === '/impact'
       ? <DonorImpactPage onHome={() => navigate('/')} />
